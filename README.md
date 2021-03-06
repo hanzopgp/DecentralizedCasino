@@ -9,6 +9,6 @@
 - Backend casino
 - Frontend (js/python/java?)
 - Gas optimisation (external, view, memory...)
-- Security (SafeMath, )
+- Security (SafeMath, Ownable...)
 - Payable functions
 - Tokens
