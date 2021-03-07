@@ -1,7 +1,7 @@
 const Migrations = artifacts.require("Migrations");
-const HelloWorld = artifacts.require("HelloWorld");
+const DiceGame = artifacts.require("DiceGame");
 
 module.exports = function (deployer) {
   deployer.deploy(Migrations);
-  deployer.deploy(HelloWorld);
+  deployer.deploy(DiceGame);
 };
