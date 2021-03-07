@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Roll the dice</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+  </head>
+   <body>
+    <div style="text-align: center; color: green"> <h1> Dice Game</h1></div>
+      <div class="container text-monospace" style="width: 650px;">
+      <div style="font-size: x-large;">
+        <span>Current Status :  </span><span id="message" class="text-uppercase" style="color: orange">Set New Bet</span>
+      </div>
+      <br>
+      <div id="accountAddress"></div><br>
+      <div> <p class="text-capitalize" style="font-size: x-large;">Get new bet</p></div>  
+            <button type="submit" class="btn btn-primary" onclick="App.getNewBet();">Get new bet
+            </button>
+            <br><br>
+        <div> <p id="newBet" class="text-capitalize font-weight-bold" style="font-size: large; color: blueviolet"> </p></div>
+<br>
+      <div> <p class="text-capitalize font-weight-bold" style="font-size: x-large;">Roll the dice </p></div>
+    <button type="submit" class="btn btn-primary" onclick="App.roll();">
+      Roll it
+    </button>
+    <br><br>
+          <div> <p id="result" class="text-capitalize font-weight-bold" style="font-size: x-large; color: blue;"></p></div>   
+      <!-- <div> <p id="status" class="text-capitalize font-weight-bold"></p></div> -->
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+  </html>  

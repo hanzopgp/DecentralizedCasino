@@ -1,53 +1,58 @@
 pragma solidity ^0.5.0;
 
-contract DiceGame{
+contract Dice{
 
-	address public player;
-	uint minimumBet = 0.001 ether;
-	uint maximumBet = 5 ether;
-	uint betValue = 0 ether;
+	struct Bet{
+		uint8  currentBet;
+		bool  isBetSet; //default value is false	
+		uint8  destiny;
+	}
 
-	event HasPaid(address player);
-    event Won(address player);
-    event Lost(address player);
+	mapping(address => Bet) private bets;
+
+	uint8 private randomFactor;
+
+	event NewBetIsSet(address bidder , uint8 currentBet);
+	event GameResult(address bidder, uint8 currentBet , uint8 destiny);
 
 	constructor() public{
-		player = msg.sender;
+		randomFactor = 10;
 	}
 
-	modifier payed(){
-		require(betValue > 0 ether);
-		_;
+	function() external payable{}
+
+	function isBetSet() public view returns(bool){
+		return bets[msg.sender].isBetSet;
 	}
 
-	function computeDoubleDice() private view returns(uint){
-      	uint randNonce = 0;
-		uint dice1 = uint(keccak256(abi.encodePacked(now, player, randNonce))) % 6 + 1;
-		randNonce++;
-		uint dice2 = uint(keccak256(abi.encodePacked(now, player, randNonce))) % 6 + 1;
-		uint doubleDice = dice1 + dice2;
-		return doubleDice;
+	function getNewbet() public returns(uint8){
+		require(bets[msg.sender].isBetSet == false);
+		bets[msg.sender].isBetSet = true;
+		bets[msg.sender].currentBet = random();
+		randomFactor += bets[msg.sender].currentBet;
+		emit NewBetIsSet(msg.sender,bets[msg.sender].currentBet);
+		return bets[msg.sender].currentBet;
 	}
 
-	function pay() external payable{
-		require(msg.value >= minimumBet);
-		require(msg.value < maximumBet);
-		emit HasPaid(player);
-		betValue = address(this).balance;
-  	}
+	function roll() public returns(address , uint8 , uint8){
+		require(bets[msg.sender].isBetSet == true);
+		bets[msg.sender].destiny = random();
+		randomFactor += bets[msg.sender].destiny;
+		bets[msg.sender].isBetSet = false;
+		if(bets[msg.sender].destiny == bets[msg.sender].currentBet){
+			msg.sender.transfer(100000000000000);
+			emit GameResult(msg.sender, bets[msg.sender].currentBet, bets[msg.sender].destiny);			
+		}else{
+			emit GameResult(msg.sender, bets[msg.sender].currentBet, bets[msg.sender].destiny);
+		}
+		return (msg.sender , bets[msg.sender].currentBet , bets[msg.sender].destiny);
+	}
 
-  	function receive() external payable{
-  		msg.sender.transfer(betValue*11);
-  	}
 
-  	function play(uint betNb) external payed(){
-  		uint doubleDice = computeDoubleDice();
-  		if(betNb == doubleDice){
-  			this.receive();
-  			emit Won(player);
-  		}else{
-  			emit Lost(player);
-  		}
-  	}
-
+    function random() private view returns (uint8) {
+       	uint256 blockValue = uint256(blockhash(block.number-1 + block.timestamp));
+        blockValue = blockValue + uint256(randomFactor);
+        return uint8(blockValue % 5) + 1;
+    }
+	
 }
