@@ -12,40 +12,43 @@ contract Dice{
 
 	uint8 private randomFactor;
 
-	event NewBetIsSet(address bidder , uint8 currentBet);
-	event GameResult(address bidder, uint8 currentBet , uint8 destiny);
+	address currentPlayer;
+
+	event NewBetIsSet(address player , uint8 currentBet);
+	event GameResult(address player, uint8 currentBet , uint8 destiny);
 
 	constructor() public{
 		randomFactor = 10;
+		currentPlayer = msg.sender;
 	}
 
 	function() external payable{}
 
 	function isBetSet() public view returns(bool){
-		return bets[msg.sender].isBetSet;
+		return bets[currentPlayer].isBetSet;
 	}
 
 	function getNewbet() public returns(uint8){
-		require(bets[msg.sender].isBetSet == false);
-		bets[msg.sender].isBetSet = true;
-		bets[msg.sender].currentBet = random();
-		randomFactor += bets[msg.sender].currentBet;
-		emit NewBetIsSet(msg.sender,bets[msg.sender].currentBet);
-		return bets[msg.sender].currentBet;
+		require(bets[currentPlayer].isBetSet == false);
+		bets[currentPlayer].isBetSet = true;
+		bets[currentPlayer].currentBet = random();
+		randomFactor += bets[currentPlayer].currentBet;
+		emit NewBetIsSet(currentPlayer,bets[currentPlayer].currentBet);
+		return bets[currentPlayer].currentBet;
 	}
 
 	function roll() public returns(address , uint8 , uint8){
-		require(bets[msg.sender].isBetSet == true);
-		bets[msg.sender].destiny = random();
-		randomFactor += bets[msg.sender].destiny;
-		bets[msg.sender].isBetSet = false;
-		if(bets[msg.sender].destiny == bets[msg.sender].currentBet){
+		require(bets[currentPlayer].isBetSet == true);
+		bets[currentPlayer].destiny = random();
+		randomFactor += bets[currentPlayer].destiny;
+		bets[currentPlayer].isBetSet = false;
+		if(bets[currentPlayer].destiny == bets[currentPlayer].currentBet){
 			msg.sender.transfer(100000000000000);
-			emit GameResult(msg.sender, bets[msg.sender].currentBet, bets[msg.sender].destiny);			
+			emit GameResult(currentPlayer, bets[currentPlayer].currentBet, bets[currentPlayer].destiny);			
 		}else{
-			emit GameResult(msg.sender, bets[msg.sender].currentBet, bets[msg.sender].destiny);
+			emit GameResult(currentPlayer, bets[currentPlayer].currentBet, bets[currentPlayer].destiny);
 		}
-		return (msg.sender , bets[msg.sender].currentBet , bets[msg.sender].destiny);
+		return (currentPlayer , bets[currentPlayer].currentBet , bets[currentPlayer].destiny);
 	}
 
 
