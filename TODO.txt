@@ -1,0 +1,7 @@
+- Trouver comment test pay() avec truffle
+- tester ensuite play()
+- ajouter des jeux
+- optimiser gas
+- securite
+- tokens au lieu de payable
+- frontend
