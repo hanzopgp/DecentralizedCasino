@@ -52,7 +52,7 @@ contract DiceGame is Ownable{
 		return true;
 	}
 
-	function getNewBet(uint playerBet) public payable isRightPlayer(currentPlayer) returns(uint){
+	function getNewBet(uint playerBet) public payable isRightPlayer(currentPlayer) returns(uint, bool, uint){
 		require(betsMap[currentPlayer].isSet == false, "There is already a bet ready");
 		require(playerBet >= 2, "Bet must be between 2 and 12");
 		require(playerBet <= 12, "Bet must be between 2 and 12");
@@ -62,7 +62,7 @@ contract DiceGame is Ownable{
 		betsMap[currentPlayer].isSet = true;
 		betsMap[currentPlayer].currentBet = playerBet;
 		emit EventNewBet(currentPlayer, betsMap[currentPlayer].currentBet);
-		return betsMap[currentPlayer].currentBet;
+		return (betsMap[currentPlayer].currentBet, betsMap[currentPlayer].isSet, betsMap[currentPlayer].moneyBet);
 	}
 
 	function playDice() public isRightPlayer(currentPlayer) returns(address , uint , uint){
