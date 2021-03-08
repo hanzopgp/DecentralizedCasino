@@ -1,61 +1,74 @@
 pragma solidity ^0.5.0;
 
-contract Dice{
+import "./SafeMath.sol";
+import "./Ownable.sol";
+
+contract DiceGame is Ownable{
+
+	using SafeMath for uint256;
 
 	struct Bet{
-		uint8  currentBet;
-		bool  isBetSet; //default value is false	
-		uint8  destiny;
+		uint currentBet;
+		bool isSet; 	
+		uint diceResult;
+		uint moneyBet;
 	}
 
-	mapping(address => Bet) private bets;
-
-	uint8 private randomFactor;
-
+	mapping(address => Bet) private betsMap;
 	address currentPlayer;
+	uint private maximumBetValue = 1 ether;
+	uint private minimumBetValue = 0.001 ether;
 
-	event NewBetIsSet(address player , uint8 currentBet);
-	event GameResult(address player, uint8 currentBet , uint8 destiny);
+	event EventNewBet(address player , uint currentBet);
+	event EventGameResult(address player, uint currentBet , uint diceResult);
 
 	constructor() public{
-		randomFactor = 10;
 		currentPlayer = msg.sender;
 	}
 
-	function() external payable{}
+	// function() external payable{}
+
+	function playerWin() external payable{
+		msg.sender.transfer(betsMap[currentPlayer].moneyBet * 10);
+	}
+
+	function withdrawContractBalance() external onlyOwner{
+		msg.sender.transfer(address(this).balance);
+	}
 
 	function isBetSet() public view returns(bool){
-		return bets[currentPlayer].isBetSet;
+		return betsMap[currentPlayer].isSet;
 	}
 
-	function getNewbet() public returns(uint8){
-		require(bets[currentPlayer].isBetSet == false);
-		bets[currentPlayer].isBetSet = true;
-		bets[currentPlayer].currentBet = random();
-		randomFactor += bets[currentPlayer].currentBet;
-		emit NewBetIsSet(currentPlayer,bets[currentPlayer].currentBet);
-		return bets[currentPlayer].currentBet;
+	function getNewbet(uint playerBet) public payable returns(uint){
+		require(betsMap[currentPlayer].isSet == false, "There is already a bet ready");
+		require(playerBet >= 2, "Bet must be between 2 and 12");
+		require(playerBet <= 12, "Bet must be between 2 and 12");
+		require(msg.value >= minimumBetValue, "Too low bet value");
+		require(msg.value <= maximumBetValue, "Too high bet value");
+		betsMap[currentPlayer].isSet = true;
+		betsMap[currentPlayer].currentBet = playerBet;
+		emit EventNewBet(currentPlayer, betsMap[currentPlayer].currentBet);
+		return betsMap[currentPlayer].currentBet;
 	}
 
-	function roll() public returns(address , uint8 , uint8){
-		require(bets[currentPlayer].isBetSet == true);
-		bets[currentPlayer].destiny = random();
-		randomFactor += bets[currentPlayer].destiny;
-		bets[currentPlayer].isBetSet = false;
-		if(bets[currentPlayer].destiny == bets[currentPlayer].currentBet){
-			msg.sender.transfer(100000000000000);
-			emit GameResult(currentPlayer, bets[currentPlayer].currentBet, bets[currentPlayer].destiny);			
-		}else{
-			emit GameResult(currentPlayer, bets[currentPlayer].currentBet, bets[currentPlayer].destiny);
+	function playDice() public returns(address , uint , uint){
+		require(betsMap[currentPlayer].isSet == true, "You need to bet before playing"); 																	
+		betsMap[currentPlayer].diceResult = randomDoubleDice();															
+		betsMap[currentPlayer].isSet = false;
+		if(betsMap[currentPlayer].diceResult == betsMap[currentPlayer].currentBet){
+			this.playerWin();
 		}
-		return (currentPlayer , bets[currentPlayer].currentBet , bets[currentPlayer].destiny);
+		emit EventGameResult(currentPlayer, betsMap[currentPlayer].currentBet, betsMap[currentPlayer].diceResult);
+		return (currentPlayer , betsMap[currentPlayer].currentBet , betsMap[currentPlayer].diceResult);
 	}
 
-
-    function random() private view returns (uint8) {
-       	uint256 blockValue = uint256(blockhash(block.number-1 + block.timestamp));
-        blockValue = blockValue + uint256(randomFactor);
-        return uint8(blockValue % 5) + 1;
+    function randomDoubleDice() private view returns (uint) {
+    	uint randomId = 0;
+		uint firstDice = uint(keccak256(abi.encodePacked(now, currentPlayer, randomId))) % 6 + 1;	
+		randomId++;
+		uint secondDice = uint(keccak256(abi.encodePacked(now, currentPlayer, randomId))) % 6 + 1;
+		return firstDice + secondDice;
     }
 	
 }
