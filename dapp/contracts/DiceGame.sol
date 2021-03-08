@@ -20,6 +20,7 @@ contract DiceGame is Ownable{
 	uint public minimumBetValue = 0.001 ether;
 	uint private contractBalance = 0;
 
+	event EventCancelBet(address player);
 	event EventNewBet(address player , uint currentBet);
 	event EventGameResult(address player, uint currentBet , uint diceResult);
 
@@ -27,9 +28,12 @@ contract DiceGame is Ownable{
 		currentPlayer = msg.sender;
 	}
 
-	// function() external payable{}
+	modifier isRightPlayer(address player){
+		require(msg.sender == player);
+		_;
+	}
 
-	function playerWin() external payable{
+	function playerWin() external isRightPlayer(currentPlayer){
 		msg.sender.transfer(betsMap[currentPlayer].moneyBet * 10);
 	}
 
@@ -37,7 +41,18 @@ contract DiceGame is Ownable{
 		return betsMap[currentPlayer].isSet;
 	}
 
-	function getNewBet(uint playerBet) public payable returns(uint){
+	function cancelBet() external isRightPlayer(currentPlayer) returns(bool){
+		require(betsMap[currentPlayer].isSet == true, "There is no bet currently");
+		betsMap[currentPlayer].currentBet = 0;
+		betsMap[currentPlayer].isSet = false;
+		betsMap[currentPlayer].diceResult = 0;
+		msg.sender.transfer(betsMap[currentPlayer].moneyBet);
+		betsMap[currentPlayer].moneyBet = 0;
+		emit EventCancelBet(currentPlayer);
+		return true;
+	}
+
+	function getNewBet(uint playerBet) public payable isRightPlayer(currentPlayer) returns(uint){
 		require(betsMap[currentPlayer].isSet == false, "There is already a bet ready");
 		require(playerBet >= 2, "Bet must be between 2 and 12");
 		require(playerBet <= 12, "Bet must be between 2 and 12");
@@ -50,7 +65,7 @@ contract DiceGame is Ownable{
 		return betsMap[currentPlayer].currentBet;
 	}
 
-	function playDice() public returns(address , uint , uint){
+	function playDice() public isRightPlayer(currentPlayer) returns(address , uint , uint){
 		require(betsMap[currentPlayer].isSet == true, "You need to bet before playing"); 																	
 		betsMap[currentPlayer].diceResult = randomDoubleDice();															
 		betsMap[currentPlayer].isSet = false;
@@ -68,6 +83,11 @@ contract DiceGame is Ownable{
 		uint secondDice = uint(keccak256(abi.encodePacked(now, currentPlayer, randomId))) % 6 + 1;
 		return firstDice + secondDice;
     }
+
+    function addFundsContractBalance() external payable onlyOwner{
+    	require(msg.value > 0, "No funds transfered");
+		contractBalance += msg.value;
+	}
 
     function withdrawContractBalance() external onlyOwner{
 		msg.sender.transfer(contractBalance);
