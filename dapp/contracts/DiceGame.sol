@@ -16,8 +16,9 @@ contract DiceGame is Ownable{
 
 	mapping(address => Bet) private betsMap;
 	address currentPlayer;
-	uint private maximumBetValue = 1 ether;
-	uint private minimumBetValue = 0.001 ether;
+	uint public maximumBetValue = 1 ether;
+	uint public minimumBetValue = 0.001 ether;
+	uint private contractBalance = 0;
 
 	event EventNewBet(address player , uint currentBet);
 	event EventGameResult(address player, uint currentBet , uint diceResult);
@@ -32,20 +33,17 @@ contract DiceGame is Ownable{
 		msg.sender.transfer(betsMap[currentPlayer].moneyBet * 10);
 	}
 
-	function withdrawContractBalance() external onlyOwner{
-		msg.sender.transfer(address(this).balance);
-	}
-
 	function isBetSet() public view returns(bool){
 		return betsMap[currentPlayer].isSet;
 	}
 
-	function getNewbet(uint playerBet) public payable returns(uint){
+	function getNewBet(uint playerBet) public payable returns(uint){
 		require(betsMap[currentPlayer].isSet == false, "There is already a bet ready");
 		require(playerBet >= 2, "Bet must be between 2 and 12");
 		require(playerBet <= 12, "Bet must be between 2 and 12");
 		require(msg.value >= minimumBetValue, "Too low bet value");
 		require(msg.value <= maximumBetValue, "Too high bet value");
+		contractBalance += msg.value;
 		betsMap[currentPlayer].isSet = true;
 		betsMap[currentPlayer].currentBet = playerBet;
 		emit EventNewBet(currentPlayer, betsMap[currentPlayer].currentBet);
@@ -70,5 +68,13 @@ contract DiceGame is Ownable{
 		uint secondDice = uint(keccak256(abi.encodePacked(now, currentPlayer, randomId))) % 6 + 1;
 		return firstDice + secondDice;
     }
+
+    function withdrawContractBalance() external onlyOwner{
+		msg.sender.transfer(contractBalance);
+	}
+
+	function getContractBalance() external view onlyOwner returns(uint){
+		return contractBalance;
+	}
 	
 }
