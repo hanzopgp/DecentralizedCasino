@@ -41,6 +41,26 @@ contract("DiceGame", (accounts) => {
     })
 
 
+    it("cancelBet() should emit a EventCancelBet", async () => {
+  		const result = await contractInstance.cancelBet();
+        assert.equal(result.logs[0].event, "EventCancelBet");
+    })
+    // it("cancelBet() should return the bet value", async () => {
+  		// const result = await contractInstance.cancelBet();
+    //     assert.equal(result.logs[0].args.currentBet, 6);
+        
+    // })
+    // it("cancelBet() should return isSet as true", async () => {
+  		// const result = await contractInstance.cancelBet();
+    //     assert.equal(result.logs[0].args.isSet, true);
+        
+    // })
+    // it("cancelBet() should return the money value", async () => {
+  		// const result = await contractInstance.cancelBet();
+    //     assert.equal(result.logs[0].args.moneyBet, 500000000000000000);
+    // })
+
+
     it("playDice() should emit a EventGameResult", async () => {
     	await contractInstance.getNewBet(6, {from: accounts[0], value: 500000000000000000});
         const result = await contractInstance.playDice();
