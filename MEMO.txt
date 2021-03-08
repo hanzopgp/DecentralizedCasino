@@ -1,0 +1,7 @@
+truffle develop
+migrate --reset
+let dice = await DiceGame.deployed()
+dice.isBetSet()
+dice.getContractBalance()
+dice.getNewBet(6, {from: accounts[0], value: 500000000000000000})
+dice.playDice()
