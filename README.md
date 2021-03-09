@@ -11,12 +11,14 @@ Most of the commands used can be found in MEMO.txt file.
 
 ## ToDo features
 
-- Backend casino
+- Backend casino in solidity
+- Truffle tests with local blockchain
 - Frontend (js/python/java?)
 - Gas optimisation (external, view, memory...)
 - Security (SafeMath, Ownable...)
 - Payable functions
-- Tokens
+- Safe randomness (ChainLink)
+- Tokens as credits for the games (Using ERC21)
 
 ## Links
 
