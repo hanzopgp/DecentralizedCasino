@@ -55,8 +55,8 @@ contract DiceGame is Ownable{ //Ownable allows use onlyOwner modifier so we can 
 
 
 	//Modifiers
-	modifier isRightPlayer(address player){
-		require(msg.sender == player);
+	modifier isRightPlayer(){
+		require(msg.sender == currentPlayer, "You are not the current player");
 		_;
 	}
 	modifier isEnoughMoney(){
@@ -76,7 +76,7 @@ contract DiceGame is Ownable{ //Ownable allows use onlyOwner modifier so we can 
 
 
 	//General casino functions
-	function playerReceivesMoney() external isRightPlayer(currentPlayer){
+	function playerReceivesMoney() external isRightPlayer{
 		if(gameType == 1){ //1: dice
 			msg.sender.transfer(betsMap[currentPlayer].moneyBet * diceBetMultiplier);
 		}else if(gameType == 2){ //2: roulette
@@ -86,7 +86,7 @@ contract DiceGame is Ownable{ //Ownable allows use onlyOwner modifier so we can 
 	function isBetSet() public view returns(bool){
 		return betsMap[currentPlayer].isSet;
 	}
-	function cancelBet() external isRightPlayer(currentPlayer) returns(bool){
+	function cancelBet() external isRightPlayer returns(bool){
 		require(betsMap[currentPlayer].isSet == true, "There is no bet currently");
 		betsMap[currentPlayer].diceBet = 0;
 		betsMap[currentPlayer].rouletteBet = "";
@@ -101,7 +101,7 @@ contract DiceGame is Ownable{ //Ownable allows use onlyOwner modifier so we can 
 
 
 	//Dice game functions
-	function getDiceBet(uint playerBet) public payable isRightPlayer(currentPlayer) isEnoughMoney currentBetIsNotSet returns(uint, bool, uint){
+	function getDiceBet(uint playerBet) public payable isRightPlayer isEnoughMoney currentBetIsNotSet returns(uint, bool, uint){
 		require(playerBet >= minDiceValue, "Bet must be between 2 and 12");
 		require(playerBet <= maxDiceValue, "Bet must be between 2 and 12");
 		contractBalance += msg.value;
@@ -110,7 +110,7 @@ contract DiceGame is Ownable{ //Ownable allows use onlyOwner modifier so we can 
 		emit EventDiceBet(currentPlayer, betsMap[currentPlayer].diceBet);
 		return (betsMap[currentPlayer].diceBet, betsMap[currentPlayer].isSet, betsMap[currentPlayer].moneyBet);
 	}
-	function playDice() public isRightPlayer(currentPlayer) currentBetIsSet returns(address , uint , uint){
+	function playDice() public isRightPlayer currentBetIsSet returns(address , uint , uint){
 		gameType = 1;																
 		betsMap[currentPlayer].diceResult = randomDoubleDice();															
 		betsMap[currentPlayer].isSet = false;
@@ -127,7 +127,7 @@ contract DiceGame is Ownable{ //Ownable allows use onlyOwner modifier so we can 
 
 
     //Roulette game functions
-	function getRouletteBet(string memory playerBet) public payable isRightPlayer(currentPlayer) isEnoughMoney currentBetIsNotSet returns(string memory, bool, uint){
+	function getRouletteBet(string memory playerBet) public payable isRightPlayer isEnoughMoney currentBetIsNotSet returns(string memory, bool, uint){
 		require(checkRouletteBet(playerBet));
 		contractBalance += msg.value;
 		betsMap[currentPlayer].isSet = true;
@@ -135,7 +135,7 @@ contract DiceGame is Ownable{ //Ownable allows use onlyOwner modifier so we can 
 		emit EventRouletteBet(currentPlayer, betsMap[currentPlayer].rouletteBet);
 		return (betsMap[currentPlayer].rouletteBet, betsMap[currentPlayer].isSet, betsMap[currentPlayer].moneyBet);
 	}
-	function playRoulette() public isRightPlayer(currentPlayer) currentBetIsSet returns(address, string memory, string memory){	
+	function playRoulette() public isRightPlayer currentBetIsSet returns(address, string memory, string memory){	
 		gameType = 2;	
 		rouletteGame();	
 		betsMap[currentPlayer].isSet = false;
