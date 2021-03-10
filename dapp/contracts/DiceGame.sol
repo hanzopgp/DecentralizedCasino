@@ -145,10 +145,10 @@ contract DiceGame is Ownable{ //Ownable allows use onlyOwner modifier so we can 
 		return (currentPlayer, betsMap[currentPlayer].rouletteBet, betsMap[currentPlayer].rouletteResult.number);
 	}
 	function isPlayerWinning() private view returns(bool){
-		if((betsMap[currentPlayer].rouletteBet == betsMap[currentPlayer].rouletteResult.number)
-		|| (betsMap[currentPlayer].rouletteBet == betsMap[currentPlayer].rouletteResult.isGreen)
-		|| (betsMap[currentPlayer].rouletteBet == betsMap[currentPlayer].rouletteResult.color)
-		|| (betsMap[currentPlayer].rouletteBet == betsMap[currentPlayer].rouletteResult.thirdNumber)){
+		if((compareStrings(betsMap[currentPlayer].rouletteBet, betsMap[currentPlayer].rouletteResult.number))
+		|| ((compareStrings(betsMap[currentPlayer].rouletteBet, betsMap[currentPlayer].rouletteResult.isGreen)))
+		|| ((compareStrings(betsMap[currentPlayer].rouletteBet, betsMap[currentPlayer].rouletteResult.color)))
+		|| ((compareStrings(betsMap[currentPlayer].rouletteBet, betsMap[currentPlayer].rouletteResult.thirdNumber)))){
 			return true;
 		}
 		return false;
@@ -179,16 +179,16 @@ contract DiceGame is Ownable{ //Ownable allows use onlyOwner modifier so we can 
 		}
 	}
 	function checkRouletteBet(string memory playerBet) private view returns(bool){
-		if(playerBet == "black" 
-		|| playerBet == "white"){
+		if((compareStrings(playerBet, "black")) 
+		|| (compareStrings(playerBet, "white"))){
 			betsMap[currentPlayer].rouletteBetMultiplier == 2;
 			return true;
-		}else if(playerBet == "green"){
+		}else if(compareStrings(playerBet, "green")){
 			betsMap[currentPlayer].rouletteBetMultiplier == 36;
 			return true;
-		}else if(playerBet == "firstThird" 
-			  || playerBet == "secondThird" 
-			  || playerBet == "thirdThird"){
+		}else if((compareStrings(playerBet, "firstThird")) 
+			  || (compareStrings(playerBet, "secondThird"))
+			  || (compareStrings(playerBet, "thirdThird"))){
 			betsMap[currentPlayer].rouletteBetMultiplier == 3;
 			return true;
 		}else if(stringToUint(playerBet) >= 0 && stringToUint(playerBet) <= 36){
@@ -232,7 +232,7 @@ contract DiceGame is Ownable{ //Ownable allows use onlyOwner modifier so we can 
         	return res;
     	}
     }
-    function uintToString(uint v) private view returns (string memory str) {
+    function uintToString(uint v) private returns (string memory str) {
         uint maxlength = 100;
         bytes memory reversed = new bytes(maxlength);
         uint i = 0;
@@ -246,6 +246,9 @@ contract DiceGame is Ownable{ //Ownable allows use onlyOwner modifier so we can 
             s[j] = reversed[i - j];
         }
         str = string(s);
+    }
+    function compareStrings(string memory a, string memory b) private view returns(bool){
+    	return keccak256(bytes(a)) == keccak256(bytes(b));
     }
 	
 }
