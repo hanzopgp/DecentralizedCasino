@@ -43,7 +43,7 @@ contract DiceGame is Ownable{ //Ownable allows use onlyOwner modifier so we can 
 	event EventDiceBet(address player , uint diceBet);
 	event EventDiceResult(address player, uint diceBet , uint diceResult);
 	event EventRouletteBet(address player , string rouletteBet);
-	event EventRouletteResult(address player, string rouletteBet , string[] rouletteResult);
+	event EventRouletteResult(address player, string rouletteBet , string rouletteResultNb);
 
 
 
@@ -102,8 +102,8 @@ contract DiceGame is Ownable{ //Ownable allows use onlyOwner modifier so we can 
 
 	//Dice game functions
 	function getDiceBet(uint playerBet) public payable isRightPlayer(currentPlayer) isEnoughMoney currentBetIsNotSet returns(uint, bool, uint){
-		require(playerBet >= minDiceValue, "Bet must be between " + minDiceValue + " and " + maxDiceValue);
-		require(playerBet <= maxDiceValue, "Bet must be between " + minDiceValue + " and " + maxDiceValue);
+		require(playerBet >= minDiceValue, "Bet must be between 2 and 12");
+		require(playerBet <= maxDiceValue, "Bet must be between 2 and 12");
 		contractBalance += msg.value;
 		betsMap[currentPlayer].isSet = true;
 		betsMap[currentPlayer].diceBet = playerBet;
@@ -127,7 +127,7 @@ contract DiceGame is Ownable{ //Ownable allows use onlyOwner modifier so we can 
 
 
     //Roulette game functions
-	function getRouletteBet(string storage playerBet) public payable isRightPlayer(currentPlayer) isEnoughMoney currentBetIsNotSet returns(string storage, bool, uint){
+	function getRouletteBet(string memory playerBet) public payable isRightPlayer(currentPlayer) isEnoughMoney currentBetIsNotSet returns(string memory, bool, uint){
 		require(checkRouletteBet(playerBet));
 		contractBalance += msg.value;
 		betsMap[currentPlayer].isSet = true;
@@ -135,14 +135,14 @@ contract DiceGame is Ownable{ //Ownable allows use onlyOwner modifier so we can 
 		emit EventRouletteBet(currentPlayer, betsMap[currentPlayer].rouletteBet);
 		return (betsMap[currentPlayer].rouletteBet, betsMap[currentPlayer].isSet, betsMap[currentPlayer].moneyBet);
 	}
-	function playRoulette() public isRightPlayer(currentPlayer) currentBetIsSet returns(address, string storage, string[] storage){	
+	function playRoulette() public isRightPlayer(currentPlayer) currentBetIsSet returns(address, string memory, string memory){	
 		gameType = 2;	
 		rouletteGame();	
 		betsMap[currentPlayer].isSet = false;
 		isPlayerWinning();
 		this.playerReceivesMoney();
-		emit EventRouletteResult(currentPlayer, betsMap[currentPlayer].rouletteBet, betsMap[currentPlayer].rouletteResult);
-		return (currentPlayer, betsMap[currentPlayer].rouletteBet, betsMap[currentPlayer].rouletteResult);
+		emit EventRouletteResult(currentPlayer, betsMap[currentPlayer].rouletteBet, betsMap[currentPlayer].rouletteResult.number);
+		return (currentPlayer, betsMap[currentPlayer].rouletteBet, betsMap[currentPlayer].rouletteResult.number);
 	}
 	function isPlayerWinning() private view returns(bool){
 		if((betsMap[currentPlayer].rouletteBet == betsMap[currentPlayer].rouletteResult.number)
@@ -156,29 +156,29 @@ contract DiceGame is Ownable{ //Ownable allows use onlyOwner modifier so we can 
 	function rouletteGame() private view{
 		uint rouletteNumberResult = randomUintBetween(0, 36);
 		//Number
-		RouletteResult.number = uintToString(rouletteNumberResult);
+		betsMap[currentPlayer].rouletteResult.number = uintToString(rouletteNumberResult);
 		//Color
 		if(rouletteNumberResult % 2 == 0 && rouletteNumberResult != 0){
-			RouletteResult.color = "black";
+			betsMap[currentPlayer].rouletteResult.color = "black";
 		}else{
-			RouletteResult.color = "white";
+			betsMap[currentPlayer].rouletteResult.color = "white";
 		}
 		//Third
 		if(rouletteNumberResult > 0 && rouletteNumberResult <= 12){
-			RouletteResult.thirdNumber = "firstThird";
+			betsMap[currentPlayer].rouletteResult.thirdNumber = "firstThird";
 		}else if(rouletteNumberResult > 12 && rouletteNumberResult <= 24){
-			RouletteResult.thirdNumber = "secondThird";
+			betsMap[currentPlayer].rouletteResult.thirdNumber = "secondThird";
 		}else{
-			RouletteResult.thirdNumber = "thirdNumber";
+			betsMap[currentPlayer].rouletteResult.thirdNumber = "thirdNumber";
 		}
 		//Green
 		if(rouletteNumberResult == 0){
-			RouletteResult.isGreen = "true";
+			betsMap[currentPlayer].rouletteResult.isGreen = "true";
 		}else{
-			RouletteResult.isGreen = "false";
+			betsMap[currentPlayer].rouletteResult.isGreen = "false";
 		}
 	}
-	function checkRouletteBet(string storage playerBet) private view returns(bool){
+	function checkRouletteBet(string memory playerBet) private view returns(bool){
 		if(playerBet == "black" 
 		|| playerBet == "white"){
 			betsMap[currentPlayer].rouletteBetMultiplier == 2;
@@ -221,17 +221,9 @@ contract DiceGame is Ownable{ //Ownable allows use onlyOwner modifier so we can 
 		randomId++;
 		return uint(keccak256(abi.encodePacked(now, currentPlayer, randomId))) % max + min;
 	}
-	function tableContains(string[] storage table, string storage element) private view returns(bool){
-		for(uint i = 0; i < table.length; i++){
-			if(table[i] == element){
-				return true;
-			}
-		}
-		return false;
-	}
-	function stringToUint(string storage str) private view returns (uint res){
+	function stringToUint(string memory str) private view returns (uint res){
 		res = 0;
-        bytes storage b = bytes(str);    
+        bytes memory b = bytes(str);    
         for (uint i = 0; i < b.length; i++) {
             uint c = uint(b[i]);
             if (c >= 48 && c <= 57) {
@@ -240,16 +232,16 @@ contract DiceGame is Ownable{ //Ownable allows use onlyOwner modifier so we can 
         	return res;
     	}
     }
-    function uintToString(uint v) private view returns (string storage str) {
+    function uintToString(uint v) private view returns (string memory str) {
         uint maxlength = 100;
-        bytes storage reversed = new bytes(maxlength);
+        bytes memory reversed = new bytes(maxlength);
         uint i = 0;
         while (v != 0) {
             uint remainder = v % 10;
             v = v / 10;
             reversed[i++] = byte(48 + remainder);
         }
-        bytes storage s = new bytes(i + 1);
+        bytes memory s = new bytes(i + 1);
         for (uint j = 0; j <= i; j++) {
             s[j] = reversed[i - j];
         }
