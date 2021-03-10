@@ -120,7 +120,7 @@ contract DiceGame is Ownable{ //Ownable allows use onlyOwner modifier so we can 
 		emit EventDiceResult(currentPlayer, betsMap[currentPlayer].diceBet, betsMap[currentPlayer].diceResult);
 		return (currentPlayer , betsMap[currentPlayer].diceBet , betsMap[currentPlayer].diceResult);
 	}
-    function randomDoubleDice() private view returns (uint){
+    function randomDoubleDice() private returns (uint){
 		return randomUintBetween(1, 6) + randomUintBetween(1, 6);
     }
 
@@ -153,7 +153,7 @@ contract DiceGame is Ownable{ //Ownable allows use onlyOwner modifier so we can 
 		}
 		return false;
 	}
-	function rouletteGame() private view{
+	function rouletteGame() private {
 		uint rouletteNumberResult = randomUintBetween(0, 36);
 		//Number
 		betsMap[currentPlayer].rouletteResult.number = uintToString(rouletteNumberResult);
@@ -217,37 +217,41 @@ contract DiceGame is Ownable{ //Ownable allows use onlyOwner modifier so we can 
 
 
 	//Utility functions
-	function randomUintBetween(uint min, uint max) private view returns(uint){
+	function randomUintBetween(uint min, uint max) private returns(uint){
 		randomId++;
 		return uint(keccak256(abi.encodePacked(now, currentPlayer, randomId))) % max + min;
 	}
-	function stringToUint(string memory str) private view returns (uint res){
-		res = 0;
-        bytes memory b = bytes(str);    
-        for (uint i = 0; i < b.length; i++) {
-            uint c = uint(b[i]);
+	function stringToUint(string memory s) internal pure returns (uint result) {
+        bytes memory b = bytes(s);
+        uint i;
+        result = 0;
+        for (i = 0; i < b.length; i++) {
+            uint c = uint(uint8(b[i]));
             if (c >= 48 && c <= 57) {
-                res = res * 10 + (c - 48);
+                result = result * 10 + (c - 48);
             }
-        	return res;
-    	}
-    }
-    function uintToString(uint v) private returns (string memory str) {
-        uint maxlength = 100;
-        bytes memory reversed = new bytes(maxlength);
-        uint i = 0;
-        while (v != 0) {
-            uint remainder = v % 10;
-            v = v / 10;
-            reversed[i++] = byte(48 + remainder);
         }
-        bytes memory s = new bytes(i + 1);
-        for (uint j = 0; j <= i; j++) {
-            s[j] = reversed[i - j];
-        }
-        str = string(s);
     }
-    function compareStrings(string memory a, string memory b) private view returns(bool){
+    function uintToString(uint _i) internal pure returns (string memory _uintAsString) {
+        uint number = _i;
+        if (number == 0) {
+            return "0";
+        }
+        uint j = number;
+        uint len;
+        while (j != 0) {
+            len++;
+            j /= 10;
+        }
+        bytes memory bstr = new bytes(len);
+        uint k = len - 1;
+        while (number != 0) {
+            bstr[k--] = byte(uint8(48 + number % 10));
+            number /= 10;
+        }
+        return string(bstr);
+    }
+    function compareStrings(string memory a, string memory b) internal pure returns(bool){
     	return keccak256(bytes(a)) == keccak256(bytes(b));
     }
 	
