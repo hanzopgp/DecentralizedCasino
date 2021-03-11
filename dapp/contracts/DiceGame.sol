@@ -5,7 +5,7 @@ import "./Ownable.sol";
 
 contract DiceGame is Ownable{ //Ownable allows use onlyOwner modifier so we can make admin functions
 
-	using SafeMath for uint256; //Using SafeMath lib to avoid overflow erros
+	using SafeMath for uint256; //Using SafeMath lib to avoid overflow errors
 
 
 
