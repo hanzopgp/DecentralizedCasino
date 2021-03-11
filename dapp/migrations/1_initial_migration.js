@@ -1,7 +1,7 @@
 const Migrations = artifacts.require("Migrations");
-const DiceGame = artifacts.require("DiceGame");
+const Casino = artifacts.require("Casino");
 
 module.exports = function (deployer) {
   deployer.deploy(Migrations);
-  deployer.deploy(DiceGame);
+  deployer.deploy(Casino);
 };

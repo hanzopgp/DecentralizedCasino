@@ -4,6 +4,7 @@ import "./SafeMath.sol";
 import "./Ownable.sol";
 import "./Game.sol";
 import "./Dice.sol";
+import "./Utility.sol";
 
 contract Casino is Ownable{ //Ownable allows use onlyOwner modifier so we can make admin functions
 
