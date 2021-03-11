@@ -10,6 +10,12 @@ abstract contract Game{
 
 
 
+	//Events
+	event EventBet(address player , uint diceBet);
+	event EventResult(address player, uint diceBet , uint diceResult);
+
+
+
 	//Modifiers
 	modifier isEnoughMoney(){
 		require(msg.value >= minimumBetValue, "Too low bet value");
@@ -17,23 +23,23 @@ abstract contract Game{
 		_;
 	}
 	modifier currentBetIsNotSet(){
-		require(betsMap[currentPlayer].isSet == false, "There is already a bet ready");
+		require(betsMap[msg.sender].isSet == false, "There is already a bet ready");
 		_;
 	}
 	modifier currentBetIsSet(){
-		require(betsMap[currentPlayer].isSet == true, "You need to bet before playing"); 
+		require(betsMap[msg.sender].isSet == true, "You need to bet before playing"); 
 		_;
 	}
 
 
 
 	//General abstract game functions
-	function isBetSet() public view returns(bool){};
-	function bet(string empty, uint playerBet) public payable isEnoughMoney currentBetIsNotSet returns(uint, bool, uint){};
-	function cancelBet() currentBetIsSet external returns(bool){};
-	function play() public currentBetIsSet returns(address , uint , uint){};
-	function playerReceivesMoney() external{};
+	function isBetSet() public view returns(bool);
+	function bet(string empty, uint playerBet) public payable isEnoughMoney currentBetIsNotSet returns(uint, bool, uint);
+	function cancelBet() currentBetIsSet external returns(bool);
+	function play() public currentBetIsSet returns(address , uint , uint);
+	function playerReceivesMoney() external;
 	
 
-	
+
 }
