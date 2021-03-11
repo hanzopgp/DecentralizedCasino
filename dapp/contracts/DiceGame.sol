@@ -1,9 +1,10 @@
 pragma solidity ^0.5.0;
 
 import "./SafeMath.sol";
-import "./Casino.sol";
+import "./Game.sol";
+import "./Utility.sol";
 
-contract Dice is Casino{ //Ownable allows use onlyOwner modifier so we can make admin functions
+contract Dice is Game{ //Ownable allows use onlyOwner modifier so we can make admin functions
 
 
 
@@ -19,7 +20,7 @@ contract Dice is Casino{ //Ownable allows use onlyOwner modifier so we can make 
 		uint diceResult;
 	}
 	mapping(address => Bet) private betsMap;
-	uint public diceBetMultiplier = 10;
+	uint diceBetMultiplier = 10;
 
 
 
@@ -30,6 +31,9 @@ contract Dice is Casino{ //Ownable allows use onlyOwner modifier so we can make 
 
 
 	//Dice game functions
+	function isBetSet() public view returns(bool){
+		return betsMap[currentPlayer].isSet;
+	}
 	function bet(string empty, uint playerBet) public payable isEnoughMoney currentBetIsNotSet returns(uint, bool, uint){
 		require(playerBet >= 2, "Bet must be between 2 and 12");
 		require(playerBet <= 12, "Bet must be between 2 and 12");
@@ -38,6 +42,17 @@ contract Dice is Casino{ //Ownable allows use onlyOwner modifier so we can make 
 		betsMap[currentPlayer].diceBet = playerBet;
 		emit EventDiceBet(currentPlayer, betsMap[currentPlayer].diceBet);
 		return (betsMap[currentPlayer].diceBet, betsMap[currentPlayer].isSet, betsMap[currentPlayer].moneyBet);
+	}
+	function cancelBet() external currentBetIsSet returns(bool){
+		require(betsMap[currentPlayer].isSet == true, "There is no bet currently");
+		betsMap[currentPlayer].diceBet = 0;
+		betsMap[currentPlayer].rouletteBet = "";
+		betsMap[currentPlayer].isSet = false;
+		betsMap[currentPlayer].diceResult = 0;
+		msg.sender.transfer(betsMap[currentPlayer].moneyBet);
+		betsMap[currentPlayer].moneyBet = 0;
+		emit EventCancelBet(currentPlayer);
+		return true;
 	}
 	function play() public currentBetIsSet returns(address , uint , uint){
 		gameType = 1;																
@@ -49,10 +64,12 @@ contract Dice is Casino{ //Ownable allows use onlyOwner modifier so we can make 
 		emit EventDiceResult(currentPlayer, betsMap[currentPlayer].diceBet, betsMap[currentPlayer].diceResult);
 		return (currentPlayer , betsMap[currentPlayer].diceBet , betsMap[currentPlayer].diceResult);
 	}
-    function randomDoubleDice() private returns (uint){
+    function playerReceivesMoney() external{
+		msg.sender.transfer(betsMap[currentPlayer].moneyBet * diceBetMultiplier);
+	}
+	function randomDoubleDice() private returns (uint){
 		return randomUintBetween(1, 6) + randomUintBetween(1, 6);
     }
-
 
 	
 }

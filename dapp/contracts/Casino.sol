@@ -17,61 +17,19 @@ contract Casino is Ownable{ //Ownable allows use onlyOwner modifier so we can ma
 	uint public maximumBetValue = 1 ether;
 	uint public minimumBetValue = 0.001 ether;
 	uint private contractBalance = 0;
+	Game game;
 
 
 
-	//Events
-	event EventCancelBet(address player);
-
-
-
-	//Modifiers
-	modifier isEnoughMoney(){
-		require(msg.value >= minimumBetValue, "Too low bet value");
-		require(msg.value <= maximumBetValue, "Too high bet value");
-		_;
-	}
-	modifier currentBetIsNotSet(){
-		require(betsMap[currentPlayer].isSet == false, "There is already a bet ready");
-		_;
-	}
-	modifier currentBetIsSet(){
-		require(betsMap[currentPlayer].isSet == true, "You need to bet before playing"); 
-		_;
-	}
-
-
-
-	//General abstract casino functions
-	function playerReceivesMoney() external{
-		if(gameType == 1){ //1: dice
-			//msg.sender.transfer(betsMap[currentPlayer].moneyBet * diceBetMultiplier);
-		}else if(gameType == 2){ //2: roulette
-			//msg.sender.transfer(betsMap[currentPlayer].moneyBet * betsMap[currentPlayer].rouletteBetMultiplier);
-		}
-	}
-	function bet() external{
-
-	}
-	function play() external{
-
-	}
-	function cancelBet() external returns(bool){
-		require(betsMap[currentPlayer].isSet == true, "There is no bet currently");
-		betsMap[currentPlayer].diceBet = 0;
-		betsMap[currentPlayer].rouletteBet = "";
-		betsMap[currentPlayer].isSet = false;
-		betsMap[currentPlayer].diceResult = 0;
-		msg.sender.transfer(betsMap[currentPlayer].moneyBet);
-		betsMap[currentPlayer].moneyBet = 0;
-		emit EventCancelBet(currentPlayer);
-		return true;
-	}
+	//Game type setter
 	function setGameType(uint type) external{
 		gameType = type;
-	}
-	function isBetSet() public view returns(bool){
-		return betsMap[currentPlayer].isSet;
+		if(type = 1){
+			game = new Dice(msg.sender);
+		}
+		else if(type == 2){
+			game = new Roulette(msg.sender);
+		}	
 	}
 
 
