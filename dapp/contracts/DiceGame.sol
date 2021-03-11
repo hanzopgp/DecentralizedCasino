@@ -71,5 +71,6 @@ contract Dice is Game{ //Ownable allows use onlyOwner modifier so we can make ad
 		return randomUintBetween(1, 6) + randomUintBetween(1, 6);
     }
 
+
 	
 }

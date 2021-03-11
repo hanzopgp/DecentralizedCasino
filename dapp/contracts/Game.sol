@@ -2,6 +2,8 @@ pragma solidity ^0.5.0;
 
 abstract contract Game{ 
 
+
+
 	//Variables
 	uint public maximumBetValue = 1 ether;
 	uint public minimumBetValue = 0.001 ether;
@@ -31,5 +33,7 @@ abstract contract Game{
 	function cancelBet() currentBetIsSet external returns(bool){};
 	function play() public currentBetIsSet returns(address , uint , uint){};
 	function playerReceivesMoney() external{};
+	
+
 	
 }

@@ -4,7 +4,11 @@ import "./SafeMath.sol";
 
 contract Utility{
 
+
+
     uint randomId = 0;
+
+
 
 	function randomUintBetween(uint min, uint max) private returns(uint){
 		randomId++;
@@ -43,5 +47,7 @@ contract Utility{
         }
         return string(bstr);
     }
+
+
 
 }
