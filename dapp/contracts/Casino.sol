@@ -13,19 +13,36 @@ contract Casino is Ownable{ //Ownable allows use onlyOwner modifier so we can ma
 
 	//Variables
 	uint private contractBalance = 0;
-	mapping (address => uint) public playerGameType; //address : currentPlayer ; uint : gameType
 	mapping (address => Game) public playerGame; //address : currentPlayer ; Game : Dice or Roulette
 
 
 	//Game type setter
-	function setGameType(uint typef) external{
-		playerGame[msg.sender] = typef;
-		if(typef == 1){
+	function setGameType(uint gameType) external{
+		if(gameType == 1){
 			playerGame[msg.sender] = new Dice();
 		}
-		else if(typef == 2){
+		else if(gameType == 2){
 			//playerGame[msg.sender] = new Roulette();
 		}	
+	}
+
+
+
+	//Playing game
+	function isBetSet() public view returns(bool){
+		return playerGame[msg.sender].isBetSet();
+	}
+	function bet(string empty, uint playerBet) public payable isEnoughMoney currentBetIsNotSet returns(uint, bool, uint){
+		return playerGame[msg.sender].bet(empty, playerBet);
+	}
+	function cancelBet() currentBetIsSet external returns(bool){
+		return playerGame[msg.sender].cancelBet();
+	}	
+	function play() public currentBetIsSet returns(address , uint , uint){
+		return playerGame[msg.sender].play();
+	}
+	function playerReceivesMoney() external{
+		return playerGame[msg.sender].playerReceivesMoney();
 	}
 
 
