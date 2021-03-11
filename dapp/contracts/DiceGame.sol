@@ -49,14 +49,14 @@ contract DiceGame is Ownable{ //Ownable allows use onlyOwner modifier so we can 
 
 	//Constructor
 	constructor() public{
-		currentPlayer = msg.sender;
+		msg.sender == currentPlayer;
 	}
 
 
 
 	//Modifiers
 	modifier isRightPlayer(){
-		require(msg.sender == currentPlayer, "You are not the current player");
+		//require(msg.sender == currentPlayer, "You are not the current player");
 		_;
 	}
 	modifier isEnoughMoney(){
@@ -139,8 +139,9 @@ contract DiceGame is Ownable{ //Ownable allows use onlyOwner modifier so we can 
 		gameType = 2;	
 		rouletteGame();	
 		betsMap[currentPlayer].isSet = false;
-		isPlayerWinning();
-		this.playerReceivesMoney();
+		if(isPlayerWinning() == true){
+			this.playerReceivesMoney();
+		}	
 		emit EventRouletteResult(currentPlayer, betsMap[currentPlayer].rouletteBet, betsMap[currentPlayer].rouletteResult.number);
 		return (currentPlayer, betsMap[currentPlayer].rouletteBet, betsMap[currentPlayer].rouletteResult.number);
 	}
