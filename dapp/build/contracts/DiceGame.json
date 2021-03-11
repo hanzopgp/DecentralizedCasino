@@ -31081,15 +31081,60 @@
           ],
           "name": "EventDiceResult",
           "type": "event"
+        },
+        "0xe6cdeffc935ef7df3f9331aaa0768cf9561fd84515062e65da48ecba3ca992f1": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "player",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "string",
+              "name": "rouletteBet",
+              "type": "string"
+            }
+          ],
+          "name": "EventRouletteBet",
+          "type": "event"
+        },
+        "0xc89c72a02a5db5f05a0814c7bcb7de56b04c91d70bb9d9319e5062cab5ef6858": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "player",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "string",
+              "name": "rouletteBet",
+              "type": "string"
+            },
+            {
+              "indexed": false,
+              "internalType": "string",
+              "name": "rouletteResultNb",
+              "type": "string"
+            }
+          ],
+          "name": "EventRouletteResult",
+          "type": "event"
         }
       },
       "links": {},
       "address": "0xd73efAC03e1945bCbE7825146d736A4E1Ffdf03a",
-      "transactionHash": "0xa7d3bdfa0ec19dd2068f93948ccd21350e432beaa9c0886efcf1acfc790a3e91"
+      "transactionHash": "0xe2becd7badd2e9140428f6b094371691ec146a2ba4d8a01ba6e4be12ba520731"
     }
   },
   "schemaVersion": "3.3.4",
-  "updatedAt": "2021-03-10T21:25:35.923Z",
+  "updatedAt": "2021-03-11T20:25:44.673Z",
+  "networkType": "ethereum",
   "devdoc": {
     "methods": {
       "isOwner()": {

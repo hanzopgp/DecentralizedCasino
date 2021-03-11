@@ -6,11 +6,32 @@ contract Utility{
 
 
 
+    //Variables
     uint randomId = 0;
+    uint public maximumBetValue = 1 ether;
+    uint public minimumBetValue = 0.001 ether;
 
 
 
-	function randomUintBetween(uint min, uint max) private returns(uint){
+    //Modifiers
+    modifier isEnoughMoney(){
+        require(msg.value >= minimumBetValue, "Too low bet value");
+        require(msg.value <= maximumBetValue, "Too high bet value");
+        _;
+    }
+    modifier currentBetIsNotSet(bool betIsSet){
+        require(betIsSet == false, "There is already a bet ready");
+        _;
+    }
+    modifier currentBetIsSet(bool betIsSet){
+        require(betIsSet == true, "You need to bet before playing"); 
+        _;
+    }
+
+
+
+    //Utility functions
+	function randomUintBetween(uint min, uint max) internal returns(uint){
 		randomId++;
 		return uint(keccak256(abi.encodePacked(now, msg.sender, randomId))) % max + min;
 	}
