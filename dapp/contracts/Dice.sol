@@ -41,7 +41,6 @@ contract Dice is Game, Utility{ //Ownable allows use onlyOwner modifier so we ca
 		betsMap[msg.sender].isSet = false;
 		betsMap[msg.sender].diceResult = 0;
 		uint moneyBetSave = betsMap[msg.sender].moneyBet;
-		//msg.sender.transfer(betsMap[msg.sender].moneyBet);
 		betsMap[msg.sender].moneyBet = 0;
 		return moneyBetSave;
 	}
@@ -54,8 +53,8 @@ contract Dice is Game, Utility{ //Ownable allows use onlyOwner modifier so we ca
 		return (betsMap[msg.sender].diceBet , betsMap[msg.sender].diceResult);
 	}
     function playerReceivesMoney() external returns(uint){
-    	uint amount = betsMap[msg.sender].moneyBet * diceBetMultiplier;
-		//msg.sender.transfer(amount);		
+    	uint amount = betsMap[msg.sender].moneyBet * diceBetMultiplier;	
+    	betsMap[msg.sender].moneyBet = 0;
 		return amount;
 	}
 	function randomDoubleDice() internal returns (uint){

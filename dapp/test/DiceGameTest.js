@@ -9,6 +9,7 @@ contract("Casino", (accounts) => {
         casino = await Casino.new();
     });
 
+    //Dice game test
     it("setGameType() test", async () => {
         const result = await casino.setGameType(1, {from: accounts[0]});
         //assert.equal(String(result.receipt.from), String(accounts[0]));
@@ -54,6 +55,24 @@ contract("Casino", (accounts) => {
         const result = await casino.playerReceivesMoney({from: accounts[0]});
         assert.equal(result.logs[0].event, "EventPlayerReceives");
         //assert.equal(result.logs[0].args.moneyWin, 60);
+    })
+
+    //Admin function test
+    it("addFundsToBalance() test", async () => {
+        await casino.addFundsCasinoBalance({from: accounts[0], value: 666666});
+        const result = await casino.getCasinoBalance({from: accounts[0]});
+        assert.equal(result, 666666);
+    })
+    it("withdrawCasinoBalance() test", async () => {
+        await casino.addFundsCasinoBalance({from: accounts[0], value: 666666});
+        await casino.withdrawCasinoBalance({from: accounts[0]});
+        const result = await casino.getCasinoBalance({from: accounts[0]});
+        assert.equal(result, 666666);
+    })
+    it("getCasinoBalance() test", async () => {
+        await casino.addFundsCasinoBalance({from: accounts[0], value: 666666});
+        const result = await casino.getCasinoBalance({from: accounts[0]});
+        assert.equal(result, 666666);
     })
 })
 
