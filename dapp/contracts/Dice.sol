@@ -36,13 +36,14 @@ contract Dice is Game, Utility{ //Ownable allows use onlyOwner modifier so we ca
 		betsMap[msg.sender].moneyBet = msg.value;
 		return (betsMap[msg.sender].diceBet, betsMap[msg.sender].isSet, betsMap[msg.sender].moneyBet);
 	}
-	function cancelBet() external currentBetIsSet(betsMap[msg.sender].isSet) returns(bool){
+	function cancelBet() external currentBetIsSet(betsMap[msg.sender].isSet) returns(uint){
 		betsMap[msg.sender].diceBet = 0;
 		betsMap[msg.sender].isSet = false;
 		betsMap[msg.sender].diceResult = 0;
-		msg.sender.transfer(betsMap[msg.sender].moneyBet);
+		uint moneyBetSave = betsMap[msg.sender].moneyBet;
+		//msg.sender.transfer(betsMap[msg.sender].moneyBet);
 		betsMap[msg.sender].moneyBet = 0;
-		return true;
+		return moneyBetSave;
 	}
 	function play() external currentBetIsSet(betsMap[msg.sender].isSet) returns(uint , uint){																
 		betsMap[msg.sender].diceResult = randomDoubleDice();															
@@ -54,8 +55,8 @@ contract Dice is Game, Utility{ //Ownable allows use onlyOwner modifier so we ca
 	}
     function playerReceivesMoney() external returns(uint){
     	uint amount = betsMap[msg.sender].moneyBet * diceBetMultiplier;
-		msg.sender.transfer(amount);		
-		return betsMap[msg.sender].moneyBet * diceBetMultiplier;
+		//msg.sender.transfer(amount);		
+		return amount;
 	}
 	function randomDoubleDice() internal returns (uint){
 		return randomUintBetween(1, 6) + randomUintBetween(1, 6);

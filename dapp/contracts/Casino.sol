@@ -27,7 +27,6 @@ contract Casino is Ownable{ //Ownable allows use onlyOwner modifier so we can ma
 
 
 
-
 	//Events
 	event EventGameSet(address player, bool gameSet);
 	event EventBet(address player , uint bet);
@@ -37,13 +36,11 @@ contract Casino is Ownable{ //Ownable allows use onlyOwner modifier so we can ma
 
 
 
-
 	//Modifiers
 	modifier isGameSet(){
-		require(playerInfoMap[msg.sender].gameSet == true);
+		require(playerInfoMap[msg.sender].gameSet == true, "There is no current game");
 		_;
 	}
-
 
 
 
@@ -76,9 +73,11 @@ contract Casino is Ownable{ //Ownable allows use onlyOwner modifier so we can ma
 		casinoBalance += moneyBet; 
 		return (betValue, isSet, moneyBet);
 	}
-	function cancelBet() external isGameSet returns(bool){
+	function cancelBet() external isGameSet returns(uint){
+		uint moneyBack = gamesMap[msg.sender].cancelBet();
 		emit EventCancelBet(msg.sender);
-		return gamesMap[msg.sender].cancelBet();
+		//msg.sender.transfer(betsMap[msg.sender].moneyBet);
+		return moneyBack;
 	}	
 	function play() external isGameSet returns(uint , uint){
 		(uint betValue, uint result) = gamesMap[msg.sender].play();
@@ -89,6 +88,7 @@ contract Casino is Ownable{ //Ownable allows use onlyOwner modifier so we can ma
 		uint moneyWin = gamesMap[msg.sender].playerReceivesMoney();
 		casinoBalance -= moneyWin;
 		emit EventPlayerReceives(msg.sender, moneyWin);
+		msg.sender.transfer(moneyWin);
 		return moneyWin;
 	}
 
