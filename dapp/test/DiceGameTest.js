@@ -14,7 +14,7 @@ contract("Casino", (accounts) => {
         const result = await casino.setGameType(1, {from: accounts[0]});
         //assert.equal(String(result.receipt.from), String(accounts[0]));
         assert.equal(result.logs[0].event, "EventGameSet");
-        assert.equal(result.logs[0].args.gameSet, true);
+        assert.equal(result.logs[0].args.player, a);
     })
     it("isBetSet() test", async () => {
         await casino.setGameType(1, {from: accounts[0]});
