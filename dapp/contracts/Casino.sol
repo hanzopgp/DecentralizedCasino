@@ -67,10 +67,10 @@ contract Casino is Ownable{ //Ownable allows use onlyOwner modifier so we can ma
 
 
 	//Playing game
-	function isBetSet() public view isGameSet returns(bool){
+	function isBetSet() external view isGameSet returns(bool){
 		return gamesMap[msg.sender].isBetSet();
 	}
-	function bet(string memory empty, uint playerBet) public payable isGameSet returns(uint, bool, uint){
+	function bet(string calldata empty, uint playerBet) external payable isGameSet returns(uint, bool, uint){
 		emit EventBet(msg.sender, playerBet);
 		(uint betValue, bool isSet, uint moneyBet) = gamesMap[msg.sender].bet(empty, playerBet);
 		casinoBalance += moneyBet; 
@@ -80,7 +80,7 @@ contract Casino is Ownable{ //Ownable allows use onlyOwner modifier so we can ma
 		emit EventCancelBet(msg.sender);
 		return gamesMap[msg.sender].cancelBet();
 	}	
-	function play() public isGameSet returns(uint , uint){
+	function play() external isGameSet returns(uint , uint){
 		(uint betValue, uint result) = gamesMap[msg.sender].play();
 		emit EventResult(msg.sender, betValue, result);
 		return (betValue, result);

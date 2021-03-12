@@ -25,15 +25,14 @@ contract Dice is Game, Utility{ //Ownable allows use onlyOwner modifier so we ca
 
 
 	//Dice game functions
-	function isBetSet() public view returns(bool){
+	function isBetSet() external view returns(bool){
 		return betsMap[msg.sender].isSet;
 	}
-	function bet(string memory empty, uint playerBet) public payable isEnoughMoney currentBetIsNotSet(betsMap[msg.sender].isSet) returns(uint, bool, uint){
+	function bet(string calldata empty, uint playerBet) external payable isEnoughMoney currentBetIsNotSet(betsMap[msg.sender].isSet) returns(uint, bool, uint){
 		require(playerBet >= 2, "Bet must be between 2 and 12");
 		require(playerBet <= 12, "Bet must be between 2 and 12");
-		empty = "";
-		betsMap[msg.sender].isSet = true;
 		betsMap[msg.sender].diceBet = playerBet;
+		betsMap[msg.sender].isSet = true;
 		betsMap[msg.sender].moneyBet = msg.value;
 		return (betsMap[msg.sender].diceBet, betsMap[msg.sender].isSet, betsMap[msg.sender].moneyBet);
 	}
@@ -45,7 +44,7 @@ contract Dice is Game, Utility{ //Ownable allows use onlyOwner modifier so we ca
 		betsMap[msg.sender].moneyBet = 0;
 		return true;
 	}
-	function play() public currentBetIsSet(betsMap[msg.sender].isSet) returns(uint , uint){																
+	function play() external currentBetIsSet(betsMap[msg.sender].isSet) returns(uint , uint){																
 		betsMap[msg.sender].diceResult = randomDoubleDice();															
 		betsMap[msg.sender].isSet = false;
 		if(betsMap[msg.sender].diceResult == betsMap[msg.sender].diceBet){	
@@ -58,7 +57,7 @@ contract Dice is Game, Utility{ //Ownable allows use onlyOwner modifier so we ca
 		msg.sender.transfer(amount);		
 		return betsMap[msg.sender].moneyBet * diceBetMultiplier;
 	}
-	function randomDoubleDice() private returns (uint){
+	function randomDoubleDice() internal returns (uint){
 		return randomUintBetween(1, 6) + randomUintBetween(1, 6);
     }
 
