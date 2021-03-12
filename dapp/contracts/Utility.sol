@@ -8,8 +8,8 @@ contract Utility{
 
     //Variables
     uint randomId = 0;
-    uint public maximumBetValue = 1 ether;
-    uint public minimumBetValue = 0.001 ether;
+    uint public maximumBetValue = 10 ether;
+    uint public minimumBetValue = 0 ether;
 
 
 
