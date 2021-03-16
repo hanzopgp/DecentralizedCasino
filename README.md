@@ -24,7 +24,7 @@ Most of the commands used can be found in MEMO.txt file.
 DecentralizedCasino/
 ├── dapp/
 │   	├── contracts/
-│       │       ├── games/ 	(Contains game model solidity code)   
+│       │       ├── games/ 	       (Contains game model solidity code)   
 │       │       ├── lib/               (Contains libs like safemath, ownable...)
 │       │       ├── Casino.sol         (Main solidity file)
 │       │       ├── Casinotoken.sol    (Contains the money token of the casino)
