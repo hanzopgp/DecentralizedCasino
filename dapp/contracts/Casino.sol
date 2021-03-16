@@ -4,6 +4,7 @@ import "./SafeMath.sol";
 import "./Ownable.sol";
 import "./Game.sol";
 import "./Dice.sol";
+import "./Roulette.sol";
 import "./Utility.sol";
 
 contract Casino is Ownable{ //Ownable allows using onlyOwner modifier so we can make admin functions
@@ -17,19 +18,19 @@ contract Casino is Ownable{ //Ownable allows using onlyOwner modifier so we can 
 	//Variables
 	uint casinoBalance = 0;
 	// Game game;
-	Game[] games = [new Dice()/*, new Roulette()*/];
-	// bool gameSet = false;
-	// struct PlayerInfo{
-	// 	string name;
-	// 	bool gameSet;
-	// }
+	Game[] games;
+	bool gameSet = false;
+	struct PlayerInfo{
+		string name;
+		bool gameSet;
+	}
 	mapping (address => Game) public gamesMap; //address : currentPlayer ; Game : Dice or Roulette contract
-	// mapping (address => PlayerInfo) playerInfoMap; //address : currentPlayer ; PlayerInfo : player infos structure
+	mapping (address => PlayerInfo) public playerInfoMap; //address : currentPlayer ; PlayerInfo : player infos structure
 
 
 
 	//Events
-	event EventGameSet(address player /*, bool gameSet*/);
+	event EventGameSet(address player, bool gameSet);
 	event EventBet(address player , uint bet);
 	event EventResult(address player, uint bet , uint result);
 	event EventCancelBet(address player);
@@ -37,10 +38,17 @@ contract Casino is Ownable{ //Ownable allows using onlyOwner modifier so we can 
 
 
 
+	//Constructor
+	constructor() public{
+		games.push(new Dice());
+		games.push(new Roulette());
+	}
+
+
+
 	//Modifiers
 	modifier isGameSet(){
-		require(/*playerInfoMap[msg.sender].gameSet == true*/
-			address(gamesMap[msg.sender]) != address(0), "There is no current game");
+		require(playerInfoMap[msg.sender].gameSet == true, "There is no current game set");
 		_;
 	}
 
@@ -49,51 +57,39 @@ contract Casino is Ownable{ //Ownable allows using onlyOwner modifier so we can 
 	//Game type setter
 	function setGameType(uint gameType) external returns(bool){
 		bool _success = false;
-		if(gameType == 1){
-			gamesMap[msg.sender] = games[gameType-1];
-			// gamesMap[msg.sender] = new Dice();
-			// playerInfoMap[msg.sender].gameSet = true;
-			_success = true;
-			emit EventGameSet(msg.sender /*, playerInfoMap[msg.sender].gameSet*/);
-			// return playerInfoMap[msg.sender].gameSet;
-		}
-		else if(gameType == 2){
-			//gamesMap[msg.sender] = games[gameType-1];
-			////gamesMap[msg.sender] = new Roulette();
-			////playerInfoMap[msg.sender].gameSet = true;
-			//_success = true;
-			//emit EventGameSet(msg.sender /*, playerInfoMap[msg.sender].gameSet*/);
-			////return playerInfoMap[msg.sender].gameSet;
-		}
-		return _success; //playerInfoMap[msg.sender].gameSet;
+		gamesMap[msg.sender] = games[gameType-1];
+		playerInfoMap[msg.sender].gameSet = true;
+		_success = true;
+		emit EventGameSet(msg.sender, playerInfoMap[msg.sender].gameSet);
+		return playerInfoMap[msg.sender].gameSet;
 	}
 
 
 
 	//Playing game
-	function isBetSet() external view isGameSet returns(bool){
+	function isBetSetGame() external view isGameSet returns(bool){
 		return gamesMap[msg.sender].isBetSet();
 	}
-	function bet(string calldata empty, uint playerBet) external payable isGameSet returns(uint, bool, uint){
+	function betGame(string calldata empty, uint playerBet) external payable isGameSet returns(uint, bool, uint){
 		(uint betValue, bool isSet, uint moneyBet) = gamesMap[msg.sender].bet(empty, playerBet);
-		casinoBalance += moneyBet; 
+		increaseCasinoBalance(moneyBet);
 		emit EventBet(msg.sender, playerBet);
 		return (betValue, isSet, moneyBet);
 	}
-	function cancelBet() external isGameSet returns(uint){
+	function cancelBetGame() external isGameSet returns(uint){
 		uint moneyBack = gamesMap[msg.sender].cancelBet();
+		msg.sender.transfer(moneyBack);
 		emit EventCancelBet(msg.sender);
-		//msg.sender.transfer(betsMap[msg.sender].moneyBet);
 		return moneyBack;
 	}	
-	function play() external isGameSet returns(uint , uint){
+	function playGame() external isGameSet returns(uint , uint){
 		(uint betValue, uint result) = gamesMap[msg.sender].play();
 		emit EventResult(msg.sender, betValue, result);
 		return (betValue, result);
 	}
-	function playerReceivesMoney() isGameSet external returns(uint){
-		uint moneyWin = gamesMap[msg.sender].playerReceivesMoney();
-		casinoBalance -= moneyWin;
+	function playerWithdrawMoney() isGameSet external returns(uint){
+		uint moneyWin = gamesMap[msg.sender].playerMoneyWin();
+		decreaseCasinoBalance(moneyWin);
 		msg.sender.transfer(moneyWin);
 		emit EventPlayerReceives(msg.sender, moneyWin);
 		return moneyWin;
@@ -116,7 +112,8 @@ contract Casino is Ownable{ //Ownable allows using onlyOwner modifier so we can 
 	function increaseCasinoBalance(uint amount) internal{
 		casinoBalance += amount;
 	}
-
-
+	function decreaseCasinoBalance(uint amount) internal{
+		casinoBalance -= amount;
+	}
 
 }

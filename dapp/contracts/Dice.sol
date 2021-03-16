@@ -48,11 +48,11 @@ contract Dice is Game, Utility{ //Ownable allows use onlyOwner modifier so we ca
 		betsMap[msg.sender].diceResult = randomDoubleDice();															
 		betsMap[msg.sender].isSet = false;
 		if(betsMap[msg.sender].diceResult == betsMap[msg.sender].diceBet){	
-			this.playerReceivesMoney();
+			this.playerMoneyWin();
 		}
 		return (betsMap[msg.sender].diceBet , betsMap[msg.sender].diceResult);
 	}
-    function playerReceivesMoney() external returns(uint){
+    function playerMoneyWin() external returns(uint){
     	uint amount = betsMap[msg.sender].moneyBet * diceBetMultiplier;	
     	betsMap[msg.sender].moneyBet = 0;
 		return amount;

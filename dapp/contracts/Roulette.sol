@@ -4,7 +4,7 @@ import "./SafeMath.sol";
 import "./Game.sol";
 import "./Utility.sol";
 
-contract RouletteGame is Game, Utility {
+contract Roulette is Game, Utility {
 
     /* For details on types of bet of the roulette game,
     see https://en.wikipedia.org/wiki/Roulette#Types_of_bets */
@@ -220,12 +220,12 @@ contract RouletteGame is Game, Utility {
             }
         }
         if(_hasWon == true){
-            this.playerReceivesMoney();
+            this.playerMoneyWin();
         }
         return (_bet.betData, _bet.numberOfCard);
     }
 
-    function playerReceivesMoney() external returns(uint){
+    function playerMoneyWin() external returns(uint){
         uint _moneyWon = _playersBet[msg.sender].money * (36/_playersBet[msg.sender].numberOfCard);
         _moneyWon += ((36 % _playersBet[msg.sender].numberOfCard) * _playersBet[msg.sender].money) / _playersBet[msg.sender].numberOfCard;
         _playersBet[msg.sender].money = 0;
