@@ -7,9 +7,9 @@ contract Utility{
 
 
     //Variables
-    uint randomId = 0;
-    uint public maximumBetValue = 10 ether;
-    uint public minimumBetValue = 0 ether;
+    uint256 randomId = 0;
+    uint256 public maximumBetValue = 10 ether;
+    uint256 public minimumBetValue = 0 ether;
 
 
 
@@ -31,9 +31,9 @@ contract Utility{
 
 
     //Utility functions
-	function randomUintBetween(uint min, uint max) internal returns(uint){
+	function randomUintBetween(uint8 min, uint8 max) internal returns(uint8){
 		randomId++;
-		return uint(keccak256(abi.encodePacked(now, msg.sender, randomId))) % max + min;
+		return uint8(uint(keccak256(abi.encodePacked(now, msg.sender, randomId))) % max + min);
 	}
     function compareStrings(string memory a, string memory b) internal pure returns(bool){
         return keccak256(bytes(a)) == keccak256(bytes(b));
@@ -50,18 +50,18 @@ contract Utility{
         }
     }
     function uintToString(uint _i) internal pure returns (string memory _uintAsString) {
-        uint number = _i;
+        uint256 number = _i;
         if (number == 0) {
             return "0";
         }
-        uint j = number;
-        uint len;
+        uint256 j = number;
+        uint256 len;
         while (j != 0) {
             len++;
             j /= 10;
         }
         bytes memory bstr = new bytes(len);
-        uint k = len - 1;
+        uint256 k = len - 1;
         while (number != 0) {
             bstr[k--] = byte(uint8(48 + number % 10));
             number /= 10;

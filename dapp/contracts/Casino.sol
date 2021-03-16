@@ -16,8 +16,7 @@ contract Casino is Ownable{ //Ownable allows using onlyOwner modifier so we can 
 
 
 	//Variables
-	uint casinoBalance = 0;
-	// Game game;
+	uint256 casinoBalance = 0;
 	Game[] games;
 	bool gameSet = false;
 	struct PlayerInfo{
@@ -31,10 +30,10 @@ contract Casino is Ownable{ //Ownable allows using onlyOwner modifier so we can 
 
 	//Events
 	event EventGameSet(address player, bool gameSet);
-	event EventBet(address player , uint bet);
-	event EventResult(address player, uint bet , uint result);
+	event EventBet(address player , uint8 bet);
+	event EventResult(address player, uint8 bet , uint8 result);
 	event EventCancelBet(address player);
-	event EventPlayerReceives(address player, uint amount);
+	event EventPlayerReceives(address player, uint256 amount);
 
 
 
@@ -55,13 +54,13 @@ contract Casino is Ownable{ //Ownable allows using onlyOwner modifier so we can 
 
 
 	//Game type setter
-	function setGameType(uint gameType) external returns(bool){
+	function setGameType(uint8 gameType) external returns(bool, uint8){
 		bool _success = false;
 		gamesMap[msg.sender] = games[gameType-1];
 		playerInfoMap[msg.sender].gameSet = true;
 		_success = true;
 		emit EventGameSet(msg.sender, playerInfoMap[msg.sender].gameSet);
-		return playerInfoMap[msg.sender].gameSet;
+		return (playerInfoMap[msg.sender].gameSet, gameType);
 	}
 
 
@@ -70,25 +69,25 @@ contract Casino is Ownable{ //Ownable allows using onlyOwner modifier so we can 
 	function isBetSetGame() external view isGameSet returns(bool){
 		return gamesMap[msg.sender].isBetSet();
 	}
-	function betGame(string calldata empty, uint playerBet) external payable isGameSet returns(uint, bool, uint){
-		(uint betValue, bool isSet, uint moneyBet) = gamesMap[msg.sender].bet(empty, playerBet);
+	function betGame(string calldata empty, uint8 playerBet) external payable isGameSet returns(uint8, bool, uint256){
+		(uint8 betValue, bool isSet, uint256 moneyBet) = gamesMap[msg.sender].bet(empty, playerBet);
 		increaseCasinoBalance(moneyBet);
 		emit EventBet(msg.sender, playerBet);
 		return (betValue, isSet, moneyBet);
 	}
-	function cancelBetGame() external isGameSet returns(uint){
-		uint moneyBack = gamesMap[msg.sender].cancelBet();
+	function cancelBetGame() external isGameSet returns(uint256){
+		uint256 moneyBack = gamesMap[msg.sender].cancelBet();
 		msg.sender.transfer(moneyBack);
 		emit EventCancelBet(msg.sender);
 		return moneyBack;
 	}	
-	function playGame() external isGameSet returns(uint , uint){
-		(uint betValue, uint result) = gamesMap[msg.sender].play();
+	function playGame() external isGameSet returns(uint8 , uint8){
+		(uint8 betValue, uint8 result) = gamesMap[msg.sender].play();
 		emit EventResult(msg.sender, betValue, result);
 		return (betValue, result);
 	}
-	function playerWithdrawMoney() isGameSet external returns(uint){
-		uint moneyWin = gamesMap[msg.sender].playerMoneyWin();
+	function playerWithdrawMoney() isGameSet external returns(uint256){
+		uint256 moneyWin = gamesMap[msg.sender].playerMoneyWin();
 		decreaseCasinoBalance(moneyWin);
 		msg.sender.transfer(moneyWin);
 		emit EventPlayerReceives(msg.sender, moneyWin);
