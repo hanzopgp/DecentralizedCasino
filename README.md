@@ -27,9 +27,9 @@ DecentralizedCasino/
 │       │       ├── games/ 		          
 │       │       ├── lib/
 │       │       ├── Casino.sol
-│       │         ├── Casino.sol
-│       │         ├── Casinotoken.sol
-│       │         ├── Utility.sol
+│       │       ├── Casino.sol
+│       │       ├── Casinotoken.sol
+│       │       ├── Utility.sol
 │       │       └── Migrations.sol                           
 │   	├── migrations/   (Contains the js code for deploying our contracts)
 │       ├── build/        (Contains the json files after compiling)
