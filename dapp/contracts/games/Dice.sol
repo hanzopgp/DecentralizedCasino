@@ -1,8 +1,8 @@
 pragma solidity ^0.5.0;
 
-import "./SafeMath.sol";
+import "./../lib/SafeMath.sol";
 import "./Game.sol";
-import "./Utility.sol";
+import "./../Utility.sol";
 
 contract Dice is Game, Utility{ //Ownable allows use onlyOwner modifier so we can make admin functions
 

@@ -1,10 +1,10 @@
 pragma solidity ^0.5.0;
 
-import "./SafeMath.sol";
-import "./Ownable.sol";
-import "./Game.sol";
-import "./Dice.sol";
-import "./Roulette.sol";
+import "./lib/SafeMath.sol";
+import "./lib/Ownable.sol";
+import "./games/Game.sol";
+import "./games/Dice.sol";
+import "./games/Roulette.sol";
 import "./Utility.sol";
 
 contract Casino is Ownable{ //Ownable allows using onlyOwner modifier so we can make admin functions
