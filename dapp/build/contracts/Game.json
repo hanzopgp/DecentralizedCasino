@@ -114,14 +114,14 @@
     "absolutePath": "/home/hanzo/Desktop/DecentralizedCasino/dapp/contracts/Game.sol",
     "exportedSymbols": {
       "Game": [
-        704
+        721
       ]
     },
-    "id": 705,
+    "id": 722,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 668,
+        "id": 685,
         "literals": [
           "solidity",
           "^",
@@ -137,9 +137,9 @@
         "contractKind": "interface",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 704,
+        "id": 721,
         "linearizedBaseContracts": [
-          704
+          721
         ],
         "name": "Game",
         "nodeType": "ContractDefinition",
@@ -147,28 +147,28 @@
           {
             "body": null,
             "documentation": null,
-            "id": 673,
+            "id": 690,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "isBetSet",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 669,
+              "id": 686,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "97:2:2"
             },
             "returnParameters": {
-              "id": 672,
+              "id": 689,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 671,
+                  "id": 688,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 673,
+                  "scope": 690,
                   "src": "122:4:2",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -177,7 +177,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 670,
+                    "id": 687,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "122:4:2",
@@ -192,7 +192,7 @@
               ],
               "src": "121:6:2"
             },
-            "scope": 704,
+            "scope": 721,
             "src": "80:48:2",
             "stateMutability": "view",
             "superFunction": null,
@@ -201,22 +201,22 @@
           {
             "body": null,
             "documentation": null,
-            "id": 686,
+            "id": 703,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "bet",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 678,
+              "id": 695,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 675,
+                  "id": 692,
                   "name": "empty",
                   "nodeType": "VariableDeclaration",
-                  "scope": 686,
+                  "scope": 703,
                   "src": "143:21:2",
                   "stateVariable": false,
                   "storageLocation": "calldata",
@@ -225,7 +225,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 674,
+                    "id": 691,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "143:6:2",
@@ -239,10 +239,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 677,
+                  "id": 694,
                   "name": "playerBet",
                   "nodeType": "VariableDeclaration",
-                  "scope": 686,
+                  "scope": 703,
                   "src": "166:15:2",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -251,7 +251,7 @@
                     "typeString": "uint8"
                   },
                   "typeName": {
-                    "id": 676,
+                    "id": 693,
                     "name": "uint8",
                     "nodeType": "ElementaryTypeName",
                     "src": "166:5:2",
@@ -267,15 +267,15 @@
               "src": "142:40:2"
             },
             "returnParameters": {
-              "id": 685,
+              "id": 702,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 680,
+                  "id": 697,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 686,
+                  "scope": 703,
                   "src": "208:5:2",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -284,7 +284,7 @@
                     "typeString": "uint8"
                   },
                   "typeName": {
-                    "id": 679,
+                    "id": 696,
                     "name": "uint8",
                     "nodeType": "ElementaryTypeName",
                     "src": "208:5:2",
@@ -298,10 +298,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 682,
+                  "id": 699,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 686,
+                  "scope": 703,
                   "src": "215:4:2",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -310,7 +310,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 681,
+                    "id": 698,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "215:4:2",
@@ -324,10 +324,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 684,
+                  "id": 701,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 686,
+                  "scope": 703,
                   "src": "221:7:2",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -336,7 +336,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 683,
+                    "id": 700,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "221:7:2",
@@ -351,7 +351,7 @@
               ],
               "src": "207:22:2"
             },
-            "scope": 704,
+            "scope": 721,
             "src": "130:100:2",
             "stateMutability": "payable",
             "superFunction": null,
@@ -360,28 +360,28 @@
           {
             "body": null,
             "documentation": null,
-            "id": 691,
+            "id": 708,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "cancelBet",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 687,
+              "id": 704,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "250:2:2"
             },
             "returnParameters": {
-              "id": 690,
+              "id": 707,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 689,
+                  "id": 706,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 691,
+                  "scope": 708,
                   "src": "270:7:2",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -390,7 +390,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 688,
+                    "id": 705,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "270:7:2",
@@ -405,7 +405,7 @@
               ],
               "src": "269:9:2"
             },
-            "scope": 704,
+            "scope": 721,
             "src": "232:47:2",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -414,28 +414,28 @@
           {
             "body": null,
             "documentation": null,
-            "id": 698,
+            "id": 715,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "play",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 692,
+              "id": 709,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "294:2:2"
             },
             "returnParameters": {
-              "id": 697,
+              "id": 714,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 694,
+                  "id": 711,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 698,
+                  "scope": 715,
                   "src": "314:5:2",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -444,7 +444,7 @@
                     "typeString": "uint8"
                   },
                   "typeName": {
-                    "id": 693,
+                    "id": 710,
                     "name": "uint8",
                     "nodeType": "ElementaryTypeName",
                     "src": "314:5:2",
@@ -458,10 +458,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 696,
+                  "id": 713,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 698,
+                  "scope": 715,
                   "src": "322:5:2",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -470,7 +470,7 @@
                     "typeString": "uint8"
                   },
                   "typeName": {
-                    "id": 695,
+                    "id": 712,
                     "name": "uint8",
                     "nodeType": "ElementaryTypeName",
                     "src": "322:5:2",
@@ -485,7 +485,7 @@
               ],
               "src": "313:15:2"
             },
-            "scope": 704,
+            "scope": 721,
             "src": "281:48:2",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -494,28 +494,28 @@
           {
             "body": null,
             "documentation": null,
-            "id": 703,
+            "id": 720,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "playerMoneyWin",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 699,
+              "id": 716,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "354:2:2"
             },
             "returnParameters": {
-              "id": 702,
+              "id": 719,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 701,
+                  "id": 718,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 703,
+                  "scope": 720,
                   "src": "374:7:2",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -524,7 +524,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 700,
+                    "id": 717,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "374:7:2",
@@ -539,14 +539,14 @@
               ],
               "src": "373:9:2"
             },
-            "scope": 704,
+            "scope": 721,
             "src": "331:52:2",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "external"
           }
         ],
-        "scope": 705,
+        "scope": 722,
         "src": "25:361:2"
       }
     ],
@@ -557,7 +557,7 @@
       "absolutePath": "/home/hanzo/Desktop/DecentralizedCasino/dapp/contracts/Game.sol",
       "exportedSymbols": {
         "Game": [
-          704
+          721
         ]
       }
     },
@@ -571,7 +571,7 @@
             ".0"
           ]
         },
-        "id": 668,
+        "id": 685,
         "name": "PragmaDirective",
         "src": "0:23:2"
       },
@@ -587,10 +587,10 @@
           "documentation": null,
           "fullyImplemented": false,
           "linearizedBaseContracts": [
-            704
+            721
           ],
           "name": "Game",
-          "scope": 705
+          "scope": 722
         },
         "children": [
           {
@@ -604,7 +604,7 @@
                 null
               ],
               "name": "isBetSet",
-              "scope": 704,
+              "scope": 721,
               "stateMutability": "view",
               "superFunction": null,
               "visibility": "external"
@@ -617,7 +617,7 @@
                   ]
                 },
                 "children": [],
-                "id": 669,
+                "id": 686,
                 "name": "ParameterList",
                 "src": "97:2:2"
               },
@@ -627,7 +627,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "",
-                      "scope": 673,
+                      "scope": 690,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "bool",
@@ -640,22 +640,22 @@
                           "name": "bool",
                           "type": "bool"
                         },
-                        "id": 670,
+                        "id": 687,
                         "name": "ElementaryTypeName",
                         "src": "122:4:2"
                       }
                     ],
-                    "id": 671,
+                    "id": 688,
                     "name": "VariableDeclaration",
                     "src": "122:4:2"
                   }
                 ],
-                "id": 672,
+                "id": 689,
                 "name": "ParameterList",
                 "src": "121:6:2"
               }
             ],
-            "id": 673,
+            "id": 690,
             "name": "FunctionDefinition",
             "src": "80:48:2"
           },
@@ -670,7 +670,7 @@
                 null
               ],
               "name": "bet",
-              "scope": 704,
+              "scope": 721,
               "stateMutability": "payable",
               "superFunction": null,
               "visibility": "external"
@@ -682,7 +682,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "empty",
-                      "scope": 686,
+                      "scope": 703,
                       "stateVariable": false,
                       "storageLocation": "calldata",
                       "type": "string",
@@ -695,12 +695,12 @@
                           "name": "string",
                           "type": "string"
                         },
-                        "id": 674,
+                        "id": 691,
                         "name": "ElementaryTypeName",
                         "src": "143:6:2"
                       }
                     ],
-                    "id": 675,
+                    "id": 692,
                     "name": "VariableDeclaration",
                     "src": "143:21:2"
                   },
@@ -708,224 +708,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "playerBet",
-                      "scope": 686,
-                      "stateVariable": false,
-                      "storageLocation": "default",
-                      "type": "uint8",
-                      "value": null,
-                      "visibility": "internal"
-                    },
-                    "children": [
-                      {
-                        "attributes": {
-                          "name": "uint8",
-                          "type": "uint8"
-                        },
-                        "id": 676,
-                        "name": "ElementaryTypeName",
-                        "src": "166:5:2"
-                      }
-                    ],
-                    "id": 677,
-                    "name": "VariableDeclaration",
-                    "src": "166:15:2"
-                  }
-                ],
-                "id": 678,
-                "name": "ParameterList",
-                "src": "142:40:2"
-              },
-              {
-                "children": [
-                  {
-                    "attributes": {
-                      "constant": false,
-                      "name": "",
-                      "scope": 686,
-                      "stateVariable": false,
-                      "storageLocation": "default",
-                      "type": "uint8",
-                      "value": null,
-                      "visibility": "internal"
-                    },
-                    "children": [
-                      {
-                        "attributes": {
-                          "name": "uint8",
-                          "type": "uint8"
-                        },
-                        "id": 679,
-                        "name": "ElementaryTypeName",
-                        "src": "208:5:2"
-                      }
-                    ],
-                    "id": 680,
-                    "name": "VariableDeclaration",
-                    "src": "208:5:2"
-                  },
-                  {
-                    "attributes": {
-                      "constant": false,
-                      "name": "",
-                      "scope": 686,
-                      "stateVariable": false,
-                      "storageLocation": "default",
-                      "type": "bool",
-                      "value": null,
-                      "visibility": "internal"
-                    },
-                    "children": [
-                      {
-                        "attributes": {
-                          "name": "bool",
-                          "type": "bool"
-                        },
-                        "id": 681,
-                        "name": "ElementaryTypeName",
-                        "src": "215:4:2"
-                      }
-                    ],
-                    "id": 682,
-                    "name": "VariableDeclaration",
-                    "src": "215:4:2"
-                  },
-                  {
-                    "attributes": {
-                      "constant": false,
-                      "name": "",
-                      "scope": 686,
-                      "stateVariable": false,
-                      "storageLocation": "default",
-                      "type": "uint256",
-                      "value": null,
-                      "visibility": "internal"
-                    },
-                    "children": [
-                      {
-                        "attributes": {
-                          "name": "uint256",
-                          "type": "uint256"
-                        },
-                        "id": 683,
-                        "name": "ElementaryTypeName",
-                        "src": "221:7:2"
-                      }
-                    ],
-                    "id": 684,
-                    "name": "VariableDeclaration",
-                    "src": "221:7:2"
-                  }
-                ],
-                "id": 685,
-                "name": "ParameterList",
-                "src": "207:22:2"
-              }
-            ],
-            "id": 686,
-            "name": "FunctionDefinition",
-            "src": "130:100:2"
-          },
-          {
-            "attributes": {
-              "body": null,
-              "documentation": null,
-              "implemented": false,
-              "isConstructor": false,
-              "kind": "function",
-              "modifiers": [
-                null
-              ],
-              "name": "cancelBet",
-              "scope": 704,
-              "stateMutability": "nonpayable",
-              "superFunction": null,
-              "visibility": "external"
-            },
-            "children": [
-              {
-                "attributes": {
-                  "parameters": [
-                    null
-                  ]
-                },
-                "children": [],
-                "id": 687,
-                "name": "ParameterList",
-                "src": "250:2:2"
-              },
-              {
-                "children": [
-                  {
-                    "attributes": {
-                      "constant": false,
-                      "name": "",
-                      "scope": 691,
-                      "stateVariable": false,
-                      "storageLocation": "default",
-                      "type": "uint256",
-                      "value": null,
-                      "visibility": "internal"
-                    },
-                    "children": [
-                      {
-                        "attributes": {
-                          "name": "uint256",
-                          "type": "uint256"
-                        },
-                        "id": 688,
-                        "name": "ElementaryTypeName",
-                        "src": "270:7:2"
-                      }
-                    ],
-                    "id": 689,
-                    "name": "VariableDeclaration",
-                    "src": "270:7:2"
-                  }
-                ],
-                "id": 690,
-                "name": "ParameterList",
-                "src": "269:9:2"
-              }
-            ],
-            "id": 691,
-            "name": "FunctionDefinition",
-            "src": "232:47:2"
-          },
-          {
-            "attributes": {
-              "body": null,
-              "documentation": null,
-              "implemented": false,
-              "isConstructor": false,
-              "kind": "function",
-              "modifiers": [
-                null
-              ],
-              "name": "play",
-              "scope": 704,
-              "stateMutability": "nonpayable",
-              "superFunction": null,
-              "visibility": "external"
-            },
-            "children": [
-              {
-                "attributes": {
-                  "parameters": [
-                    null
-                  ]
-                },
-                "children": [],
-                "id": 692,
-                "name": "ParameterList",
-                "src": "294:2:2"
-              },
-              {
-                "children": [
-                  {
-                    "attributes": {
-                      "constant": false,
-                      "name": "",
-                      "scope": 698,
+                      "scope": 703,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint8",
@@ -940,18 +723,25 @@
                         },
                         "id": 693,
                         "name": "ElementaryTypeName",
-                        "src": "314:5:2"
+                        "src": "166:5:2"
                       }
                     ],
                     "id": 694,
                     "name": "VariableDeclaration",
-                    "src": "314:5:2"
-                  },
+                    "src": "166:15:2"
+                  }
+                ],
+                "id": 695,
+                "name": "ParameterList",
+                "src": "142:40:2"
+              },
+              {
+                "children": [
                   {
                     "attributes": {
                       "constant": false,
                       "name": "",
-                      "scope": 698,
+                      "scope": 703,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint8",
@@ -964,55 +754,41 @@
                           "name": "uint8",
                           "type": "uint8"
                         },
-                        "id": 695,
+                        "id": 696,
                         "name": "ElementaryTypeName",
-                        "src": "322:5:2"
+                        "src": "208:5:2"
                       }
                     ],
-                    "id": 696,
+                    "id": 697,
                     "name": "VariableDeclaration",
-                    "src": "322:5:2"
-                  }
-                ],
-                "id": 697,
-                "name": "ParameterList",
-                "src": "313:15:2"
-              }
-            ],
-            "id": 698,
-            "name": "FunctionDefinition",
-            "src": "281:48:2"
-          },
-          {
-            "attributes": {
-              "body": null,
-              "documentation": null,
-              "implemented": false,
-              "isConstructor": false,
-              "kind": "function",
-              "modifiers": [
-                null
-              ],
-              "name": "playerMoneyWin",
-              "scope": 704,
-              "stateMutability": "nonpayable",
-              "superFunction": null,
-              "visibility": "external"
-            },
-            "children": [
-              {
-                "attributes": {
-                  "parameters": [
-                    null
-                  ]
-                },
-                "children": [],
-                "id": 699,
-                "name": "ParameterList",
-                "src": "354:2:2"
-              },
-              {
-                "children": [
+                    "src": "208:5:2"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 703,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bool",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bool",
+                          "type": "bool"
+                        },
+                        "id": 698,
+                        "name": "ElementaryTypeName",
+                        "src": "215:4:2"
+                      }
+                    ],
+                    "id": 699,
+                    "name": "VariableDeclaration",
+                    "src": "215:4:2"
+                  },
                   {
                     "attributes": {
                       "constant": false,
@@ -1032,30 +808,254 @@
                         },
                         "id": 700,
                         "name": "ElementaryTypeName",
-                        "src": "374:7:2"
+                        "src": "221:7:2"
                       }
                     ],
                     "id": 701,
                     "name": "VariableDeclaration",
-                    "src": "374:7:2"
+                    "src": "221:7:2"
                   }
                 ],
                 "id": 702,
                 "name": "ParameterList",
-                "src": "373:9:2"
+                "src": "207:22:2"
               }
             ],
             "id": 703,
             "name": "FunctionDefinition",
+            "src": "130:100:2"
+          },
+          {
+            "attributes": {
+              "body": null,
+              "documentation": null,
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "cancelBet",
+              "scope": 721,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 704,
+                "name": "ParameterList",
+                "src": "250:2:2"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 708,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 705,
+                        "name": "ElementaryTypeName",
+                        "src": "270:7:2"
+                      }
+                    ],
+                    "id": 706,
+                    "name": "VariableDeclaration",
+                    "src": "270:7:2"
+                  }
+                ],
+                "id": 707,
+                "name": "ParameterList",
+                "src": "269:9:2"
+              }
+            ],
+            "id": 708,
+            "name": "FunctionDefinition",
+            "src": "232:47:2"
+          },
+          {
+            "attributes": {
+              "body": null,
+              "documentation": null,
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "play",
+              "scope": 721,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 709,
+                "name": "ParameterList",
+                "src": "294:2:2"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 715,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint8",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint8",
+                          "type": "uint8"
+                        },
+                        "id": 710,
+                        "name": "ElementaryTypeName",
+                        "src": "314:5:2"
+                      }
+                    ],
+                    "id": 711,
+                    "name": "VariableDeclaration",
+                    "src": "314:5:2"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 715,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint8",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint8",
+                          "type": "uint8"
+                        },
+                        "id": 712,
+                        "name": "ElementaryTypeName",
+                        "src": "322:5:2"
+                      }
+                    ],
+                    "id": 713,
+                    "name": "VariableDeclaration",
+                    "src": "322:5:2"
+                  }
+                ],
+                "id": 714,
+                "name": "ParameterList",
+                "src": "313:15:2"
+              }
+            ],
+            "id": 715,
+            "name": "FunctionDefinition",
+            "src": "281:48:2"
+          },
+          {
+            "attributes": {
+              "body": null,
+              "documentation": null,
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "playerMoneyWin",
+              "scope": 721,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 716,
+                "name": "ParameterList",
+                "src": "354:2:2"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 720,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 717,
+                        "name": "ElementaryTypeName",
+                        "src": "374:7:2"
+                      }
+                    ],
+                    "id": 718,
+                    "name": "VariableDeclaration",
+                    "src": "374:7:2"
+                  }
+                ],
+                "id": 719,
+                "name": "ParameterList",
+                "src": "373:9:2"
+              }
+            ],
+            "id": 720,
+            "name": "FunctionDefinition",
             "src": "331:52:2"
           }
         ],
-        "id": 704,
+        "id": 721,
         "name": "ContractDefinition",
         "src": "25:361:2"
       }
     ],
-    "id": 705,
+    "id": 722,
     "name": "SourceUnit",
     "src": "0:386:2"
   },
@@ -1065,7 +1065,7 @@
   },
   "networks": {},
   "schemaVersion": "3.3.4",
-  "updatedAt": "2021-03-16T21:22:40.756Z",
+  "updatedAt": "2021-03-16T21:50:09.581Z",
   "devdoc": {
     "methods": {}
   },

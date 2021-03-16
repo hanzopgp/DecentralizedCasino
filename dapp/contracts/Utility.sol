@@ -4,14 +4,13 @@ import "./SafeMath.sol";
 
 contract Utility{
 
-
+    using SafeMath for uint256; //Using SafeMath lib to avoid overflow errors
+    using SafeMath for uint8;
 
     //Variables
     uint256 randomId = 0;
     uint256 public maximumBetValue = 10 ether;
     uint256 public minimumBetValue = 0 ether;
-
-
 
     //Modifiers
     modifier isEnoughMoney(){
@@ -19,37 +18,39 @@ contract Utility{
         require(msg.value <= maximumBetValue, "Too high bet value");
         _;
     }
+
     modifier currentBetIsNotSet(bool betIsSet){
         require(betIsSet == false, "There is already a bet ready");
         _;
     }
+
     modifier currentBetIsSet(bool betIsSet){
         require(betIsSet == true, "You need to bet before playing"); 
         _;
     }
 
-
-
     //Utility functions
 	function randomUintBetween(uint8 min, uint8 max) internal returns(uint8){
-		randomId++;
-		return uint8(uint(keccak256(abi.encodePacked(now, msg.sender, randomId))) % max + min);
+		randomId = randomId.add(1);
+		return uint8((uint(keccak256(abi.encodePacked(now, msg.sender, randomId))) % max ).add(min));
 	}
+
     function compareStrings(string memory a, string memory b) internal pure returns(bool){
         return keccak256(bytes(a)) == keccak256(bytes(b));
     }
-	function stringToUint(string memory s) internal pure returns (uint result) {
+
+	function stringToUint(string memory s) internal pure returns (uint256) {
         bytes memory b = bytes(s);
-        uint i;
-        result = 0;
-        for (i = 0; i < b.length; i++) {
+        uint256 result = 0;
+        for (uint i = 0; i < b.length; i = i.add(1)) {
             uint c = uint(uint8(b[i])); //Conversion trick
             if (c >= 48 && c <= 57) {
-                result = result * 10 + (c - 48);
+                result = result.mul(10 + c - 48);
             }
         }
     }
-    function uintToString(uint _i) internal pure returns (string memory _uintAsString) {
+
+    function uintToString(uint _i) internal pure returns (string memory) {
         uint256 number = _i;
         if (number == 0) {
             return "0";
@@ -57,14 +58,14 @@ contract Utility{
         uint256 j = number;
         uint256 len;
         while (j != 0) {
-            len++;
-            j /= 10;
+            len = len.add(1);
+            j = j.div(10);
         }
         bytes memory bstr = new bytes(len);
-        uint256 k = len - 1;
+        uint256 k = len.sub(1);
         while (number != 0) {
-            bstr[k--] = byte(uint8(48 + number % 10));
-            number /= 10;
+            bstr[k = k.sub(1)] = byte(uint8(48 + number % 10));
+            number = number.div(10);
         }
         return string(bstr);
     }

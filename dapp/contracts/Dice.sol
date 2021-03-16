@@ -6,11 +6,8 @@ import "./Utility.sol";
 
 contract Dice is Game, Utility{ //Ownable allows use onlyOwner modifier so we can make admin functions
 
-
-
-	using SafeMath for uint256; //Using SafeMath lib to avoid overflow erros
-
-
+	using SafeMath for uint256; //Using SafeMath lib to avoid overflow errors
+	using SafeMath for uint8;
 
 	//Variables
 	struct Bet{
@@ -21,8 +18,6 @@ contract Dice is Game, Utility{ //Ownable allows use onlyOwner modifier so we ca
 	}
 	mapping(address => Bet) private betsMap;
 	uint8 diceBetMultiplier = 10;
-
-
 
 	//Dice game functions
 	function isBetSet() external view returns(bool){
@@ -53,14 +48,12 @@ contract Dice is Game, Utility{ //Ownable allows use onlyOwner modifier so we ca
 		return (betsMap[msg.sender].diceBet , betsMap[msg.sender].diceResult);
 	}
     function playerMoneyWin() external returns(uint256){
-    	uint256 amount = betsMap[msg.sender].moneyBet * diceBetMultiplier;	
+    	uint256 amount = betsMap[msg.sender].moneyBet.mul(diceBetMultiplier);	
     	betsMap[msg.sender].moneyBet = 0;
 		return amount;
 	}
 	function randomDoubleDice() internal returns (uint8){
-		return randomUintBetween(1, 6) + randomUintBetween(1, 6);
+		return uint8(randomUintBetween(1, 6).add(randomUintBetween(1, 6)));
     }
-
-
 	
 }

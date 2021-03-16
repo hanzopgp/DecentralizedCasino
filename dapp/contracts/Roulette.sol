@@ -6,6 +6,9 @@ import "./Utility.sol";
 
 contract Roulette is Game, Utility {
 
+    using SafeMath for uint256; //Using SafeMath lib to avoid overflow errors
+    using SafeMath for uint8;
+
     /* For details on types of bet of the roulette game,
     see https://en.wikipedia.org/wiki/Roulette#Types_of_bets */
     struct RouletteBet {
