@@ -25,8 +25,8 @@ DecentralizedCasino/
 ├── dapp/
 │   	├── contracts/    (Contains our smart contract written in solidity)
 │   	├── migrations/   (Contains the js code for deploying our contracts)
-│       ├── build/      (Contains the json files after compiling)
-│       ├── test/       (Contains js tests files ran by truffle test command)
+│       ├── build/        (Contains the json files after compiling)
+│       ├── test/         (Contains js tests files ran by truffle test command)
 │       └── truffle-config.js 
 ├── README.md		          
 ├── MEMO.txt
