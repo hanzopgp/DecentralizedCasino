@@ -25,9 +25,9 @@ DecentralizedCasino/
 ├── dapp/
 │   	├── contracts/
 │   	├── migrations/       
-│     ├── build/
-│     ├── test/
-│     └── truffle-config.js 
+│      ├── build/
+│      ├── test/
+│      └── truffle-config.js 
 ├── README.md		          
 ├── MEMO.txt
 ├── TODO.txt
