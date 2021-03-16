@@ -23,17 +23,16 @@ Most of the commands used can be found in MEMO.txt file.
 <pre><code>
 DecentralizedCasino/
 ├── dapp/
-│   	├── contracts/    (Contains our smart contract written in solidity)
-│       │       ├── games/ 		          
-│       │       ├── lib/
-│       │       ├── Casino.sol
-│       │       ├── Casino.sol
-│       │       ├── Casinotoken.sol
-│       │       ├── Utility.sol
-│       │       └── Migrations.sol                           
-│   	├── migrations/   (Contains the js code for deploying our contracts)
-│       ├── build/        (Contains the json files after compiling)
-│       ├── test/         (Contains js tests files ran by truffle test command)
+│   	├── contracts/
+│       │       ├── games/ 		         (Contains game model solidity code)   
+│       │       ├── lib/               (Contains libs like safemath, ownable...)
+│       │       ├── Casino.sol         (Main solidity file)
+│       │       ├── Casinotoken.sol    (Contains the money token of the casino)
+│       │       ├── Utility.sol        (Contains utility functions)
+│       │       └── Migrations.sol     (Classic migration contract)                    
+│   	├── migrations/                  (Contains the js code to deploy our contracts)
+│       ├── build/                     (Contains the json files after compiling)
+│       ├── test/                      (Contains js tests files ran by truffle test command)
 │       └── truffle-config.js 
 ├── README.md		          
 ├── MEMO.txt
