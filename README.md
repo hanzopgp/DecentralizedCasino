@@ -24,6 +24,10 @@ Most of the commands used can be found in MEMO.txt file.
 DecentralizedCasino/
 ├── dapp/
 │   	├── contracts/    (Contains our smart contract written in solidity)
+│     │       ├── README.md		          
+│     │       ├── MEMO.txt
+│     │       ├── TODO.txt
+│     │       └── LICENCE                           
 │   	├── migrations/   (Contains the js code for deploying our contracts)
 │       ├── build/        (Contains the json files after compiling)
 │       ├── test/         (Contains js tests files ran by truffle test command)
