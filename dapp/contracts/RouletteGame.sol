@@ -1,18 +1,20 @@
 pragma solidity ^0.5.0;
 
 import "./SafeMath.sol";
-import "./Ownable.sol";
+import "./Game.sol";
+import "./Utility.sol";
 
 contract RouletteGame is Game, Utility {
 
     /* For details on types of bet of the roulette game,
     see https://en.wikipedia.org/wiki/Roulette#Types_of_bets */
     struct RouletteBet {
+        bool isSet;
         uint money;
-        uint8 numberOfCard;
+        uint numberOfCard;
         /* 1-Single ; 2-Split ; 3-Street ; 4:Square ; 6-DoubleStreet ; 12-Column/Dozen ;
         18-Low/High/Red/Black/Even/Odd ; 24-DoubleColumn/DoubleDozen */
-        uint8 betData;
+        uint betData;
         /*
         Single                      -> number with the bet (0 <= n <= 36)
         Split                       -> 0 to 23, horizontal split : left number = 3*(n//2)+n%2+1,
@@ -41,11 +43,11 @@ contract RouletteGame is Game, Utility {
         false, true, false, true, false, true];
 
     function isBetSet() external view returns(bool){
-        return _playersBet[msg.sender];
+        return _playersBet[msg.sender].isSet;
     }
 
-    function bet(string calldata _typeOfCard, uint _dataOfBet) external payable returns(uint, bool, uint) {
-        RouletteBet _newBet = RouletteBet(msg.value, 0, 0); 
+    function bet(string calldata _typeOfCard, uint _dataOfBet) external payable isEnoughMoney currentBetIsNotSet(_playersBet[msg.sender].isSet) returns(uint, bool, uint) {
+        RouletteBet memory _newBet = RouletteBet(true, msg.value, 0, 0); 
         if(compareStrings(_typeOfCard, "Single")){
             if(0 <= _dataOfBet && _dataOfBet <= 36){
                 _newBet.numberOfCard = 1;
@@ -122,10 +124,20 @@ contract RouletteGame is Game, Utility {
         }
     }
 
-    function play() external returns (uint) {
+    function cancelBet() external currentBetIsSet(_playersBet[msg.sender].isSet) returns(uint){
+        _playersBet[msg.sender].betData = 0;
+        _playersBet[msg.sender].isSet = false;
+        _playersBet[msg.sender].numberOfCard = 0;
+        uint moneyBetSave = _playersBet[msg.sender].money;
+        _playersBet[msg.sender].money = 0;
+        return moneyBetSave;
+    }
+
+    function play() external currentBetIsSet(_playersBet[msg.sender].isSet) returns (uint, uint) {
+        _playersBet[msg.sender].isSet = false;
         uint _result = randomUintBetween(0, 36);
         bool _hasWon = false;
-        RouletteBet _bet = _playersBet[msg.sender];
+        RouletteBet memory _bet = _playersBet[msg.sender];
         if(_bet.numberOfCard == 1){
             if(_result == _bet.betData){
                 _hasWon = true;
@@ -134,30 +146,30 @@ contract RouletteGame is Game, Utility {
             if(_bet.betData <= 23){
                 uint _leftNumber = 3*(_bet.betData/2) + (_bet.betData%2) + 1;
                 if(_result == _leftNumber || _result == _leftNumber+1){
-                    _hasWon = true,
+                    _hasWon = true;
                 }
             }else{
                 uint _upperNumber = _bet.betData - 23;
                 if(_result == _upperNumber || _result == _upperNumber+3){
-                    _hasWon = true,
+                    _hasWon = true;
                 }
             }
         }else if(_bet.numberOfCard == 3){
             uint _leftNumber = 3*_bet.betData + 1;
-            if(_leftNumber <= _result == _leftNumber+1
+            if(_leftNumber <= _result && _result <= _leftNumber+1
                 || _result == _leftNumber+2){
-                _hasWon = true,
+                _hasWon = true;
             }
         }else if(_bet.numberOfCard == 4){
             uint _leftUpperNumber = 3*(_bet.betData/2) + (_bet.betData%2) + 1;
             if(_result == _leftUpperNumber || _result == _leftUpperNumber+1
                 || _result == _leftUpperNumber+3 || _result == _leftUpperNumber+4){
-                _hasWon = true,
+                _hasWon = true;
             }
         }else if(_bet.numberOfCard == 6){
             uint _leftUpperNumber = 3*(_bet.betData/2) + (_bet.betData%2) + 1;
             if(_leftUpperNumber <= _result && _result <= _leftUpperNumber+6){
-                _hasWon = true,
+                _hasWon = true;
             }
         }else if(_bet.numberOfCard == 12){
             if(_bet.betData <= 2){
@@ -171,11 +183,11 @@ contract RouletteGame is Game, Utility {
             }
         }else if(_bet.numberOfCard == 18){
             if(_bet.betData == 0){
-                if(1 <= _result <= 18){
+                if(1 <= _result && _result <= 18){
                     _hasWon = true;
                 }
             }else if(_bet.betData == 1){
-                if(19 <= _result <= 36){
+                if(19 <= _result && _result <= 36){
                     _hasWon = true;
                 }
             }else if(_bet.betData == 2){
@@ -207,12 +219,17 @@ contract RouletteGame is Game, Utility {
                 }
             }
         }
-        if(_hasWon){
-            uint _moneyWon = _bet.money * (36/_bet.numberOfCard);
-            _moneyWon += ((36 % _bet.numberOfCard) * _bet.money) / numberOfCard;
-            msg.sender.transfer(_moneyWon);
-            return _moneyWon;
+        if(_hasWon == true){
+            this.playerReceivesMoney();
         }
-        return 0;
+        return (_bet.betData, _bet.numberOfCard);
     }
+
+    function playerReceivesMoney() external returns(uint){
+        uint _moneyWon = _playersBet[msg.sender].money * (36/_playersBet[msg.sender].numberOfCard);
+        _moneyWon += ((36 % _playersBet[msg.sender].numberOfCard) * _playersBet[msg.sender].money) / _playersBet[msg.sender].numberOfCard;
+        _playersBet[msg.sender].money = 0;
+        return _moneyWon;
+    }
+
 }
