@@ -15,7 +15,6 @@ contract Dice is Game, Utility, Ownable{ //Ownable allows use onlyOwner modifier
 		bool isSet; 
 		uint256 moneyBet;
 		uint8 diceBet;
-		// uint8 diceResult;
 	}
 	mapping(address => Bet) private betsMap;
 	uint256 diceBetMultiplier = 6;
@@ -24,6 +23,7 @@ contract Dice is Game, Utility, Ownable{ //Ownable allows use onlyOwner modifier
 	function isBetSet(address player) external view onlyOwner returns(bool){
 		return betsMap[player].isSet;
 	}
+
 	function bet(address player, string calldata /*betInfo*/, uint8 betData, uint money) external onlyOwner isEnoughMoney(money) currentBetIsNotSet(betsMap[player].isSet) returns(bool){
 		require(betData >= 2, "Bet must be between 2 and 12");
 		require(betData <= 12, "Bet must be between 2 and 12");
@@ -32,14 +32,12 @@ contract Dice is Game, Utility, Ownable{ //Ownable allows use onlyOwner modifier
 		betsMap[player].moneyBet = money;
 		return betsMap[player].isSet;
 	}
+
 	function cancelBet(address player) external onlyOwner currentBetIsSet(betsMap[player].isSet) returns(uint256){
-		// betsMap[msg.sender].diceBet = 0;
 		betsMap[player].isSet = false;
-		// betsMap[msg.sender].diceResult = 0;
-		// uint256 moneyBetSave = betsMap[msg.sender].moneyBet;
-		// betsMap[msg.sender].moneyBet = 0;
 		return betsMap[player].moneyBet;
 	}
+
 	function play(address player) external onlyOwner currentBetIsSet(betsMap[player].isSet) returns(uint8 , uint256){																
 		uint8 diceResult = randomDoubleDice();															
 	   	uint256 amount = 0;
@@ -49,11 +47,7 @@ contract Dice is Game, Utility, Ownable{ //Ownable allows use onlyOwner modifier
 		betsMap[player].isSet = false;
 		return (diceResult, amount);
 	}
- //    function playerMoneyWin() external returns(uint256){
- //    	uint256 amount = betsMap[msg.sender].moneyBet.mul(diceBetMultiplier);	
- //    	betsMap[msg.sender].moneyBet = 0;
-	// 	return amount;
-	// }
+
 	function randomDoubleDice() internal returns (uint8){
 		return uint8(randomUintBetween(1, 6).add(randomUintBetween(1, 6)));
     }

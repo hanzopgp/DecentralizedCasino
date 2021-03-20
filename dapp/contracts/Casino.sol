@@ -18,7 +18,7 @@ contract Casino is Ownable{ //Ownable allows using onlyOwner modifier so we can 
 	mapping (uint => address) public tokensToOwner; // uint : tokenID ; address : currentPlayer
 
 	//Events
-	//the player is playing to the game
+	//the player has set the game
 	event EventGameSet(address player, uint gameType);
 	//the player has bet
 	event EventBet(address player , string betInfo, uint8 bet, uint256 money);
@@ -26,7 +26,7 @@ contract Casino is Ownable{ //Ownable allows using onlyOwner modifier so we can 
 	event EventResult(address player, uint8 result);
 	//current player's bet has been canceled, this amount of money has been sent back
 	event EventCancelBet(address player, uint256 amount);
-	//player earned the amount of money
+	//player won money
 	event EventPlayerReceives(address player, uint256 amount);
 
 	//Constructor
