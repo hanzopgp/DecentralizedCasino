@@ -7,43 +7,85 @@
         {
           "indexed": true,
           "internalType": "address",
-          "name": "previousOwner",
+          "name": "_owner",
           "type": "address"
         },
         {
           "indexed": true,
           "internalType": "address",
-          "name": "newOwner",
+          "name": "_approved",
           "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "_tokenId",
+          "type": "uint256"
         }
       ],
-      "name": "OwnershipTransferred",
+      "name": "Approval",
       "type": "event"
     },
     {
-      "constant": true,
-      "inputs": [],
-      "name": "_owner",
-      "outputs": [
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "_from",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "_to",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "_tokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "Transfer",
+      "type": "event"
+    },
+    {
+      "constant": false,
+      "inputs": [
         {
           "internalType": "address",
-          "name": "",
+          "name": "_to",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_tokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "approve",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_owner",
           "type": "address"
         }
       ],
-      "payable": false,
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "constant": true,
-      "inputs": [],
-      "name": "isOwner",
+      "name": "balanceOf",
       "outputs": [
         {
-          "internalType": "bool",
-          "name": "",
-          "type": "bool"
+          "internalType": "uint256",
+          "name": "_balance",
+          "type": "uint256"
         }
       ],
       "payable": false,
@@ -52,12 +94,18 @@
     },
     {
       "constant": true,
-      "inputs": [],
-      "name": "owner",
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_tokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "ownerOf",
       "outputs": [
         {
           "internalType": "address",
-          "name": "",
+          "name": "_owner",
           "type": "address"
         }
       ],
@@ -67,8 +115,14 @@
     },
     {
       "constant": false,
-      "inputs": [],
-      "name": "renounceOwnership",
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_tokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "takeOwnership",
       "outputs": [],
       "payable": false,
       "stateMutability": "nonpayable",
@@ -79,36 +133,41 @@
       "inputs": [
         {
           "internalType": "address",
-          "name": "newOwner",
+          "name": "_to",
           "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_tokenId",
+          "type": "uint256"
         }
       ],
-      "name": "transferOwnership",
+      "name": "transfer",
       "outputs": [],
       "payable": false,
       "stateMutability": "nonpayable",
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"constant\":true,\"inputs\":[],\"name\":\"_owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"isOwner\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{\"isOwner()\":{\"return\":\"true if `msg.sender` is the owner of the contract.\"},\"owner()\":{\"return\":\"the address of the owner.\"},\"renounceOwnership()\":{\"details\":\"Allows the current owner to relinquish control of the contract.\"},\"transferOwnership(address)\":{\"details\":\"Allows the current owner to transfer control of the contract to a newOwner.\",\"params\":{\"newOwner\":\"The address to transfer ownership to.\"}}}},\"userdoc\":{\"methods\":{\"renounceOwnership()\":{\"notice\":\"Renouncing to ownership will leave the contract without an owner. It will not be possible to call the functions with the `onlyOwner` modifier anymore.\"}}}},\"settings\":{\"compilationTarget\":{\"/home/hanzo/Desktop/DecentralizedCasino/dapp/contracts/Casitoken.sol\":\"Casitoken\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/hanzo/Desktop/DecentralizedCasino/dapp/contracts/Casitoken.sol\":{\"keccak256\":\"0xf61864dc56401ef1063ff16e0aa977795de901ce8fa442bcf0f2dadf5f8674ad\",\"urls\":[\"bzz-raw://e72cfb01452ad946d32921b20facb690832dbe722a9c6868bc1498665b34b45c\",\"dweb:/ipfs/QmQ4TB5ykZUzScG9tXxAxSjdsaKuESAh4F1xMMNEmiL6y4\"]},\"/home/hanzo/Desktop/DecentralizedCasino/dapp/contracts/lib/Ownable.sol\":{\"keccak256\":\"0x360bf8f3e3be3c4ef26dae2b5ab32e04c1e1cafd8d89d88057a5fb2f35578129\",\"urls\":[\"bzz-raw://68b89f465873a1efcb43402a1ebc8f0baee056fd3113072df77a9afcb12dbbc5\",\"dweb:/ipfs/Qmdhj1Sk6W5ddErhw6sQe6Fa5bRR3MTny5eyP9d1aUpYwT\"]}},\"version\":1}",
-  "bytecode": "0x6080604052336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16600073ffffffffffffffffffffffffffffffffffffffff167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e060405160405180910390a361056d806100cf6000396000f3fe608060405234801561001057600080fd5b50600436106100575760003560e01c8063715018a61461005c5780638da5cb5b146100665780638f32d59b146100b0578063b2bdfa7b146100d2578063f2fde38b1461011c575b600080fd5b610064610160565b005b61006e6102c4565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6100b86102ed565b604051808215151515815260200191505060405180910390f35b6100da610344565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b61015e6004803603602081101561013257600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610369565b005b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614610205576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260268152602001806105136026913960400191505060405180910390fd5b600073ffffffffffffffffffffffffffffffffffffffff166000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e060405160405180910390a360008060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905090565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614905090565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161461040e576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260268152602001806105136026913960400191505060405180910390fd5b6104178161041a565b50565b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff16141561045457600080fd5b8073ffffffffffffffffffffffffffffffffffffffff166000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e060405160405180910390a3806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505056fe596f7520617265206e6f7420746865206f776e6572206f66207468697320636f6e7472616374a265627a7a7231582067d49926dacc11f9d4ee315c86f399541a6a613de7dd8d369f4535d818e5d13664736f6c63430005100032",
-  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100575760003560e01c8063715018a61461005c5780638da5cb5b146100665780638f32d59b146100b0578063b2bdfa7b146100d2578063f2fde38b1461011c575b600080fd5b610064610160565b005b61006e6102c4565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6100b86102ed565b604051808215151515815260200191505060405180910390f35b6100da610344565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b61015e6004803603602081101561013257600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610369565b005b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614610205576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260268152602001806105136026913960400191505060405180910390fd5b600073ffffffffffffffffffffffffffffffffffffffff166000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e060405160405180910390a360008060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905090565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614905090565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161461040e576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260268152602001806105136026913960400191505060405180910390fd5b6104178161041a565b50565b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff16141561045457600080fd5b8073ffffffffffffffffffffffffffffffffffffffff166000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e060405160405180910390a3806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505056fe596f7520617265206e6f7420746865206f776e6572206f66207468697320636f6e7472616374a265627a7a7231582067d49926dacc11f9d4ee315c86f399541a6a613de7dd8d369f4535d818e5d13664736f6c63430005100032",
-  "sourceMap": "54:35:1:-;;;519:10:7;510:6;;:19;;;;;;;;;;;;;;;;;;577:6;;;;;;;;;;;544:40;;573:1;544:40;;;;;;;;;;;;54:35:1;;;;;;",
-  "deployedSourceMap": "54:35:1:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;54:35:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1383:137:7;;;:::i;:::-;;652:76;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;814:89;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;238:21;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;1688:107;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;1688:107:7;;;;;;;;;;;;;;;;;;;:::i;:::-;;1383:137;1043:6;;;;;;;;;;;1029:20;;:10;:20;;;1021:71;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1481:1;1444:40;;1465:6;;;;;;;;;;;1444:40;;;;;;;;;;;;1511:1;1494:6;;:19;;;;;;;;;;;;;;;;;;1383:137::o;652:76::-;689:7;715:6;;;;;;;;;;;708:13;;652:76;:::o;814:89::-;853:4;890:6;;;;;;;;;;;876:20;;:10;:20;;;869:27;;814:89;:::o;238:21::-;;;;;;;;;;;;;:::o;1688:107::-;1043:6;;;;;;;;;;;1029:20;;:10;:20;;;1021:71;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1760:28;1779:8;1760:18;:28::i;:::-;1688:107;:::o;1936:183::-;2029:1;2009:22;;:8;:22;;;;2001:31;;;;;;2076:8;2047:38;;2068:6;;;;;;;;;;;2047:38;;;;;;;;;;;;2104:8;2095:6;;:17;;;;;;;;;;;;;;;;;;1936:183;:::o",
-  "source": "pragma solidity ^0.5.0;\n\nimport \"./lib/Ownable.sol\";\n\ncontract Casitoken is Ownable{\n\n\n\n}",
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_approved\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"_tokenId\",\"type\":\"uint256\"}],\"name\":\"Approval\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_from\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_to\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"_tokenId\",\"type\":\"uint256\"}],\"name\":\"Transfer\",\"type\":\"event\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_tokenId\",\"type\":\"uint256\"}],\"name\":\"approve\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_owner\",\"type\":\"address\"}],\"name\":\"balanceOf\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"_balance\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_tokenId\",\"type\":\"uint256\"}],\"name\":\"ownerOf\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"_owner\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_tokenId\",\"type\":\"uint256\"}],\"name\":\"takeOwnership\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_tokenId\",\"type\":\"uint256\"}],\"name\":\"transfer\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/hanzo/Desktop/DecentralizedCasino/dapp/contracts/Casitoken.sol\":\"Casitoken\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/hanzo/Desktop/DecentralizedCasino/dapp/contracts/Casitoken.sol\":{\"keccak256\":\"0x795d6c8a3a9a06097521cfc98b0e5621b1833e78e46b4d2421dfe39e90fb47ad\",\"urls\":[\"bzz-raw://71a07a98576d09b019eed882f1a122d25a562e117b84a22eb3403a9c3ab482ca\",\"dweb:/ipfs/QmcGTUJPoSeyEuKBfC31ucusqnaW34ZZPZ73fNqHR9ekiU\"]},\"/home/hanzo/Desktop/DecentralizedCasino/dapp/contracts/lib/ERC721.sol\":{\"keccak256\":\"0x5934cd7eea469aa86414fc24946a1048b87fde6882ff86a21d003060ce06db1b\",\"urls\":[\"bzz-raw://52310bc7fe38ddf357e1f94f8a86ca76cb66cb2a02c75d68a8442db19c7f6fb9\",\"dweb:/ipfs/QmVTrViz4Q4BiA2uxniKVJ5SZanceXhoKMZsKi5QCmEaWX\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity ^0.5.0;\n\nimport \"./lib/ERC721.sol\";\n\ncontract Casitoken is ERC721{\n\n\n\n}",
   "sourcePath": "/home/hanzo/Desktop/DecentralizedCasino/dapp/contracts/Casitoken.sol",
   "ast": {
     "absolutePath": "/home/hanzo/Desktop/DecentralizedCasino/dapp/contracts/Casitoken.sol",
     "exportedSymbols": {
       "Casitoken": [
-        403
+        367
       ]
     },
-    "id": 404,
+    "id": 368,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 399,
+        "id": 363,
         "literals": [
           "solidity",
           "^",
@@ -119,13 +178,13 @@
         "src": "0:23:1"
       },
       {
-        "absolutePath": "/home/hanzo/Desktop/DecentralizedCasino/dapp/contracts/lib/Ownable.sol",
-        "file": "./lib/Ownable.sol",
-        "id": 400,
+        "absolutePath": "/home/hanzo/Desktop/DecentralizedCasino/dapp/contracts/lib/ERC721.sol",
+        "file": "./lib/ERC721.sol",
+        "id": 364,
         "nodeType": "ImportDirective",
-        "scope": 404,
-        "sourceUnit": 2387,
-        "src": "25:27:1",
+        "scope": 368,
+        "sourceUnit": 2055,
+        "src": "25:26:1",
         "symbolAliases": [],
         "unitAlias": ""
       },
@@ -135,47 +194,47 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 401,
-              "name": "Ownable",
+              "id": 365,
+              "name": "ERC721",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 2386,
-              "src": "76:7:1",
+              "referencedDeclaration": 2054,
+              "src": "75:6:1",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Ownable_$2386",
-                "typeString": "contract Ownable"
+                "typeIdentifier": "t_contract$_ERC721_$2054",
+                "typeString": "contract ERC721"
               }
             },
-            "id": 402,
+            "id": 366,
             "nodeType": "InheritanceSpecifier",
-            "src": "76:7:1"
+            "src": "75:6:1"
           }
         ],
         "contractDependencies": [
-          2386
+          2054
         ],
         "contractKind": "contract",
         "documentation": null,
-        "fullyImplemented": true,
-        "id": 403,
+        "fullyImplemented": false,
+        "id": 367,
         "linearizedBaseContracts": [
-          403,
-          2386
+          367,
+          2054
         ],
         "name": "Casitoken",
         "nodeType": "ContractDefinition",
         "nodes": [],
-        "scope": 404,
-        "src": "54:35:1"
+        "scope": 368,
+        "src": "53:34:1"
       }
     ],
-    "src": "0:89:1"
+    "src": "0:87:1"
   },
   "legacyAST": {
     "attributes": {
       "absolutePath": "/home/hanzo/Desktop/DecentralizedCasino/dapp/contracts/Casitoken.sol",
       "exportedSymbols": {
         "Casitoken": [
-          403
+          367
         ]
       }
     },
@@ -189,42 +248,42 @@
             ".0"
           ]
         },
-        "id": 399,
+        "id": 363,
         "name": "PragmaDirective",
         "src": "0:23:1"
       },
       {
         "attributes": {
-          "SourceUnit": 2387,
-          "absolutePath": "/home/hanzo/Desktop/DecentralizedCasino/dapp/contracts/lib/Ownable.sol",
-          "file": "./lib/Ownable.sol",
-          "scope": 404,
+          "SourceUnit": 2055,
+          "absolutePath": "/home/hanzo/Desktop/DecentralizedCasino/dapp/contracts/lib/ERC721.sol",
+          "file": "./lib/ERC721.sol",
+          "scope": 368,
           "symbolAliases": [
             null
           ],
           "unitAlias": ""
         },
-        "id": 400,
+        "id": 364,
         "name": "ImportDirective",
-        "src": "25:27:1"
+        "src": "25:26:1"
       },
       {
         "attributes": {
           "contractDependencies": [
-            2386
+            2054
           ],
           "contractKind": "contract",
           "documentation": null,
-          "fullyImplemented": true,
+          "fullyImplemented": false,
           "linearizedBaseContracts": [
-            403,
-            2386
+            367,
+            2054
           ],
           "name": "Casitoken",
           "nodes": [
             null
           ],
-          "scope": 404
+          "scope": 368
         },
         "children": [
           {
@@ -235,28 +294,28 @@
               {
                 "attributes": {
                   "contractScope": null,
-                  "name": "Ownable",
-                  "referencedDeclaration": 2386,
-                  "type": "contract Ownable"
+                  "name": "ERC721",
+                  "referencedDeclaration": 2054,
+                  "type": "contract ERC721"
                 },
-                "id": 401,
+                "id": 365,
                 "name": "UserDefinedTypeName",
-                "src": "76:7:1"
+                "src": "75:6:1"
               }
             ],
-            "id": 402,
+            "id": 366,
             "name": "InheritanceSpecifier",
-            "src": "76:7:1"
+            "src": "75:6:1"
           }
         ],
-        "id": 403,
+        "id": 367,
         "name": "ContractDefinition",
-        "src": "54:35:1"
+        "src": "53:34:1"
       }
     ],
-    "id": 404,
+    "id": 368,
     "name": "SourceUnit",
-    "src": "0:89:1"
+    "src": "0:87:1"
   },
   "compiler": {
     "name": "solc",
@@ -264,31 +323,11 @@
   },
   "networks": {},
   "schemaVersion": "3.3.4",
-  "updatedAt": "2021-03-16T22:20:06.627Z",
+  "updatedAt": "2021-03-20T16:54:40.423Z",
   "devdoc": {
-    "methods": {
-      "isOwner()": {
-        "return": "true if `msg.sender` is the owner of the contract."
-      },
-      "owner()": {
-        "return": "the address of the owner."
-      },
-      "renounceOwnership()": {
-        "details": "Allows the current owner to relinquish control of the contract."
-      },
-      "transferOwnership(address)": {
-        "details": "Allows the current owner to transfer control of the contract to a newOwner.",
-        "params": {
-          "newOwner": "The address to transfer ownership to."
-        }
-      }
-    }
+    "methods": {}
   },
   "userdoc": {
-    "methods": {
-      "renounceOwnership()": {
-        "notice": "Renouncing to ownership will leave the contract without an owner. It will not be possible to call the functions with the `onlyOwner` modifier anymore."
-      }
-    }
+    "methods": {}
   }
 }
