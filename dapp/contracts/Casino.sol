@@ -14,6 +14,8 @@ contract Casino is Ownable{ //Ownable allows using onlyOwner modifier so we can 
 
 	Game[] games;
 	mapping (address => Game) public gamesMap; //address : currentPlayer ; Game : Dice or Roulette contract
+	mapping (address => uint) public tokensMap; //address : currentPlayer ; uint : token balance
+	mapping (uint => address) public tokensToOwner; // uint : tokenID ; address : currentPlayer
 
 	//Events
 	//the player is playing to the game
