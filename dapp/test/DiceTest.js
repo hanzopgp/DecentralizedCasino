@@ -1,79 +1,65 @@
 const Casino = artifacts.require("Casino");
 const utils = require("./util/utils");
-const playerNames = ["Player 1", "Player 2"];
-contract("Casino", (accounts) => {
+
+contract("Dice", (accounts) => {
     let [a, b, c] = accounts;
     let casino;
+    let amount = 10;
+    let nBenchmark = 100;
 
     beforeEach(async () => {
-        casino = await Casino.new();
+        casino = await Casino.new({from: a});
+        await casino.setGameType(1, {from: a});
+        await casino.setGameType(1, {from: b});
     });
 
     //Dice game test
-    it("setGameType() test", async () => {
-        const result = await casino.setGameType(1, {from: accounts[0]});
-        //assert.equal(String(result.receipt.from), String(accounts[0]));
-        assert.equal(result.logs[0].event, "EventGameSet");
-        assert.equal(result.logs[0].args.player, a);
-    })
-    it("isBetSet() test", async () => {
-        await casino.setGameType(1, {from: accounts[0]});
-        const result = await casino.isBetSet({from: accounts[0]});
+    it("should return that there's no bet", async () => {
+        const result = await casino.isBetSetGame({from: a});
         assert.equal(result, false);
     })
-    it("cancelBet() test", async () => {
-        await casino.setGameType(1, {from: accounts[0]});
-        await casino.bet(" ", "6", {from: accounts[0], value: 1000000});
-        const result = await casino.isBetSet({from: accounts[0]});
-        assert.equal(result, true);
-        const result2 = await casino.cancelBet({from: accounts[0]});
-        assert.equal(result2.logs[0].event, "EventCancelBet");
-        const result3 = await casino.isBetSet({from: accounts[0]});
-        assert.equal(result3, false);
-    })
-    it("bet() test", async () => {
-        await casino.setGameType(1, {from: accounts[0]});
-        const result = await casino.bet(" ", "6", {from: accounts[0], value: 1000000});
-        const result2 = await casino.isBetSet({from: accounts[0]});
+    it("should set a bet", async () => {
+        const result = await casino.betGame(" ", "6", {from: a, value: amount});
+        const result2 = await casino.isBetSetGame({from: a});
         assert.equal(result2, true);
         assert.equal(result.logs[0].event, "EventBet");
         //assert.equal(result.logs[0].args.betValue, 6);
         //assert.equal(result.logs[0].args.isSet, true);
-        //assert.equal(result.logs[0].args.moneyBet, 1000000);
+        //assert.equal(result.logs[0].args.moneyBet, amount);
     })
-    it("play() test", async () => {
-        await casino.setGameType(1, {from: accounts[0]});
-        await casino.bet(" ", "6", {from: accounts[0], value: 1000000});
-        const result = await casino.play({from: accounts[0]});
-        assert.equal(result.logs[0].event, "EventResult");
-        //assert.equal(result.logs[0].args.betValue, 6);
+    it("should cancel the bet", async () => {
+        await casino.betGame(" ", "6", {from: a, value: amount});
+        const result = await casino.isBetSetGame({from: a});
+        assert.equal(result, true);
+        const result2 = await casino.cancelBetGame({from: a});
+        assert.equal(result2.logs[0].event, "EventCancelBet");
+        const result3 = await casino.isBetSetGame({from: a});
+        assert.equal(result3, false);
     })
-    it("playerReceivesMoney() test", async () => {
-        await casino.setGameType(1, {from: accounts[0]});
-        await casino.bet(" ", "6", {from: accounts[0], value: 1000000});
-        await casino.play({from: accounts[0]});
-        const result = await casino.playerReceivesMoney({from: accounts[0]});
-        assert.equal(result.logs[0].event, "EventPlayerReceives");
+    it("should play a game, return the result and the money earned and send the money to the player", async () => {
+        await casino.addFundsCasinoBalance({from: a, value: 20*amount});
+        // for(var bet = 2 ; bet <= 12 ; bet++){
+            var nWin = 0;
+            for(var i = 0 ; i < nBenchmark ; i++){
+                await casino.betGame(" ", 7, {from: a, value: amount});
+                const result = await casino.playGame({from: a});
+                if(amount != 0){
+                    nWin++;
+                    assert.equal(result.logs[0].event, "EventPlayerReceives");
+                }
+            }
+            assert((nBenchmark - nBenchmark/20)/6 <= nWin && nWin <= (nBenchmark + nBenchmark/20)/6);
+            const result = await casino.getCasinoBalance({from: a});
+            assert(result == (20-nWin*7+nBenchmark)*amount);
+        // }
+    })
+    // it("playerReceivesMoney() test", async () => {
+    //     await casino.bet(" ", "6", {from: a, value: amount});
+    //     await casino.play({from: a});
+    //     const result = await casino.playerReceivesMoney({from: a});
+    //     assert.equal(result.logs[0].event, "EventPlayerReceives");
         //assert.equal(result.logs[0].args.moneyWin, 60);
-    })
-
-    //Admin function test
-    it("addFundsToBalance() test", async () => {
-        await casino.addFundsCasinoBalance({from: accounts[0], value: 666666});
-        const result = await casino.getCasinoBalance({from: accounts[0]});
-        assert.equal(result, 666666);
-    })
-    it("withdrawCasinoBalance() test", async () => {
-        await casino.addFundsCasinoBalance({from: accounts[0], value: 666666});
-        await casino.withdrawCasinoBalance({from: accounts[0]});
-        const result = await casino.getCasinoBalance({from: accounts[0]});
-        assert.equal(result, 666666);
-    })
-    it("getCasinoBalance() test", async () => {
-        await casino.addFundsCasinoBalance({from: accounts[0], value: 666666});
-        const result = await casino.getCasinoBalance({from: accounts[0]});
-        assert.equal(result, 666666);
-    })
+    // })
 })
 
 
