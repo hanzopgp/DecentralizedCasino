@@ -13,9 +13,9 @@ contract Utility{
     uint256 public minimumBetValue = 0 ether;
 
     //Modifiers
-    modifier isEnoughMoney(){
-        require(msg.value >= minimumBetValue, "Too low bet value");
-        require(msg.value <= maximumBetValue, "Too high bet value");
+    modifier isEnoughMoney(uint money){
+        require(money >= minimumBetValue, "Too low bet value");
+        require(money <= maximumBetValue, "Too high bet value");
         _;
     }
 

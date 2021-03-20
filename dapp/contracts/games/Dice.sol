@@ -1,10 +1,11 @@
 pragma solidity ^0.5.0;
 
 import "./../lib/SafeMath.sol";
-import "./Game.sol";
+import "./../lib/Ownable.sol";
 import "./../Utility.sol";
+import "./Game.sol";
 
-contract Dice is Game, Utility{ //Ownable allows use onlyOwner modifier so we can make admin functions
+contract Dice is Game, Utility, Ownable{ //Ownable allows use onlyOwner modifier so we can make admin functions
 
 	using SafeMath for uint256; //Using SafeMath lib to avoid overflow errors
 	using SafeMath for uint8;
@@ -14,44 +15,45 @@ contract Dice is Game, Utility{ //Ownable allows use onlyOwner modifier so we ca
 		bool isSet; 
 		uint256 moneyBet;
 		uint8 diceBet;
-		uint8 diceResult;
+		// uint8 diceResult;
 	}
 	mapping(address => Bet) private betsMap;
-	uint8 diceBetMultiplier = 10;
+	uint256 diceBetMultiplier = 6;
 
 	//Dice game functions
-	function isBetSet() external view returns(bool){
-		return betsMap[msg.sender].isSet;
+	function isBetSet(address player) external view onlyOwner returns(bool){
+		return betsMap[player].isSet;
 	}
-	function bet(string calldata empty, uint8 playerBet) external payable isEnoughMoney currentBetIsNotSet(betsMap[msg.sender].isSet) returns(uint8, bool, uint256){
-		require(playerBet >= 2, "Bet must be between 2 and 12");
-		require(playerBet <= 12, "Bet must be between 2 and 12");
-		betsMap[msg.sender].diceBet = playerBet;
-		betsMap[msg.sender].isSet = true;
-		betsMap[msg.sender].moneyBet = msg.value;
-		return (betsMap[msg.sender].diceBet, betsMap[msg.sender].isSet, betsMap[msg.sender].moneyBet);
+	function bet(address player, string calldata /*betInfo*/, uint8 betData, uint money) external onlyOwner isEnoughMoney(money) currentBetIsNotSet(betsMap[player].isSet) returns(bool){
+		require(betData >= 2, "Bet must be between 2 and 12");
+		require(betData <= 12, "Bet must be between 2 and 12");
+		betsMap[player].diceBet = betData;
+		betsMap[player].isSet = true;
+		betsMap[player].moneyBet = money;
+		return betsMap[player].isSet;
 	}
-	function cancelBet() external currentBetIsSet(betsMap[msg.sender].isSet) returns(uint256){
-		betsMap[msg.sender].diceBet = 0;
-		betsMap[msg.sender].isSet = false;
-		betsMap[msg.sender].diceResult = 0;
-		uint256 moneyBetSave = betsMap[msg.sender].moneyBet;
-		betsMap[msg.sender].moneyBet = 0;
-		return moneyBetSave;
+	function cancelBet(address player) external onlyOwner currentBetIsSet(betsMap[player].isSet) returns(uint256){
+		// betsMap[msg.sender].diceBet = 0;
+		betsMap[player].isSet = false;
+		// betsMap[msg.sender].diceResult = 0;
+		// uint256 moneyBetSave = betsMap[msg.sender].moneyBet;
+		// betsMap[msg.sender].moneyBet = 0;
+		return betsMap[player].moneyBet;
 	}
-	function play() external currentBetIsSet(betsMap[msg.sender].isSet) returns(uint8 , uint8){																
-		betsMap[msg.sender].diceResult = randomDoubleDice();															
-		betsMap[msg.sender].isSet = false;
-		if(betsMap[msg.sender].diceResult == betsMap[msg.sender].diceBet){	
-			this.playerMoneyWin();
+	function play(address player) external onlyOwner currentBetIsSet(betsMap[player].isSet) returns(uint8 , uint256){																
+		uint8 diceResult = randomDoubleDice();															
+	   	uint256 amount = 0;
+		if(diceResult == betsMap[player].diceBet){	
+			amount = betsMap[player].moneyBet.mul(diceBetMultiplier);
 		}
-		return (betsMap[msg.sender].diceBet , betsMap[msg.sender].diceResult);
+		betsMap[player].isSet = false;
+		return (diceResult, amount);
 	}
-    function playerMoneyWin() external returns(uint256){
-    	uint256 amount = betsMap[msg.sender].moneyBet.mul(diceBetMultiplier);	
-    	betsMap[msg.sender].moneyBet = 0;
-		return amount;
-	}
+ //    function playerMoneyWin() external returns(uint256){
+ //    	uint256 amount = betsMap[msg.sender].moneyBet.mul(diceBetMultiplier);	
+ //    	betsMap[msg.sender].moneyBet = 0;
+	// 	return amount;
+	// }
 	function randomDoubleDice() internal returns (uint8){
 		return uint8(randomUintBetween(1, 6).add(randomUintBetween(1, 6)));
     }
