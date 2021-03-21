@@ -1,8 +1,8 @@
 pragma solidity ^0.5.0;
 
-import "./Casino.sol";
-import "./lib/ERC721.sol";
-import "./lib/SafeMath.sol";
+import "./ERC721.sol";
+import "./../lib/SafeMath.sol";
+import "./../Casino.sol";
 
 contract Casitoken is Casino, ERC721{
 
@@ -23,21 +23,24 @@ contract Casitoken is Casino, ERC721{
     return tokensToOwner[tokenId];
   }
 
-  function transfer(address from, address to, uint256 tokenId) private{
+  function transfer(address from, address to, uint256 tokenId) public returns(bool success){
     tokensMap[to] = tokensMap[to].add(1);
     tokensMap[msg.sender] = tokensMap[msg.sender].sub(1);
     tokensToOwner[tokenId] = to;
     emit Transfer(from, to, tokenId);
+    return true;
   }
 
-  function transferFrom(address from, address to, uint256 tokenId) external payable{
+  function transferFrom(address from, address to, uint256 tokenId) external payable returns(bool success){
     require (tokensToOwner[tokenId] == msg.sender || approvals[tokenId] == msg.sender);
     transfer(from, to, tokenId);
+    return true;
   }
 
-  function approve(address approved, uint256 tokenId) external payable onlyOwnerOf(tokenId){
+  function approve(address approved, uint256 tokenId) external payable onlyOwnerOf(tokenId) returns(bool success){
     approvals[tokenId] = approved;
     emit Approval(msg.sender, approved, tokenId);
+    return true;
   }
 
 }

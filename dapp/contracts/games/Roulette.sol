@@ -229,11 +229,4 @@ contract Roulette is Game, Utility, Ownable {
         return (_result, 0);
     }
 
-    // function playerMoneyWin() external returns(uint256){
-    //     uint256 _moneyWon = _playersBet[player].money * (36/_playersBet[player].numberOfCard);
-    //     _moneyWon += ((36 % _playersBet[player].numberOfCard) * _playersBet[player].money) / _playersBet[player].numberOfCard;
-    //     _playersBet[player].money = 0;
-    //     return _moneyWon;
-    // }
-
 }
