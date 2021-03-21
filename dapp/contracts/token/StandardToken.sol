@@ -20,7 +20,7 @@ contract StandardToken is ERC721{
         }
     }
 
-    function transferFrom(address from, address to, uint256 value) external payable returns(bool success){
+    function transferFrom(address from, address to, uint256 value) public returns(bool success){
         if (balances[from] >= value && allowed[from][msg.sender] >= value && value > 0){
             balances[to] += value;
             balances[from] -= value;

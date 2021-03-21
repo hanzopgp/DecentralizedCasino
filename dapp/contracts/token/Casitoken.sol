@@ -31,7 +31,7 @@ contract Casitoken is Casino, ERC721{
     return true;
   }
 
-  function transferFrom(address from, address to, uint256 tokenId) external payable returns(bool success){
+  function transferFrom(address from, address to, uint256 tokenId) public returns(bool success){
     require (tokensToOwner[tokenId] == msg.sender || approvals[tokenId] == msg.sender);
     transfer(from, to, tokenId);
     return true;

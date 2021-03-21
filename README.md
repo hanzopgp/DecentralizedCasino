@@ -21,8 +21,8 @@ DecentralizedCasino/
 │   	├── contracts/
 │       │       ├── games/ 	       (Contains game model solidity code)   
 │       │       ├── lib/               (Contains libs like safemath, ownable...)
+│       │       ├── token/             (Contains the token files of the casino)
 │       │       ├── Casino.sol         (Main solidity file)
-│       │       ├── Casinotoken.sol    (Contains the money token of the casino)
 │       │       ├── Utility.sol        (Contains utility functions)               
 │   	├── migrations/                (Contains the js code to deploy our contracts)
 │       ├── build/                     (Contains the json files after compiling)
