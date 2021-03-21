@@ -44,6 +44,7 @@ contract Casino is Ownable{ //Ownable allows using onlyOwner modifier so we can 
 		_;
 	}
 
+	//??? Est ce qu'il faut le faire dans le backend ou direct transfer() depuis le frontend pour que l'user achete des tokens ???
 	//Get casino custom tokens
 	function buyCasitokens(uint nbtok) external payable returns(uint){
 		//Checks if the user bought minimum one token and the amount he paid is enough
