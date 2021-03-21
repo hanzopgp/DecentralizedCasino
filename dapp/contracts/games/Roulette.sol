@@ -14,7 +14,7 @@ contract Roulette is Game, Utility, Ownable {
     see https://en.wikipedia.org/wiki/Roulette#Types_of_bets */
     struct RouletteBet {
         // bool isSet;
-        uint256 money;
+        uint256 tokenAmount;
         uint8 numberOfCard;
         /* 1-Single ; 2-Split ; 3-Street ; 4:Square ; 6-DoubleStreet ; 12-Column/Dozen ;
         18-Low/High/Red/Black/Even/Odd ; 24-DoubleColumn/DoubleDozen */
@@ -50,7 +50,13 @@ contract Roulette is Game, Utility, Ownable {
         return _playersBet[player].numberOfCard != 0;
     }
 
-    function bet(address player, string calldata _typeOfCard, uint8 _dataOfBet, uint256 money) external onlyOwner isEnoughMoney(money) currentBetIsNotSet(_playersBet[player].numberOfCard != 0) returns(bool) {
+    function bet(address player, 
+                 string calldata _typeOfCard, 
+                 uint8 _dataOfBet, 
+                 uint256 tokenAmount) external onlyOwner 
+                                         isEnoughMoney(tokenAmount) 
+                                         currentBetIsNotSet(_playersBet[player].numberOfCard != 0) 
+                                         returns(bool) {
         uint numberOfCard = 0;
         uint betData = 0;
         if(compareStrings(_typeOfCard, "Single")){
@@ -124,7 +130,7 @@ contract Roulette is Game, Utility, Ownable {
         }
         bool _isValid = (numberOfCard != 0);
         require(_isValid, "Invalid type of bet");
-        _playersBet[player].money = money;
+        _playersBet[player].tokenAmount = tokenAmount;
         _playersBet[player].numberOfCard = uint8(numberOfCard);
         _playersBet[player].betData = uint8(betData);
         return _isValid;
@@ -132,7 +138,7 @@ contract Roulette is Game, Utility, Ownable {
 
     function cancelBet(address player) external onlyOwner currentBetIsSet(_playersBet[player].numberOfCard != 0) returns(uint256){
         _playersBet[player].numberOfCard = 0;
-        return _playersBet[player].money;
+        return _playersBet[player].tokenAmount;
     }
 
     function play(address player) external onlyOwner currentBetIsSet(_playersBet[player].numberOfCard != 0) returns (uint8, uint256) {
@@ -222,9 +228,9 @@ contract Roulette is Game, Utility, Ownable {
         }
         _playersBet[player].numberOfCard = 0;
         if(_hasWon){
-            uint _moneyWon = _bet.money * (36/_bet.numberOfCard);
-            _moneyWon += ((36 % _bet.numberOfCard) * _bet.money) / _bet.numberOfCard;
-            return (_result, _moneyWon);
+            uint tokenWon = _bet.tokenAmount * (36/_bet.numberOfCard);
+            tokenWon += ((36 % _bet.numberOfCard) * _bet.tokenAmount) / _bet.numberOfCard;
+            return (_result, tokenWon);
         }
         return (_result, 0);
     }

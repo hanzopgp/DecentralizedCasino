@@ -13,7 +13,7 @@ contract Dice is Game, Utility, Ownable{ //Ownable allows use onlyOwner modifier
 	//Variables
 	struct Bet{
 		bool isSet; 
-		uint256 moneyBet;
+		uint256 tokenAmount;
 		uint8 diceBet;
 	}
 	mapping(address => Bet) private betsMap;
@@ -24,25 +24,31 @@ contract Dice is Game, Utility, Ownable{ //Ownable allows use onlyOwner modifier
 		return betsMap[player].isSet;
 	}
 
-	function bet(address player, string calldata /*betInfo*/, uint8 betData, uint money) external onlyOwner isEnoughMoney(money) currentBetIsNotSet(betsMap[player].isSet) returns(bool){
+	function bet(address player, 
+				 string calldata /*betInfo*/, 
+				 uint8 betData, 
+				 uint tokenAmount) external onlyOwner 
+									  isEnoughMoney(tokenAmount) 
+									  currentBetIsNotSet(betsMap[player].isSet) 
+									  returns(bool){
 		require(betData >= 2, "Bet must be between 2 and 12");
 		require(betData <= 12, "Bet must be between 2 and 12");
 		betsMap[player].diceBet = betData;
 		betsMap[player].isSet = true;
-		betsMap[player].moneyBet = money;
+		betsMap[player].tokenAmount = tokenAmount;
 		return betsMap[player].isSet;
 	}
 
 	function cancelBet(address player) external onlyOwner currentBetIsSet(betsMap[player].isSet) returns(uint256){
 		betsMap[player].isSet = false;
-		return betsMap[player].moneyBet;
+		return betsMap[player].tokenAmount;
 	}
 
 	function play(address player) external onlyOwner currentBetIsSet(betsMap[player].isSet) returns(uint8 , uint256){																
 		uint8 diceResult = randomDoubleDice();															
 	   	uint256 amount = 0;
 		if(diceResult == betsMap[player].diceBet){	
-			amount = betsMap[player].moneyBet.mul(diceBetMultiplier);
+			amount = betsMap[player].tokenAmount.mul(diceBetMultiplier);
 		}
 		betsMap[player].isSet = false;
 		return (diceResult, amount);

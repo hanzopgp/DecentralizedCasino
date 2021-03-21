@@ -46,8 +46,9 @@ contract Casino is Ownable{ //Ownable allows using onlyOwner modifier so we can 
 
 	//Get casino custom tokens
 	function buyCasitokens(uint nbtok) external payable returns(uint){
-		require(nbtok > 1 && (msg.value >= (tokenPrice * nbtok))); //Checks if the user bought minimum one token and the amount
-		if(msg.value > (tokenPrice * nbtok)){					   //he paid is enough
+		//Checks if the user bought minimum one token and the amount he paid is enough
+		require(nbtok > 1 && (msg.value >= (tokenPrice * nbtok)), "Invalid ether or token number"); 
+		if(msg.value > (tokenPrice * nbtok)){					   
 			msg.sender.transfer((tokenPrice * nbtok) - msg.value); //Refund in case user paid too much for the tokens in input
 		}
 		for(uint i = 0; i < nbtok; i++){
@@ -71,10 +72,10 @@ contract Casino is Ownable{ //Ownable allows using onlyOwner modifier so we can 
 		return gamesMap[msg.sender].isBetSet(msg.sender);
 	}
 
-	function betGame(string calldata betInfo, uint8 betData) external payable isGameSet returns(bool){
-		bool _success = gamesMap[msg.sender].bet(msg.sender, betInfo, betData, msg.value);
+	function betGame(string calldata betInfo, uint8 betData, uint tokenAmount) external isGameSet returns(bool){
+		bool _success = gamesMap[msg.sender].bet(msg.sender, betInfo, betData, tokenAmount);
 		if(_success){
-			emit EventBet(msg.sender, betInfo, betData, msg.value);
+			emit EventBet(msg.sender, betInfo, betData, tokenAmount);
 			return _success;
 		}else{
 			revert("Incorrect bet");
@@ -82,10 +83,10 @@ contract Casino is Ownable{ //Ownable allows using onlyOwner modifier so we can 
 	}
 
 	function cancelBetGame() external isGameSet returns(bool){
-		uint256 _moneyBack = gamesMap[msg.sender].cancelBet(msg.sender);
-		if(_moneyBack > 0){
-			msg.sender.transfer(_moneyBack);
-			emit EventCancelBet(msg.sender, _moneyBack);
+		uint256 tokenRefund = gamesMap[msg.sender].cancelBet(msg.sender);
+		if(tokenRefund > 0){
+			msg.sender.transfer(tokenRefund * tokenPrice);
+			emit EventCancelBet(msg.sender, tokenRefund);
 			return true;
 		}else{
 			return false;		
@@ -94,13 +95,13 @@ contract Casino is Ownable{ //Ownable allows using onlyOwner modifier so we can 
 	}	
 
 	function playGame() external isGameSet returns(uint8 , uint256){
-		(uint8 result, uint256 moneyEarned) = gamesMap[msg.sender].play(msg.sender);
+		(uint8 result, uint256 tokenEarned) = gamesMap[msg.sender].play(msg.sender);
 		emit EventResult(msg.sender, result);
-		if(moneyEarned > 0){
-			msg.sender.transfer(moneyEarned);
-			emit EventPlayerReceives(msg.sender, moneyEarned);
+		if(tokenEarned > 0){
+			msg.sender.transfer(tokenEarned * tokenPrice);
+			emit EventPlayerReceives(msg.sender, tokenEarned);
 		}
-		return (result, moneyEarned);
+		return (result, tokenEarned);
 	}
 
     //Admin functions with onlyOwner
