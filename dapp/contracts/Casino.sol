@@ -15,8 +15,11 @@ contract Casino is Ownable{ //Ownable allows using onlyOwner modifier so we can 
 	Game[] games;
 	mapping (address => Game) public gamesMap; //address : currentPlayer ; Game : Dice or Roulette contract
 
-	mapping (address => uint) public tokensMap; //address : currentPlayer ; uint : token balance
+	uint tokenId;
+	uint tokenPrice = 0.001 ether;
+	mapping (address => uint) public ownerTokenCount; //address : currentPlayer ; uint : nb tokens
 	mapping (uint => address) public tokensToOwner; // uint : tokenID ; address : currentPlayer
+	uint[] public tokens;
 
 	//the player has set the game
 	event EventGameSet(address player, uint gameType);
@@ -39,6 +42,20 @@ contract Casino is Ownable{ //Ownable allows using onlyOwner modifier so we can 
 	modifier isGameSet(){
 		require(address(gamesMap[msg.sender]) != address(0), "There is no current game set");
 		_;
+	}
+
+	//Get casino custom tokens
+	function buyCasitokens(uint nbtok) external payable returns(uint){
+		require(nbtok > 1 && (msg.value >= (tokenPrice * nbtok))); //Checks if the user bought minimum one token and the amount
+		if(msg.value > (tokenPrice * nbtok)){					   //he paid is enough
+			msg.sender.transfer((tokenPrice * nbtok) - msg.value); //Refund in case user paid too much for the tokens in input
+		}
+		for(uint i = 0; i < nbtok; i++){
+			uint id = tokens.push(tokenId++);
+			tokensToOwner[id] = msg.sender;						   //Save the tokens for the current user
+			ownerTokenCount[msg.sender]++;						   //Keeps track of the users balance
+		}							   
+		return ownerTokenCount[msg.sender];
 	}
 
 	//Game type setter

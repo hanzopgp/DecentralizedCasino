@@ -16,7 +16,7 @@ contract Casitoken is Casino, ERC721{
   }
 
   function balanceOf(address owner) external view returns(uint256){
-    return tokensMap[owner];
+    return ownerTokenCount[owner];
   }
 
   function ownerOf(uint256 tokenId) external view returns(address){
@@ -24,8 +24,8 @@ contract Casitoken is Casino, ERC721{
   }
 
   function transfer(address from, address to, uint256 tokenId) public returns(bool success){
-    tokensMap[to] = tokensMap[to].add(1);
-    tokensMap[msg.sender] = tokensMap[msg.sender].sub(1);
+    ownerTokenCount[to] = ownerTokenCount[to].add(1);
+    ownerTokenCount[msg.sender] = ownerTokenCount[msg.sender].sub(1);
     tokensToOwner[tokenId] = to;
     emit Transfer(from, to, tokenId);
     return true;
