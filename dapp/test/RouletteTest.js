@@ -13,6 +13,7 @@ contract("Roulette", (accounts) => {
         casino = await Casino.new({from: a});
         await casino.setGameType(2, {from: a});
         await casino.setGameType(2, {from: b});
+        await casino.buyCasitokens(tokenAmount, {from: a, value : moneyForTokenAmount});
     });
 
     //Dice game test
@@ -21,14 +22,12 @@ contract("Roulette", (accounts) => {
         assert.equal(result, false);
     })
     it("should set a bet", async () => {
-        await casino.buyCasitokens(tokenAmount, {from: a, value : moneyForTokenAmount});
         const result = await casino.betGame("Single", 6, tokenAmount-1);
         const result2 = await casino.isBetSetGame({from: a});
         assert.equal(result2, true);
         assert.equal(result.logs[0].event, "EventBet");
     })
     it("should cancel the bet", async () => {
-        await casino.buyCasitokens(tokenAmount, {from: a, value : moneyForTokenAmount});
         await casino.betGame("Single", 6, tokenAmount-1);
         const result = await casino.isBetSetGame({from: a});
         assert.equal(result, true);
