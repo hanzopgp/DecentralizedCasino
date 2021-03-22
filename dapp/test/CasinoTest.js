@@ -5,27 +5,28 @@ contract("Casino", (accounts) => {
     let [a, b, c] = accounts;
     let casino;
     let amount = 10;
-    let tokenAmount = 10;
-    let moneyForTokenAmount = web3.utils.toWei("1", "ether") * tokenAmount + 100;
+    let oneToken = 1;
+    let maxTokenAmount = 100;
+    let moneyForMaxTokenAmount = (web3.utils.toWei("1", "ether")/10) * maxTokenAmount + 10;
 
     beforeEach(async () => {
         casino = await Casino.new({from: a});
     });
     
     it("should initialize with no game", async () => {
-        utils.shouldThrow(casino.betGame("", 7, tokenAmount-1));
-        utils.shouldThrow(casino.betGame("", 7, tokenAmount-1));
+        utils.shouldThrow(casino.betGame("", 7, oneToken));
+        utils.shouldThrow(casino.betGame("", 7, oneToken));
     })
     it("should set the game", async () => {
         const result = await casino.setGameType(1, {from: a});
         assert.equal(result.logs[0].event, "EventGameSet");
-        utils.shouldThrow(casino.betGame("", 7, tokenAmount-1, {from: b}));
+        utils.shouldThrow(casino.betGame("", 7, 1, {from: b}));
         const result2 = await casino.setGameType(1, {from: b});
         assert.equal(result2.logs[0].event, "EventGameSet");
     })
     it("should buy tokens", async () => {
-        const result = await casino.buyCasitokens(tokenAmount, {from: a, value: moneyForTokenAmount});
-        //assert.equal(result, tokenAmount);
+        const result = await casino.buyCasitokens(maxTokenAmount, {from: a, value: moneyForMaxTokenAmount});
+        //assert.equal(result, maxTokenAmount);
         assert.equal(result.logs[0].event, "EventTokenBought");
     })
     //Admin function test

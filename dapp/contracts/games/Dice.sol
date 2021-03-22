@@ -27,7 +27,7 @@ contract Dice is Game, Utility, Ownable{ //Ownable allows use onlyOwner modifier
 	function bet(address player, 
 				 string calldata /*betInfo*/, 
 				 uint8 betData, 
-				 uint tokenAmount) external onlyOwner 
+				 uint tokenAmount) external onlyOwner
 									        currentBetIsNotSet(betsMap[player].isSet) 
 									        returns(bool){
 		require(betData >= 2, "Bet must be between 2 and 12");

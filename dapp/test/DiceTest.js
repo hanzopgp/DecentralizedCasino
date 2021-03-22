@@ -5,15 +5,16 @@ contract("Dice", (accounts) => {
     let [a, b, c] = accounts;
     let casino;
     let amount = 10;
-    let nBenchmark = 100;
-    let tokenAmount = 10;
-    let moneyForTokenAmount = web3.utils.toWei("1", "ether") * tokenAmount + 100;
+    let nBenchmark = 50;
+    let oneToken = 1;
+    let maxTokenAmount = 100;
+    let moneyForMaxTokenAmount = (web3.utils.toWei("1", "ether")/10) * maxTokenAmount + 10;
 
     beforeEach(async () => {
         casino = await Casino.new({from: a});
         await casino.setGameType(1, {from: a});
         await casino.setGameType(1, {from: b});
-        await casino.buyCasitokens(tokenAmount, {from: a, value : moneyForTokenAmount});
+        await casino.buyCasitokens(maxTokenAmount, {from: a, value : moneyForMaxTokenAmount});
     });
 
     //Dice game test
@@ -22,7 +23,7 @@ contract("Dice", (accounts) => {
         assert.equal(result, false);
     })
     it("should set a bet", async () => {
-        const result = await casino.betGame(" ", "6", tokenAmount-1);
+        const result = await casino.betGame(" ", "6", oneToken, {from: a});
         const result2 = await casino.isBetSetGame({from: a});
         assert.equal(result2, true);
         assert.equal(result.logs[0].event, "EventBet");
@@ -31,7 +32,7 @@ contract("Dice", (accounts) => {
         //assert.equal(result.logs[0].args.tokenAmount, amount);
     })
     it("should cancel the bet", async () => {
-        await casino.betGame(" ", "6", tokenAmount-1);
+        await casino.betGame(" ", "6", oneToken, {from: a});
         const result = await casino.isBetSetGame({from: a});
         assert.equal(result, true);
         const result2 = await casino.cancelBetGame({from: a});
@@ -60,16 +61,17 @@ contract("Dice", (accounts) => {
             //     }
             // })
             for(var i = 0 ; i < nBenchmark ; i++){
-                await casino.betGame(" ", 7, tokenAmount-1);
+                await casino.betGame(" ", 7, oneToken, {from: a});
                 const result = await casino.playGame({from: a});
-                if(amount != 0){
+                //assert.equal(result.logs[0].event, "EventResult");
+                if(amount != 0){ //C'est pas si amount != 0 mais si result.log[0].args.tokenWon
                     nWin++;
-                    // assert.equal(result.logs[0].event, "EventPlayerReceives");
+                    //assert.equal(result.logs[0].event, "EventPlayerReceives");
                 }
             }
             assert((nBenchmark - nBenchmark/20)/6 <= nWin && nWin <= (nBenchmark + nBenchmark/20)/6);
-            const result = await casino.getCasinoBalance({from: a});
-            assert(result == (20-nWin*7+nBenchmark)*amount);
+            const result2 = await casino.getCasinoBalance({from: a});
+            assert(result2 == (20-nWin*7+nBenchmark)*amount);
             // assert.equal(nWin, nEventWin);
             // assert.equal(nBenchmark, nEvent);
         // }

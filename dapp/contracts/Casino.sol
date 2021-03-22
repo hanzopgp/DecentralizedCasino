@@ -16,7 +16,7 @@ contract Casino is Utility, Ownable{ //Ownable allows using onlyOwner modifier s
 	mapping (address => Game) public gamesMap; //address : currentPlayer ; Game : Dice or Roulette contract
 
 	uint tokenId;
-	uint tokenPrice = 1 ether;
+	uint tokenPrice = 0.1 ether;
 	mapping (address => uint) public ownerTokenCount; //address : currentPlayer ; uint : nb tokens
 	mapping (uint => address) public tokensToOwner; // uint : tokenID ; address : currentPlayer
 	uint[] public tokens;
@@ -97,8 +97,7 @@ contract Casino is Utility, Ownable{ //Ownable allows using onlyOwner modifier s
 			return true;
 		}else{
 			return false;		
-		}
-			
+		}		
 	}	
 
 	function playGame() external isGameSet returns(uint8 , uint256){

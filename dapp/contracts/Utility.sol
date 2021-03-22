@@ -9,7 +9,7 @@ contract Utility{
 
     //Variables
     uint256 randomId = 0;
-    uint16 public maximumTokenValue = 100;
+    uint16 public maximumTokenValue = 1000;
     uint16 public minimumTokenValue = 1;
 
     //Modifiers
