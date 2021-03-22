@@ -7,7 +7,7 @@ import "./games/Dice.sol";
 import "./games/Roulette.sol";
 import "./Utility.sol";
 
-contract Casino is Ownable{ //Ownable allows using onlyOwner modifier so we can make admin functions
+contract Casino is Utility, Ownable{ //Ownable allows using onlyOwner modifier so we can make admin functions
 
 	using SafeMath for uint256; //Using SafeMath lib to avoid overflow errors
 	using SafeMath for uint8;
@@ -16,10 +16,11 @@ contract Casino is Ownable{ //Ownable allows using onlyOwner modifier so we can 
 	mapping (address => Game) public gamesMap; //address : currentPlayer ; Game : Dice or Roulette contract
 
 	uint tokenId;
-	uint tokenPrice = 0.001 ether;
+	uint tokenPrice = 1 ether;
 	mapping (address => uint) public ownerTokenCount; //address : currentPlayer ; uint : nb tokens
 	mapping (uint => address) public tokensToOwner; // uint : tokenID ; address : currentPlayer
 	uint[] public tokens;
+	event EventTokenBought(address player, uint tokenBought);
 
 	//the player has set the game
 	event EventGameSet(address player, uint gameType);
@@ -46,17 +47,18 @@ contract Casino is Ownable{ //Ownable allows using onlyOwner modifier so we can 
 
 	//??? Est ce qu'il faut le faire dans le backend ou direct transfer() depuis le frontend pour que l'user achete des tokens ???
 	//Get casino custom tokens
-	function buyCasitokens(uint nbtok) external payable returns(uint){
+	function buyCasitokens(uint nbtok) external payable isEnoughMoneyAndToken(msg.value, nbtok, tokenPrice) returns(uint){
 		//Checks if the user bought minimum one token and the amount he paid is enough
 		require(nbtok > 1 && (msg.value >= (tokenPrice * nbtok)), "Invalid ether or token number"); 
 		if(msg.value > (tokenPrice * nbtok)){					   
-			msg.sender.transfer((tokenPrice * nbtok) - msg.value); //Refund in case user paid too much for the tokens in input
+			//msg.sender.transfer((tokenPrice * nbtok) - msg.value); //Refund in case user paid too much for the tokens in input
 		}
 		for(uint i = 0; i < nbtok; i++){
 			uint id = tokens.push(tokenId++);
 			tokensToOwner[id] = msg.sender;						   //Save the tokens for the current user
 			ownerTokenCount[msg.sender]++;						   //Keeps track of the users balance
-		}							   
+		}		
+		emit EventTokenBought(msg.sender, ownerTokenCount[msg.sender]);					   
 		return ownerTokenCount[msg.sender];
 	}
 
@@ -73,7 +75,11 @@ contract Casino is Ownable{ //Ownable allows using onlyOwner modifier so we can 
 		return gamesMap[msg.sender].isBetSet(msg.sender);
 	}
 
-	function betGame(string calldata betInfo, uint8 betData, uint tokenAmount) external isGameSet returns(bool){
+	function betGame(string calldata betInfo, 
+					 uint8 betData, 
+					 uint tokenAmount) external enoughTokenBalance(tokenAmount, ownerTokenCount[msg.sender]) 
+										        isGameSet 
+												returns(bool){
 		bool _success = gamesMap[msg.sender].bet(msg.sender, betInfo, betData, tokenAmount);
 		if(_success){
 			emit EventBet(msg.sender, betInfo, betData, tokenAmount);

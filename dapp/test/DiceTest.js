@@ -6,6 +6,8 @@ contract("Dice", (accounts) => {
     let casino;
     let amount = 10;
     let nBenchmark = 100;
+    let tokenAmount = 10;
+    let moneyForTokenAmount = web3.utils.toWei("1", "ether") * tokenAmount + 100;
 
     beforeEach(async () => {
         casino = await Casino.new({from: a});
@@ -19,16 +21,18 @@ contract("Dice", (accounts) => {
         assert.equal(result, false);
     })
     it("should set a bet", async () => {
-        const result = await casino.betGame(" ", "6", {from: a, value: amount});
+        await casino.buyCasitokens(tokenAmount, {from: a, value : moneyForTokenAmount});
+        const result = await casino.betGame(" ", "6", tokenAmount-1);
         const result2 = await casino.isBetSetGame({from: a});
         assert.equal(result2, true);
         assert.equal(result.logs[0].event, "EventBet");
         //assert.equal(result.logs[0].args.betValue, 6);
         //assert.equal(result.logs[0].args.isSet, true);
-        //assert.equal(result.logs[0].args.moneyBet, amount);
+        //assert.equal(result.logs[0].args.tokenAmount, amount);
     })
     it("should cancel the bet", async () => {
-        await casino.betGame(" ", "6", {from: a, value: amount});
+        await casino.buyCasitokens(tokenAmount, {from: a, value : moneyForTokenAmount});
+        await casino.betGame(" ", "6", tokenAmount-1);
         const result = await casino.isBetSetGame({from: a});
         assert.equal(result, true);
         const result2 = await casino.cancelBetGame({from: a});

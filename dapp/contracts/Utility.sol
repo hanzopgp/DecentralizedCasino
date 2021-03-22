@@ -9,13 +9,20 @@ contract Utility{
 
     //Variables
     uint256 randomId = 0;
-    uint256 public maximumBetValue = 10 ether;
-    uint256 public minimumBetValue = 0 ether;
+    uint16 public maximumTokenValue = 100;
+    uint16 public minimumTokenValue = 1;
 
     //Modifiers
-    modifier isEnoughMoney(uint money){
-        require(money >= minimumBetValue, "Too low bet value");
-        require(money <= maximumBetValue, "Too high bet value");
+    modifier isEnoughMoneyAndToken(uint value, uint nbtoken, uint tokenPrice){
+        require(value >= minimumTokenValue*tokenPrice, "Too low bet value");
+        require(value <= maximumTokenValue*tokenPrice, "Too high bet value");
+        require(nbtoken >= minimumTokenValue, "Too low token value");
+        require(nbtoken <= maximumTokenValue, "Too high token value");
+        _;
+    }
+
+    modifier enoughTokenBalance(uint tokenamount, uint tokenbalance){
+        require(tokenbalance >= tokenamount, "Not enough token in balance");
         _;
     }
 

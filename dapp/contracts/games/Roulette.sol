@@ -54,9 +54,8 @@ contract Roulette is Game, Utility, Ownable {
                  string calldata _typeOfCard, 
                  uint8 _dataOfBet, 
                  uint256 tokenAmount) external onlyOwner 
-                                         isEnoughMoney(tokenAmount) 
-                                         currentBetIsNotSet(_playersBet[player].numberOfCard != 0) 
-                                         returns(bool) {
+                                               currentBetIsNotSet(_playersBet[player].numberOfCard != 0) 
+                                               returns(bool) {
         uint numberOfCard = 0;
         uint betData = 0;
         if(compareStrings(_typeOfCard, "Single")){
