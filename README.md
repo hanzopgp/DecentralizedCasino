@@ -5,9 +5,8 @@
 1. [Presentation](#presentation)
 2. [Project architecture](#project-architecture)
 3. [How to use](#how-does-it-work)
-4. [Commands](#commands)
-5. [Details](#details)
-6. [Links](#links)
+4. [Features](#Features)
+5. [Links](#links)
 
 ## Presentation 
 
@@ -39,15 +38,13 @@ DecentralizedCasino/
 >For testing purposes, we are using truffle/ganache/nodejs to deploy our smart contracts on a local blockchain, with test accounts.
 Most of the commands used can be found in MEMO.txt file.
 
-## ToDo features
+## Features
 
 - Backend casino in solidity
 - Truffle tests with local blockchain
-- Frontend (js/python/java?)
-- Gas optimisation (external, view, memory...)
-- Security (SafeMath, Ownable...)
+- Gas optimisation (external, view, memory, uint struct...)
+- Security (SafeMath, Ownable, ERC20...)
 - Payable functions
-- Safe randomness (ChainLink)
 - Tokens as credits for the games (Using ERC21)
 
 ## Links
