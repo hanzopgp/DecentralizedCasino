@@ -26,6 +26,7 @@ DecentralizedCasino/
 │       │       ├── Utility.sol        (Contains utility functions)               
 │   	├── migrations/                (Contains the js code to deploy our contracts)
 │       ├── test/                      (Contains js tests files ran by truffle test command)
+│       ├── build/                     (Contains the json files after being compiled for our tests)
 │       ├── client/                    (Contains our frontend application)
 │       │        ├── src/              (Contains contracts build and react files)
 │       │        │     ├── contracts/  (Contains the json files of the compiled contracts)
