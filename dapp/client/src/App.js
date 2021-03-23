@@ -16,9 +16,9 @@ function App() {
 
   const stepComponents = {
     'ADD_FUNDS': () => (<AddFundsToContract { ...{web3, instance, accounts, nextStep} } />),
-    'WITHDRAW_FUNDS': () => {},
-    'SET_GAME': () => {},
-    'BUY_TOKEN': () => {},
+    'WITHDRAW_FUNDS': () => (<withdrawFundsOfContract { ...{web3, instance, accounts, nextStep} } />),
+    'SET_GAME': () => {}/*(<AddFundsToContract { ...{web3, instance, accounts, nextStep} } />),*/,
+    'BUY_TOKEN': () => {}/*(<AddFundsToContract { ...{web3, instance, accounts, nextStep} } />),*/,
     'BET': () => {},
     'PLAY': () => {},
   }
