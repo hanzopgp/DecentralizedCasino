@@ -28,6 +28,9 @@ DecentralizedCasino/
 │       ├── test/                      (Contains js tests files ran by truffle test command)
 │       ├── client/                    (Contains our frontend application)
 │       │        ├── src/              (Contains contracts build and react files)
+│       │        │     ├── contracts/  (Contains the json files of the compiled contracts)
+│       │        │     ├── components/ (Contains the react components)
+│       │        │     └── App.js      (Main javascript file of the app)
 │       │        └── public/           (Contains the public frontend element like index.html)
 │       └── truffle-config.js 
 ├── README.md		          
