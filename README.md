@@ -58,10 +58,9 @@ DecentralizedCasino/
 - It should open a new window "localhost:3000"
 - You can now use the decentralized casino application !
 
-## How to use
-
+>For the backend we used Solidity.
 >For testing purposes, we are using truffle/ganache/nodejs to deploy our smart contracts on a local blockchain, with test accounts.
-Most of the commands used can be found in MEMO.txt file.
+>For the frontend we used truffle react box.
 
 ## Features
 
