@@ -1,37 +1,6 @@
 const Casino = artifacts.require("Casino");
 const utils = require("./util/utils");
-console.log("test");
-console.log("test");console.log("test");
-console.log("test");console.log("test");
-console.log("test");console.log("test");
-console.log("test");console.log("test");
-console.log("test");console.log("test");
-console.log("test");console.log("test");
-console.log("test");console.log("test");
-console.log("test");console.log("test");
-console.log("test");console.log("test");
-console.log("test");console.log("test");
-console.log("test");console.log("test");
-console.log("test");console.log("test");
-console.log("test");console.log("test");
-console.log("test");console.log("test");
-console.log("test");console.log("test");
-console.log("test");console.log("test");
-console.log("test");console.log("test");
-console.log("test");console.log("test");
-console.log("test");console.log("test");
-console.log("test");console.log("test");
-console.log("test");console.log("test");
-console.log("test");console.log("test");
-console.log("test");console.log("test");
-console.log("test");console.log("test");
-console.log("test");console.log("test");
-console.log("test");console.log("test");
-console.log("test");console.log("test");
-console.log("test");console.log("test");
-console.log("test");console.log("test");
-console.log("test");console.log("test");
-console.log("test");
+
 contract("Casino", (accounts) => {
     let [a, b, c] = accounts;
     let casino;
