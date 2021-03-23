@@ -49,6 +49,7 @@ contract("Casino", (accounts) => {
         const result = await casino.playGame({from: Alice});
         //console.log(formatOutput("-->Le resultat de la partie est " + result, currentUser));
         //console.log(formatOutput("-->Vous avez gagne " + result, currentUser));
+        return [numberOfTokensBought, gameTypeSet, bet, result];
     }
 
     async function bobPlaysDice(){
@@ -67,6 +68,7 @@ contract("Casino", (accounts) => {
         const result = await casino.playGame({from: Bob});
         //console.log(formatOutput("-->Le resultat de la partie est " + result, currentUser));
         //console.log(formatOutput("-->Vous avez gagne " + result, currentUser));
+        return [numberOfTokensBought, gameTypeSet, bet, result];
     }
 
     function formatOutput(msg, user){
