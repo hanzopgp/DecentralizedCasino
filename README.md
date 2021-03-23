@@ -4,9 +4,10 @@
 
 1. [Presentation](#presentation)
 2. [Project architecture](#project-architecture)
-3. [How to use](#how-does-it-work)
-4. [Features](#Features)
-5. [Links](#links)
+3. [How to install](#how-to-install)
+4. [How to use](#how-does-it-work)
+5. [Features](#Features)
+6. [Links](#links)
 
 ## Presentation 
 
@@ -35,6 +36,25 @@ DecentralizedCasino/
 └── LICENCE  
 </pre></code>
 
+## How to install
+
+- Open a terminal
+- `git clone https://github.com/hanzopgp/DecentralizedCasino`
+- `npm install -g truffle`
+- `npm install -g hd-wallet`
+- `npm install -g ethereumjs-testrpc`
+- `cd DecentralizedCasino/dapp`
+- `truffle unbox truffle-box-react` (Don't override anything)
+- `cd client`
+- `npm install`
+- `cd ..`
+- `truffle develop`
+- `migrate` (your contracts are deployed)
+- Open a new terminal in dapp
+- `npm run start` (your server is on)
+- It should open a new window "localhost:3000"
+- You can now use the decentralized casino application !
+
 ## How to use
 
 >For testing purposes, we are using truffle/ganache/nodejs to deploy our smart contracts on a local blockchain, with test accounts.
@@ -42,6 +62,7 @@ Most of the commands used can be found in MEMO.txt file.
 
 ## Features
 
+- Frontend application to interact with deployed contracts
 - Backend casino in solidity
 - Truffle tests with local blockchain
 - Gas optimisation (external, view, memory, uint struct...)
