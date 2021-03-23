@@ -15,7 +15,7 @@ function App() {
   ]
 
   const stepComponents = {
-    'ADD_FUNDS': () => (<AddFundsToContract { ...{instance, accounts, nextStep} } />),
+    'ADD_FUNDS': () => (<AddFundsToContract { ...{web3, instance, accounts, nextStep} } />),
     'WITHDRAW_FUNDS': () => {},
     'SET_GAME': () => {},
     'BUY_TOKEN': () => {},
@@ -29,7 +29,7 @@ function App() {
   const [actualStepIndex, setActualStepIndex] = useState(0);
 
   const nextStep = () => {
-    setActualStepIndex(actualStepIndex++)
+    setActualStepIndex(actualStepIndex + 1)
   }
 
   useEffect(() => {
@@ -61,6 +61,7 @@ function App() {
   }
   return (
     <div className="App">
+      <div></div>
       {stepComponents[stepNames[actualStepIndex]]()}
     </div>
   );
