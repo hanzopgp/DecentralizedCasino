@@ -84,7 +84,7 @@ contract("Casino", (accounts) => {
     console.log(formatOutput("-->Vous deployez votre casino sur la blockchain", currentUser));
     const deployCasinoRes = deployCasino();
     deployCasinoRes.then((value) => {
-    	console.log("ok"); //Je trouve pas comment print les resultats des asyncs
+    	console.log(value); //Je trouve pas comment print les resultats des asyncs
     })
     console.log("===Fin de la demonstration===");
 
