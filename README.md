@@ -32,7 +32,7 @@ DecentralizedCasino/
 │       │        │     ├── components/ (Contains the react components)
 │       │        │     └── App.js      (Main javascript file of the app)
 │       │        └── public/           (Contains the public frontend element like index.html)
-│       └── truffle-config.js 
+│       └── truffle-config.js          (Contains the config for truffle, like the host and port)
 ├── README.md		          
 ├── MEMO.txt
 ├── TODO.txt
