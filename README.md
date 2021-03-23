@@ -18,8 +18,8 @@
 <pre><code>
 DecentralizedCasino/
 ├── dapp/
-│   	├── contracts/
-│       │       ├── games/ 	       (Contains game model solidity code)   
+│   	├── contracts/               (Contains all the backend in solidity)
+│       │       ├── games/ 	       (Contains game model)   
 │       │       ├── lib/               (Contains libs like safemath, ownable...)
 │       │       ├── token/             (Contains the token files of the casino)
 │       │       ├── Casino.sol         (Main solidity file)
