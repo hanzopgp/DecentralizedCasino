@@ -44,24 +44,25 @@ DecentralizedCasino/
 
 - Open a terminal
 - `git clone https://github.com/hanzopgp/DecentralizedCasino`
-- `npm install -g truffle`
-- `npm install -g hd-wallet`
-- `npm install -g ethereumjs-testrpc`
+- `npm install npm@latest -g` (Installs node package manager)
+- `npm install -g truffle` (Installs truffle so we can compile and migrate)
+- `npm install -g hd-wallet` (Installs hd-wallet)
+- `npm install -g ethereumjs-testrpc`(Installs testrpc so we can test our frontend app)
 - `cd DecentralizedCasino/dapp`
-- `truffle unbox truffle-box-react` (Don't override anything)
+- `truffle unbox truffle-box-react` (Don't override anything ! Installs the truffle box in the project)
 - `cd client`
-- `npm install`
+- `npm install` (Installs all the dependencies)
 - `cd ..`
-- `truffle develop`
-- `migrate` (your contracts are deployed)
+- `truffle develop` (Launch truffle console)
+- `migrate` (Compile and migrate your contracts)
 - Open a new terminal in dapp
-- `npm run start` (your server is on)
+- `npm run start` (Runs your local server for the frontend application) 
 - It should open a new window "localhost:3000"
 - You can now use the decentralized casino application !
 
->For the backend we used Solidity.
->For testing purposes, we are using truffle/ganache/nodejs to deploy our smart contracts on a local blockchain, with test accounts.
->For the frontend we used truffle react box.
+>- For the backend we used Solidity.
+>- For testing purposes, we are using truffle/ganache/nodejs to deploy our smart contracts on a local blockchain, with test accounts.
+>- For the frontend we used truffle react box.
 
 ## Features
 
@@ -83,3 +84,6 @@ DecentralizedCasino/
 - https://cryptozombies.io/
 - https://www.dappuniversity.com/
 - https://www.trufflesuite.com/
+- https://www.trufflesuite.com/boxes/react
+- https://www.npmjs.com/package/hd-wallet
+- https://www.npmjs.com/package/ethereumjs-testrpc
