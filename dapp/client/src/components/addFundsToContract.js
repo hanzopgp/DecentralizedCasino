@@ -2,24 +2,9 @@ import React, { useState, createRef, useEffect } from 'react';
 import TextField from '@material-ui/core/TextField';
 import { Button } from "@material-ui/core";
 
-function AddFundsToContract({web3, instance, accounts, nextStep}) {
+function AddFundsToContract({web3, instance, accounts, nextStep, balanceOwner, balanceAlice, balanceBob}) {
   let amount = createRef(0);
   let address = createRef("");
-
-  const [balanceOwner, setBalanceOwner] = useState(0);
-  const [balanceAlice, setBalanceAlice] = useState(0);
-  const [balanceBob, setBalanceBob] = useState(0);
-
-  useEffect(() => {
-    (async () => {
-      const balanceOwner = web3.utils.fromWei((await web3.eth.getBalance(accounts[0])), 'ether');
-      setBalanceOwner(balanceOwner);
-      const balanceAlice = web3.utils.fromWei((await web3.eth.getBalance(accounts[1])), 'ether');
-      setBalanceAlice(balanceAlice);
-      const balanceBob = web3.utils.fromWei((await web3.eth.getBalance(accounts[2])), 'ether'); 
-      setBalanceBob(balanceBob);
-    })()
-  }, [])
 
   const addFundsCasinoBalance = async() => {
     try {
@@ -138,10 +123,6 @@ function AddFundsToContract({web3, instance, accounts, nextStep}) {
         <div>
           <TextField inputRef={address}/>
         </div>
-          <p>Owner address: {accounts[0]}, Wallet balance: {Number.parseFloat(balanceOwner).toFixed(4)} ether</p>
-          <p>Alice address: {accounts[1]}, Wallet balance: {Number.parseFloat(balanceAlice).toFixed(4)} ether</p>
-          <p>Bob address: {accounts[2]}, Wallet balance: {Number.parseFloat(balanceBob).toFixed(4)} ether</p>
-
         <p>Amount sent to fill contract</p>
         <div>
           <TextField  type="number" inputRef={amount}/>

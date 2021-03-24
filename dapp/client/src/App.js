@@ -2,34 +2,48 @@ import React, { useState, useEffect } from 'react';
 import Casino from "./contracts/Casino.json";
 import getWeb3 from "./getWeb3";
 import AddFundsToContract from './components/addFundsToContract';
+import SetGame from './components/setGame';
 import "./App.css";
+import "./tailwind.output.css";
+import { Button, Divider } from '@material-ui/core';
 
 function App() {
   const stepNames = [
     'ADD_FUNDS',
-    'WITHDRAW_FUNDS',
     'SET_GAME',
     'BUY_TOKEN',
     'BET',
     'PLAY',
+    'WITHDRAW_FUNDS',
   ]
 
   const stepComponents = {
     'ADD_FUNDS': () => (<AddFundsToContract { ...{web3, instance, accounts, nextStep} } />),
-    'WITHDRAW_FUNDS': () => (<withdrawFundsOfContract { ...{web3, instance, accounts, nextStep} } />),
-    'SET_GAME': () => {}/*(<AddFundsToContract { ...{web3, instance, accounts, nextStep} } />),*/,
+    'SET_GAME': () => (<SetGame { ...{web3, instance, accounts, nextStep} } />),
     'BUY_TOKEN': () => {}/*(<AddFundsToContract { ...{web3, instance, accounts, nextStep} } />),*/,
     'BET': () => {},
     'PLAY': () => {},
+    'WITHDRAW_FUNDS': () => (<withdrawFundsOfContract { ...{web3, instance, accounts, nextStep} } />),
   }
 
   const [web3, setWeb3] = useState(null);
   const [accounts, setAccounts] = useState(null);
   const [instance, setInstance] = useState(null);
   const [actualStepIndex, setActualStepIndex] = useState(0);
+  const [accountsInfo, setAccountsInfo] = useState(null);
 
   const nextStep = () => {
     setActualStepIndex(actualStepIndex + 1)
+  }
+
+  const stepBack = () => {
+    if (actualStepIndex > 0) {
+      setActualStepIndex(actualStepIndex - 1)
+    }
+  }
+
+  const goToStep = (ind) => {
+    setActualStepIndex(ind)
   }
 
   useEffect(() => {
@@ -47,6 +61,14 @@ function App() {
           Casino.abi,
           deployedNetwork && deployedNetwork.address,
         ));
+
+        let accountsInfo = await Promise.all(accounts.map(async (account) => {
+          return {
+            account,
+            balance: web3.utils.fromWei((await web3.eth.getBalance(account)), 'ether')
+          }
+        }))
+        setAccountsInfo(accountsInfo)
       } catch (error) {
         alert(
           `Failed to load web3, accounts, or contract. Check console for details.`,
@@ -60,9 +82,35 @@ function App() {
     return <div>Loading Web3, accounts, and contract...</div>;
   }
   return (
-    <div className="App">
-      <div></div>
-      {stepComponents[stepNames[actualStepIndex]]()}
+    <div className="App h-full w-full flex justify-center align-center">
+      <div className="w-1/2 h-full">
+        {stepComponents[stepNames[actualStepIndex]]()}
+      </div>
+      <div className="bg-gray-400 w-1/2 max-h-full overflow-y-auto">
+        <Button className="bg-blue-400" onClick={stepBack}> Back </Button>
+        <Divider/>
+        {/* {navigateToAllSteps} */}
+        {
+        stepNames.map((name, index) => {
+          return (
+            <div className="bg-blue-400 w-full" key={index}>
+              {index !== 0 && <Divider/>}
+              <Button onClick={() => goToStep(index)}>{name}</Button>
+            </div>
+          )})
+        }
+        {accountsInfo &&
+        accountsInfo.map(({account, balance}, index) => {
+          return (
+            <div key={index}>
+              {index !== 0 && <Divider/>}
+              <p>{index === 0 ? "Owner address" : "Account " + index}</p>
+              <p>{account}</p>
+              <p>Wallet balance: {Number.parseFloat(balance).toFixed(4)} ether</p>
+            </div>
+          )})
+        }
+      </div>
     </div>
   );
 }

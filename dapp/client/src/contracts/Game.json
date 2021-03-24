@@ -106,15 +106,15 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"player\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"betInfo\",\"type\":\"string\"},{\"internalType\":\"uint8\",\"name\":\"betData\",\"type\":\"uint8\"},{\"internalType\":\"uint256\",\"name\":\"money\",\"type\":\"uint256\"}],\"name\":\"bet\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"player\",\"type\":\"address\"}],\"name\":\"cancelBet\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"player\",\"type\":\"address\"}],\"name\":\"isBetSet\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"player\",\"type\":\"address\"}],\"name\":\"play\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/hanzo/Desktop/DecentralizedCasino/dapp/contracts/games/Game.sol\":\"Game\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/hanzo/Desktop/DecentralizedCasino/dapp/contracts/games/Game.sol\":{\"keccak256\":\"0x8cf2fbac6aa555dd45988241b1b4ab368b5174368ba7938ac99ab106240c08ce\",\"urls\":[\"bzz-raw://921cb16956b12e13f40171d2ff254a8fd72ca8508988ea49672b490fcd66975e\",\"dweb:/ipfs/QmSNqZVfkNQkLHvKrS8c3XqnaJhCRxduuu7HmC6BpbASEQ\"]}},\"version\":1}",
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"player\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"betInfo\",\"type\":\"string\"},{\"internalType\":\"uint8\",\"name\":\"betData\",\"type\":\"uint8\"},{\"internalType\":\"uint256\",\"name\":\"money\",\"type\":\"uint256\"}],\"name\":\"bet\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"player\",\"type\":\"address\"}],\"name\":\"cancelBet\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"player\",\"type\":\"address\"}],\"name\":\"isBetSet\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"player\",\"type\":\"address\"}],\"name\":\"play\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/ujim/DecentralizedCasino/dapp/contracts/games/Game.sol\":\"Game\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/ujim/DecentralizedCasino/dapp/contracts/games/Game.sol\":{\"keccak256\":\"0x8cf2fbac6aa555dd45988241b1b4ab368b5174368ba7938ac99ab106240c08ce\",\"urls\":[\"bzz-raw://921cb16956b12e13f40171d2ff254a8fd72ca8508988ea49672b490fcd66975e\",\"dweb:/ipfs/QmSNqZVfkNQkLHvKrS8c3XqnaJhCRxduuu7HmC6BpbASEQ\"]}},\"version\":1}",
   "bytecode": "0x",
   "deployedBytecode": "0x",
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "pragma solidity ^0.5.0;\n\n//game interface\ninterface Game{ \n\n    //returns true if the user has set his bet\n    function isBetSet(address player) external view returns(bool);\n\n    //returns the bet which has been set\n    function bet(address player, string calldata betInfo, uint8 betData, uint256 money) external returns(bool);\n\n    //returns the amount of the canceled bet (0 if no bet)\n    function cancelBet(address player) external returns(uint256);\n\n    //returns the result and the amount of money the player has won, the current bet is then deleted \n    function play(address player) external returns(uint8 , uint256);\n\n}\n",
-  "sourcePath": "/home/hanzo/Desktop/DecentralizedCasino/dapp/contracts/games/Game.sol",
+  "sourcePath": "/home/ujim/DecentralizedCasino/dapp/contracts/games/Game.sol",
   "ast": {
-    "absolutePath": "/home/hanzo/Desktop/DecentralizedCasino/dapp/contracts/games/Game.sol",
+    "absolutePath": "/home/ujim/DecentralizedCasino/dapp/contracts/games/Game.sol",
     "exportedSymbols": {
       "Game": [
         1054
@@ -588,7 +588,7 @@
   },
   "legacyAST": {
     "attributes": {
-      "absolutePath": "/home/hanzo/Desktop/DecentralizedCasino/dapp/contracts/games/Game.sol",
+      "absolutePath": "/home/ujim/DecentralizedCasino/dapp/contracts/games/Game.sol",
       "exportedSymbols": {
         "Game": [
           1054
@@ -1103,7 +1103,7 @@
   },
   "networks": {},
   "schemaVersion": "3.3.4",
-  "updatedAt": "2021-03-23T14:40:45.042Z",
+  "updatedAt": "2021-03-24T00:04:08.913Z",
   "devdoc": {
     "methods": {}
   },

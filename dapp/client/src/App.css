@@ -1,9 +1,11 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.App {
+  min-height: 100vh;
+  text-align: center;
 }
 
 .App-header {

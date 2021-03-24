@@ -32,15 +32,15 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[],\"name\":\"maximumTokenValue\",\"outputs\":[{\"internalType\":\"uint16\",\"name\":\"\",\"type\":\"uint16\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"minimumTokenValue\",\"outputs\":[{\"internalType\":\"uint16\",\"name\":\"\",\"type\":\"uint16\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/hanzo/Desktop/DecentralizedCasino/dapp/contracts/Utility.sol\":\"Utility\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/hanzo/Desktop/DecentralizedCasino/dapp/contracts/Utility.sol\":{\"keccak256\":\"0x777192f7299265a514a8bf4624891eb37b9adbff68b1a6bfe848b4465c7e69fe\",\"urls\":[\"bzz-raw://f90131a209069fa2cfacfd568ec530358a747b0d20aec57e3554f6885fac5198\",\"dweb:/ipfs/QmcDhHiGztz754pNEVJmcWGbYctLftZjSPeLZvXnZrg5ok\"]},\"/home/hanzo/Desktop/DecentralizedCasino/dapp/contracts/lib/SafeMath.sol\":{\"keccak256\":\"0xa8edc46d1cf0d59cf772d95b4b1f80fe70644cd78e226b3a7bbd31acf2053f16\",\"urls\":[\"bzz-raw://4674852b6d21232bc2ade95192a1f029e8186aeb2c6ab94b2b98e012872d0c8b\",\"dweb:/ipfs/QmYB5TagFqNEucU5tDN3LMXFQnzUspzZjN1waM4RRE8oR9\"]}},\"version\":1}",
-  "bytecode": "0x6080604052600080556103e8600160006101000a81548161ffff021916908361ffff16021790555060018060026101000a81548161ffff021916908361ffff16021790555034801561005057600080fd5b5060dc8061005f6000396000f3fe6080604052348015600f57600080fd5b506004361060325760003560e01c806332994a271460375780637579000b14605b575b600080fd5b603d607f565b604051808261ffff1661ffff16815260200191505060405180910390f35b60616093565b604051808261ffff1661ffff16815260200191505060405180910390f35b600160029054906101000a900461ffff1681565b600160009054906101000a900461ffff168156fea265627a7a72315820f451afb151a949cce10a21107bf79ccdc9f3f5b8dd5562717e8b45c0acec4d3664736f6c63430005100032",
-  "deployedBytecode": "0x6080604052348015600f57600080fd5b506004361060325760003560e01c806332994a271460375780637579000b14605b575b600080fd5b603d607f565b604051808261ffff1661ffff16815260200191505060405180910390f35b60616093565b604051808261ffff1661ffff16815260200191505060405180910390f35b600160029054906101000a900461ffff1681565b600160009054906101000a900461ffff168156fea265627a7a72315820f451afb151a949cce10a21107bf79ccdc9f3f5b8dd5562717e8b45c0acec4d3664736f6c63430005100032",
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[],\"name\":\"maximumTokenValue\",\"outputs\":[{\"internalType\":\"uint16\",\"name\":\"\",\"type\":\"uint16\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"minimumTokenValue\",\"outputs\":[{\"internalType\":\"uint16\",\"name\":\"\",\"type\":\"uint16\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/ujim/DecentralizedCasino/dapp/contracts/Utility.sol\":\"Utility\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/ujim/DecentralizedCasino/dapp/contracts/Utility.sol\":{\"keccak256\":\"0x777192f7299265a514a8bf4624891eb37b9adbff68b1a6bfe848b4465c7e69fe\",\"urls\":[\"bzz-raw://f90131a209069fa2cfacfd568ec530358a747b0d20aec57e3554f6885fac5198\",\"dweb:/ipfs/QmcDhHiGztz754pNEVJmcWGbYctLftZjSPeLZvXnZrg5ok\"]},\"/home/ujim/DecentralizedCasino/dapp/contracts/lib/SafeMath.sol\":{\"keccak256\":\"0xa8edc46d1cf0d59cf772d95b4b1f80fe70644cd78e226b3a7bbd31acf2053f16\",\"urls\":[\"bzz-raw://4674852b6d21232bc2ade95192a1f029e8186aeb2c6ab94b2b98e012872d0c8b\",\"dweb:/ipfs/QmYB5TagFqNEucU5tDN3LMXFQnzUspzZjN1waM4RRE8oR9\"]}},\"version\":1}",
+  "bytecode": "0x6080604052600080556103e8600160006101000a81548161ffff021916908361ffff16021790555060018060026101000a81548161ffff021916908361ffff16021790555034801561005057600080fd5b5060dc8061005f6000396000f3fe6080604052348015600f57600080fd5b506004361060325760003560e01c806332994a271460375780637579000b14605b575b600080fd5b603d607f565b604051808261ffff1661ffff16815260200191505060405180910390f35b60616093565b604051808261ffff1661ffff16815260200191505060405180910390f35b600160029054906101000a900461ffff1681565b600160009054906101000a900461ffff168156fea265627a7a72315820ffb97bab42f29dcbc4f7b02fa3cebb26263f14b332b28d87d5ab7c7c5f34c2c364736f6c63430005100032",
+  "deployedBytecode": "0x6080604052348015600f57600080fd5b506004361060325760003560e01c806332994a271460375780637579000b14605b575b600080fd5b603d607f565b604051808261ffff1661ffff16815260200191505060405180910390f35b60616093565b604051808261ffff1661ffff16815260200191505060405180910390f35b600160029054906101000a900461ffff1681565b600160009054906101000a900461ffff168156fea265627a7a72315820ffb97bab42f29dcbc4f7b02fa3cebb26263f14b332b28d87d5ab7c7c5f34c2c364736f6c63430005100032",
   "sourceMap": "55:2415:1:-;;;222:1;203:20;;263:4;229:38;;;;;;;;;;;;;;;;;;;;307:1;273:35;;;;;;;;;;;;;;;;;;;;55:2415;8:9:-1;5:2;;;30:1;27;20:12;5:2;55:2415:1;;;;;;;",
   "deployedSourceMap": "55:2415:1:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;55:2415:1;;;;;;;;;;;;;;;;;;;;;;;;273:35;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;229:38;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;273:35;;;;;;;;;;;;;:::o;229:38::-;;;;;;;;;;;;;:::o",
   "source": "pragma solidity ^0.5.0;\n\nimport \"./lib/SafeMath.sol\";\n\ncontract Utility{\n\n    using SafeMath for uint256; //Using SafeMath lib to avoid overflow errors\n    using SafeMath for uint8;\n\n    //Variables\n    uint256 randomId = 0;\n    uint16 public maximumTokenValue = 1000;\n    uint16 public minimumTokenValue = 1;\n\n    //Modifiers\n    modifier isEnoughMoneyAndToken(uint value, uint nbtoken, uint tokenPrice){\n        require(value >= minimumTokenValue*tokenPrice, \"Too low bet value\");\n        require(value <= maximumTokenValue*tokenPrice, \"Too high bet value\");\n        require(nbtoken >= minimumTokenValue, \"Too low token value\");\n        require(nbtoken <= maximumTokenValue, \"Too high token value\");\n        _;\n    }\n\n    modifier enoughTokenBalance(uint tokenamount, uint tokenbalance){\n        require(tokenbalance >= tokenamount, \"Not enough token in balance\");\n        _;\n    }\n\n    modifier currentBetIsNotSet(bool betIsSet){\n        require(betIsSet == false, \"There is already a bet ready\");\n        _;\n    }\n\n    modifier currentBetIsSet(bool betIsSet){\n        require(betIsSet == true, \"You need to bet before playing\"); \n        _;\n    }\n\n    //Utility functions\n\tfunction randomUintBetween(uint8 min, uint8 max) internal returns(uint8){\n\t\trandomId = randomId.add(1);\n\t\treturn uint8((uint(keccak256(abi.encodePacked(now, msg.sender, randomId))) % max ).add(min));\n\t}\n\n    function compareStrings(string memory a, string memory b) internal pure returns(bool){\n        return keccak256(bytes(a)) == keccak256(bytes(b));\n    }\n\n\tfunction stringToUint(string memory s) internal pure returns (uint256) {\n        bytes memory b = bytes(s);\n        uint256 result = 0;\n        for (uint i = 0; i < b.length; i = i.add(1)) {\n            uint c = uint(uint8(b[i])); //Conversion trick\n            if (c >= 48 && c <= 57) {\n                result = result.mul(10 + c - 48);\n            }\n        }\n    }\n\n    function uintToString(uint _i) internal pure returns (string memory) {\n        uint256 number = _i;\n        if (number == 0) {\n            return \"0\";\n        }\n        uint256 j = number;\n        uint256 len;\n        while (j != 0) {\n            len = len.add(1);\n            j = j.div(10);\n        }\n        bytes memory bstr = new bytes(len);\n        uint256 k = len.sub(1);\n        while (number != 0) {\n            bstr[k = k.sub(1)] = byte(uint8(48 + number % 10));\n            number = number.div(10);\n        }\n        return string(bstr);\n    }\n\n\n\n}\n",
-  "sourcePath": "/home/hanzo/Desktop/DecentralizedCasino/dapp/contracts/Utility.sol",
+  "sourcePath": "/home/ujim/DecentralizedCasino/dapp/contracts/Utility.sol",
   "ast": {
-    "absolutePath": "/home/hanzo/Desktop/DecentralizedCasino/dapp/contracts/Utility.sol",
+    "absolutePath": "/home/ujim/DecentralizedCasino/dapp/contracts/Utility.sol",
     "exportedSymbols": {
       "Utility": [
         802
@@ -61,7 +61,7 @@
         "src": "0:23:1"
       },
       {
-        "absolutePath": "/home/hanzo/Desktop/DecentralizedCasino/dapp/contracts/lib/SafeMath.sol",
+        "absolutePath": "/home/ujim/DecentralizedCasino/dapp/contracts/lib/SafeMath.sol",
         "file": "./lib/SafeMath.sol",
         "id": 485,
         "nodeType": "ImportDirective",
@@ -4502,7 +4502,7 @@
   },
   "legacyAST": {
     "attributes": {
-      "absolutePath": "/home/hanzo/Desktop/DecentralizedCasino/dapp/contracts/Utility.sol",
+      "absolutePath": "/home/ujim/DecentralizedCasino/dapp/contracts/Utility.sol",
       "exportedSymbols": {
         "Utility": [
           802
@@ -4526,7 +4526,7 @@
       {
         "attributes": {
           "SourceUnit": 2359,
-          "absolutePath": "/home/hanzo/Desktop/DecentralizedCasino/dapp/contracts/lib/SafeMath.sol",
+          "absolutePath": "/home/ujim/DecentralizedCasino/dapp/contracts/lib/SafeMath.sol",
           "file": "./lib/SafeMath.sol",
           "scope": 803,
           "symbolAliases": [
@@ -9215,7 +9215,7 @@
   },
   "networks": {},
   "schemaVersion": "3.3.4",
-  "updatedAt": "2021-03-23T14:40:45.036Z",
+  "updatedAt": "2021-03-24T00:04:08.907Z",
   "devdoc": {
     "methods": {}
   },
