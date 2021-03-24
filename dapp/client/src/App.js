@@ -61,7 +61,7 @@ function App() {
   useEffect(() => {
     (async () => {
       try {
-        
+
         let web3 = await getWeb3();
         setWeb3(web3);
 
@@ -96,13 +96,14 @@ function App() {
     return <div>Loading Web3, accounts, and contract...</div>;
   }
   return (
-    <div className="App h-full w-full flex justify-center align-center">
-      <div className="w-1/2 h-full">
+    <div className="App h-full w-full flex justify-center align-center bg-green-200">
+
+      <div className="w-2/3 h-full">
         {stepComponents[stepNames[actualStepIndex]]()}
+        <Button onClick={stepBack}>Back</Button>
       </div>
-      <div className="bg-gray-400 w-1/2 max-h-full overflow-y-auto">
-        <Button className="bg-blue-400" onClick={stepBack}> Back </Button>
-        <Divider/>
+
+      <div className="bg-gray-400 w-1/3 max-h-full overflow-y-auto"> 
         {/* {navigateToAllSteps} */}
         {
         stepNames.map((name, index) => {
@@ -125,6 +126,7 @@ function App() {
           )})
         }
       </div>
+
     </div>
   );
 }
