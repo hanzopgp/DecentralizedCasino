@@ -48,10 +48,12 @@ DecentralizedCasino/
 - `npm install -g truffle` (Installs truffle so we can compile and migrate)
 - `npm install -g hd-wallet` (Installs hd-wallet)
 - `npm install -g ethereumjs-testrpc`(Installs testrpc so we can test our frontend app)
+- `npm install -g tailwind`(Installs tailwind so we can do a quick css design)
 - `cd DecentralizedCasino/dapp`
 - `truffle unbox truffle-box-react` (Don't override anything ! Installs the truffle box in the project)
 - `cd client`
 - `npm install` (Installs all the dependencies)
+- `npx tailwindcss-cli@latest build -o tailwind.output.css` (Builds the css files)
 - `cd ..`
 - `truffle develop` (Launch truffle console)
 - `migrate` (Compile and migrate your contracts)
