@@ -58,7 +58,7 @@ DecentralizedCasino/
 - `cd ..`
 - `truffle develop` (Launch truffle console)
 - `migrate` (Compilse and migrates your contracts)
-- Open a new terminal in dapp
+- Open a new terminal in client/
 - `npm run start` (Runs your local server for the frontend application) 
 - It should open a new window "localhost:3000"
 - You can now use the decentralized casino application !
