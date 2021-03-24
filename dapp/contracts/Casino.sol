@@ -109,7 +109,7 @@ contract Casino is Utility, Ownable{ //Ownable allows using onlyOwner modifier s
 		(uint8 result, uint256 tokenEarned) = gamesMap[msg.sender].play(msg.sender);
 		emit EventResult(msg.sender, result);
 		if(tokenEarned > 0){
-			msg.sender.transfer(tokenEarned * tokenPrice);
+			msg.sender.transfer(tokenEarned * tokenPrice - gasFee);
 			emit EventPlayerReceives(msg.sender, tokenEarned);
 		}
 		return (result, tokenEarned);

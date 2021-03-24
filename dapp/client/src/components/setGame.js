@@ -1,4 +1,4 @@
-import React, { createRef, useEffect } from 'react';
+import React, { createRef } from 'react';
 import TextField from '@material-ui/core/TextField';
 import { Button } from "@material-ui/core";
 
@@ -13,32 +13,32 @@ function setGame({nextStep, instance}) {
           from: address.current.value //Ca sera Alice
       });
       console.log(res)
-      alert("Etat de la transaction : "
+      alert("Transaction state : "
             + res
             + "\n"
-            + "Vous avez choisit le jeu : "
+            + "You chosed : "
             + (gameType ===  1 ? "Dice" : "Roulette")
             + " game");
       nextStep();
     } catch(err) {
       console.error(err);
-      alert(/*alert le game type j'imagine*/);
+      alert("Can't set game type ! Open console for infos.");
     }
   }
 
   return (
   <form>
-    <h1> Set game </h1>
+    <h1>Set game</h1>
     <p>Account address</p>
     <div>
       <TextField inputRef={address}/>
     </div>
     <p>Wich game ?</p>
     <div>
-      <Button onClick={() => setGameType(1)}>Dice game</Button>
+      <Button onClick={() => setGameType(1)}>SET DICE GAME</Button>
     </div>
     <div>
-      <Button onClick={() => setGameType(2)}>Roulette game</Button>
+      <Button onClick={() => setGameType(2)}>SET ROULETTE GAME</Button>
     </div>
   </form>
   );

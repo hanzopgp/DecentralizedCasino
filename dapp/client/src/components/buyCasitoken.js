@@ -1,7 +1,6 @@
-import React, { useState, createRef, useEffect } from 'react';
+import React, { createRef } from 'react';
 import TextField from '@material-ui/core/TextField';
 import { Button } from "@material-ui/core";
-import Casitoken from "../contracts/Casitoken.json";
 
 function BuyCasitoken({web3, instance, accounts, nextStep}) {
   let tokenAmount = createRef(0);
@@ -22,19 +21,19 @@ function BuyCasitoken({web3, instance, accounts, nextStep}) {
   			from: address.current.value 
   		});
   		let tokenReceived = (newTokenBalance - initialTokenBalance).toString();
-  		alert("Etat de la transaction : " + res.status + "\n"
-  		    + "Vous avez recu : " + res);
+  		alert("Transaction state : " + res.status + "\n"
+  		    + "You've received : " + tokenReceived);
   		nextStep();
 	} catch(err) {
 	console.error(err);
-	alert(/*alert pas assez d'argent ou valeur token fausse*/);
+	alert("Transaction refused ! Open console for infos.");
 	}
   }
 
   return (
       <form>
 
-        <h1> Add Funds to contract </h1>
+        <h1>Buy Casitokens</h1>
         <p>Account address</p>
         <div>
           <TextField inputRef={address}/>
@@ -48,7 +47,7 @@ function BuyCasitoken({web3, instance, accounts, nextStep}) {
           <TextField type="number" inputRef={tokenAmount}/>
         </div>
     
-        <Button onClick={buyCasitokens}>Add funds to Casino balance</Button>
+        <Button onClick={buyCasitokens}>BUY CASITOKENS</Button>
 
       </form>
   );

@@ -1,4 +1,4 @@
-import React, { useState, createRef, useEffect } from 'react';
+import React, { createRef } from 'react';
 import TextField from '@material-ui/core/TextField';
 import { Button } from "@material-ui/core";
 
@@ -24,7 +24,7 @@ function AddFundsToContract({web3, instance, nextStep}) {
       nextStep();
     } catch(err) {
       console.error(err);
-      alert("The address isn't the Owner's address !");
+      alert("Transaction refused ! Open console for infos.");
     }
   }
 

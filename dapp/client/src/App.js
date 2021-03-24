@@ -1,11 +1,18 @@
 import React, { useState, useEffect } from 'react';
+
 import Casino from "./contracts/Casino.json";
 import getWeb3 from "./getWeb3";
+
 import AddFundsToContract from './components/addFundsToContract';
 import SetGame from './components/setGame';
 import BuyCasitoken from './components/buyCasitoken';
+import BetGame from './components/betGame';
+import PlayGame from './components/playGame';
+import WithdrawFundsOfContract from './components/withdrawFundsOfContract';
+
 import "./App.css";
 import "./tailwind.output.css";
+
 import { Button, Divider } from '@material-ui/core';
 
 function App() {
@@ -22,9 +29,9 @@ function App() {
     'ADD_FUNDS': () => (<AddFundsToContract { ...{web3, instance, accounts, nextStep} } />),
     'SET_GAME': () => (<SetGame { ...{web3, instance, accounts, nextStep} } />),
     'BUY_TOKEN': () => (<BuyCasitoken { ...{web3, instance, accounts, nextStep} } />),
-    'BET': () => {},
-    'PLAY': () => {},
-    'WITHDRAW_FUNDS': () => (<withdrawFundsOfContract { ...{web3, instance, accounts, nextStep} } />),
+    'BET': () => (<BetGame { ...{web3, instance, accounts, nextStep} } />),
+    'PLAY': () => (<PlayGame { ...{web3, instance, accounts, nextStep} } />),
+    'WITHDRAW_FUNDS': () => (<WithdrawFundsOfContract { ...{web3, instance, accounts, nextStep} } />),
   }
 
   const [web3, setWeb3] = useState(null);
@@ -72,7 +79,7 @@ function App() {
         setAccountsInfo(accountsInfo)
       } catch (error) {
         alert(
-          `Failed to load web3, accounts, or contract. Check console for details.`,
+          `Failed to load web3, accounts, or contract ! Check console for details.`,
         );
         console.error(error);
       }
