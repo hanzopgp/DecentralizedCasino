@@ -41,22 +41,27 @@ function App() {
   const [accountsInfo, setAccountsInfo] = useState(null);
 
   const nextStep = () => {
-    setActualStepIndex(actualStepIndex + 1)
+    if(actualStepIndex + 1 > stepComponents.length){
+      setActualStepIndex(actualStepIndex + 1);
+    }else{
+      setActualStepIndex(0);
+    }
   }
 
   const stepBack = () => {
     if (actualStepIndex > 0) {
-      setActualStepIndex(actualStepIndex - 1)
+      setActualStepIndex(actualStepIndex - 1);
     }
   }
 
   const goToStep = (ind) => {
-    setActualStepIndex(ind)
+    setActualStepIndex(ind);
   }
 
   useEffect(() => {
     (async () => {
       try {
+        
         let web3 = await getWeb3();
         setWeb3(web3);
 
@@ -77,6 +82,7 @@ function App() {
           }
         }))
         setAccountsInfo(accountsInfo)
+
       } catch (error) {
         alert(
           `Failed to load web3, accounts, or contract ! Check console for details.`,
