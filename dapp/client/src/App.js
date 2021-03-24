@@ -70,10 +70,7 @@ function App() {
 
         const networkId = await web3.eth.net.getId();
         const deployedNetwork = Casino.networks[networkId];
-        setInstance(new web3.eth.Contract(
-          Casino.abi,
-          deployedNetwork && deployedNetwork.address,
-        ));
+       
 
         let accountsInfo = await Promise.all(accounts.map(async (account) => {
           return {
@@ -84,16 +81,14 @@ function App() {
         setAccountsInfo(accountsInfo)
 
       } catch (error) {
-        alert(
-          `Failed to load web3, accounts, or contract ! Check console for details.`,
-        );
+        alert("Failed to load web3, accounts, or contract ! Check console for details.");
         console.error(error);
       }
     })()
   }, [])
 
   if (!instance) {
-    return <div>Loading Web3, accounts, and contract...</div>;
+        return <div className="text-5xl h-screen flex justify-center align-center m-auto items-center bg-red-400">Loading Web3, accounts, and contract...</div>;
   }
   return (
     <div className="App h-full w-full flex justify-center align-center bg-green-200">
@@ -103,12 +98,12 @@ function App() {
         <Button onClick={stepBack}>Back</Button>
       </div>
 
-      <div className="bg-gray-400 w-1/3 max-h-full overflow-y-auto"> 
+      <div className="bg-yellow-200 w-1/3 max-h-full overflow-y-auto"> 
         {/* {navigateToAllSteps} */}
         {
         stepNames.map((name, index) => {
           return (
-            <div className="bg-blue-400 w-full" key={index}>
+            <div className="bg-blue-300 w-full" key={index}>
               {index !== 0 && <Divider/>}
               <Button onClick={() => goToStep(index)}>{name}</Button>
             </div>
