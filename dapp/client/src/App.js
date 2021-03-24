@@ -3,6 +3,7 @@ import Casino from "./contracts/Casino.json";
 import getWeb3 from "./getWeb3";
 import AddFundsToContract from './components/addFundsToContract';
 import SetGame from './components/setGame';
+import BuyCasitoken from './components/buyCasitoken';
 import "./App.css";
 import "./tailwind.output.css";
 import { Button, Divider } from '@material-ui/core';
@@ -20,7 +21,7 @@ function App() {
   const stepComponents = {
     'ADD_FUNDS': () => (<AddFundsToContract { ...{web3, instance, accounts, nextStep} } />),
     'SET_GAME': () => (<SetGame { ...{web3, instance, accounts, nextStep} } />),
-    'BUY_TOKEN': () => {}/*(<AddFundsToContract { ...{web3, instance, accounts, nextStep} } />),*/,
+    'BUY_TOKEN': () => (<BuyCasitoken { ...{web3, instance, accounts, nextStep} } />),
     'BET': () => {},
     'PLAY': () => {},
     'WITHDRAW_FUNDS': () => (<withdrawFundsOfContract { ...{web3, instance, accounts, nextStep} } />),

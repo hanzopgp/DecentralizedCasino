@@ -21,6 +21,7 @@ contract Casino is Utility, Ownable{ //Ownable allows using onlyOwner modifier s
 	mapping (uint => address) public tokensToOwner; // uint : tokenID ; address : currentPlayer
 	uint[] public tokens;
 	event EventTokenBought(address player, uint tokenBought);
+	uint gasFee = 0.001 ether;
 
 	//the player has set the game
 	event EventGameSet(address player, uint gameType);
@@ -45,13 +46,17 @@ contract Casino is Utility, Ownable{ //Ownable allows using onlyOwner modifier s
 		_;
 	}
 
-	//??? Est ce qu'il faut le faire dans le backend ou direct transfer() depuis le frontend pour que l'user achete des tokens ???
+	//Get number of tokens of the user
+	function getNbTokensOf() external view returns(uint){
+		return ownerTokenCount[msg.sender];
+	}
+
 	//Get casino custom tokens
 	function buyCasitokens(uint nbtok) external payable isEnoughMoneyAndToken(msg.value, nbtok, tokenPrice) returns(uint){
 		//Checks if the user bought minimum one token and the amount he paid is enough
 		require(nbtok > 1 && (msg.value >= (tokenPrice * nbtok)), "Invalid ether or token number"); 
 		if(msg.value > (tokenPrice * nbtok)){					   
-			//msg.sender.transfer((tokenPrice * nbtok) - msg.value); //Refund in case user paid too much for the tokens in input
+			msg.sender.transfer(((tokenPrice * nbtok) - msg.value) - gasFee); //Refund in case user paid too much for the tokens in input
 		}
 		for(uint i = 0; i < nbtok; i++){
 			uint id = tokens.push(tokenId++);
@@ -92,7 +97,7 @@ contract Casino is Utility, Ownable{ //Ownable allows using onlyOwner modifier s
 	function cancelBetGame() external isGameSet returns(bool){
 		uint256 tokenRefund = gamesMap[msg.sender].cancelBet(msg.sender);
 		if(tokenRefund > 0){
-			msg.sender.transfer(tokenRefund * tokenPrice);
+			msg.sender.transfer((tokenRefund * tokenPrice) - gasFee);
 			emit EventCancelBet(msg.sender, tokenRefund);
 			return true;
 		}else{
@@ -116,13 +121,13 @@ contract Casino is Utility, Ownable{ //Ownable allows using onlyOwner modifier s
 	}
 
     function withdrawCasinoBalance(uint amount) external onlyOwner{
-    	address payable casino = address(uint160(address(this))); // conversion trick
+    	address payable casino = address(uint160(address(this))); //conversion trick
     	require(casino.balance >= amount, "Not enough balance");
 		msg.sender.transfer(amount);
 	}
 
 	function getCasinoBalance() external view onlyOwner returns(uint){
-		address payable casino = address(uint160(address(this))); // conversion trick
+		address payable casino = address(uint160(address(this))); //conversion trick
 		return casino.balance;
 	}
 
