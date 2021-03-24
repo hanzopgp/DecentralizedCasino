@@ -2,7 +2,7 @@ import React, { createRef, useEffect } from 'react';
 import TextField from '@material-ui/core/TextField';
 import { Button } from "@material-ui/core";
 
-function setGame({nextStep, instance, accounts, balanceOwner, balanceAlice, balanceBob}) {
+function setGame({nextStep, instance}) {
   let address = createRef("");
 
   const setGameType = async(gameType) => {

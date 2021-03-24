@@ -2,7 +2,7 @@ import React, { useState, createRef, useEffect } from 'react';
 import TextField from '@material-ui/core/TextField';
 import { Button } from "@material-ui/core";
 
-function AddFundsToContract({web3, instance, accounts, nextStep, balanceOwner, balanceAlice, balanceBob}) {
+function AddFundsToContract({web3, instance, nextStep}) {
   let amount = createRef(0);
   let address = createRef("");
 
