@@ -5,9 +5,8 @@
 1. [Presentation](#presentation)
 2. [Project architecture](#project-architecture)
 3. [How to install](#how-to-install)
-4. [How to use](#how-does-it-work)
-5. [Features](#Features)
-6. [Links](#links)
+4. [Features](#Features)
+5. [Links](#links)
 
 ## Presentation 
 
@@ -64,19 +63,17 @@ DecentralizedCasino/
 - It should open a new window "localhost:3000"
 - You can now use the decentralized casino application !
 
->- For the backend we used Solidity.
->- For testing purposes, we are using truffle/ganache/nodejs to deploy our smart contracts on a local blockchain, with test accounts.
->- For the frontend we used truffle react box and tailwindcss.
-
 ## Features
 
-- Frontend application to interact with deployed contracts
-- Backend casino in solidity
-- Truffle tests with local blockchain
+- Frontend application to interact with deployed contracts in React
+- Frontend application style with Tailwindcss
+- Backend casino in Solidity
+- Truffle tests with JavaScript
+- Deploying local blockchain thanks to Truffle/Ganache/Node
 - Gas optimisation (external, view, memory, uint struct...)
-- Security (SafeMath, Ownable, ERC20...)
+- Security (SafeMath, Ownable, ERC721...)
 - Payable functions
-- Tokens as credits for the games (Using ERC21)
+- Tokens as credits for the games (Using ERC721)
 
 ## Links
 
