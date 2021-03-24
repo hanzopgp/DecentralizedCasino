@@ -41,7 +41,7 @@ function App() {
   const [accountsInfo, setAccountsInfo] = useState(null);
 
   const nextStep = () => {
-    if(actualStepIndex + 1 > stepComponents.length){
+    if(actualStepIndex + 1 >= stepComponents.length){
       setActualStepIndex(actualStepIndex + 1);
     }else{
       setActualStepIndex(0);

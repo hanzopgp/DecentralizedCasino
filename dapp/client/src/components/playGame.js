@@ -2,7 +2,7 @@ import React, { createRef } from 'react';
 import TextField from '@material-ui/core/TextField';
 import { Button } from "@material-ui/core";
 
-function PlayGame({web3, instance, nextStep}) {
+function PlayGame({instance, nextStep}) {
   let address = createRef("");
 
   const playGame = async() => {

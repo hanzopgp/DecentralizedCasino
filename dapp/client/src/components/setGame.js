@@ -10,7 +10,7 @@ function setGame({nextStep, instance}) {
       const res = await instance.methods
         .setGameType(gameType)
         .call({
-          from: address.current.value //Ca sera Alice
+          from: address.current.value
       });
       console.log(res)
       alert("Transaction state : "

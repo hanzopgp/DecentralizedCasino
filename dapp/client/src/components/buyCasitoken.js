@@ -2,7 +2,7 @@ import React, { createRef } from 'react';
 import TextField from '@material-ui/core/TextField';
 import { Button } from "@material-ui/core";
 
-function BuyCasitoken({web3, instance, accounts, nextStep}) {
+function BuyCasitoken({web3, instance, nextStep}) {
   let tokenAmount = createRef(0);
   let money = createRef(0);
   let address = createRef("");
