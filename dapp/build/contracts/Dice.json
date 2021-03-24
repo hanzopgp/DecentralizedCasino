@@ -235,14 +235,14 @@
     "absolutePath": "/home/hanzo/Desktop/DecentralizedCasino/dapp/contracts/games/Dice.sol",
     "exportedSymbols": {
       "Dice": [
-        1049
+        1051
       ]
     },
-    "id": 1050,
+    "id": 1052,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 838,
+        "id": 840,
         "literals": [
           "solidity",
           "^",
@@ -255,10 +255,10 @@
       {
         "absolutePath": "/home/hanzo/Desktop/DecentralizedCasino/dapp/contracts/lib/SafeMath.sol",
         "file": "./../lib/SafeMath.sol",
-        "id": 839,
+        "id": 841,
         "nodeType": "ImportDirective",
-        "scope": 1050,
-        "sourceUnit": 2393,
+        "scope": 1052,
+        "sourceUnit": 2395,
         "src": "25:31:2",
         "symbolAliases": [],
         "unitAlias": ""
@@ -266,10 +266,10 @@
       {
         "absolutePath": "/home/hanzo/Desktop/DecentralizedCasino/dapp/contracts/lib/Ownable.sol",
         "file": "./../lib/Ownable.sol",
-        "id": 840,
+        "id": 842,
         "nodeType": "ImportDirective",
-        "scope": 1050,
-        "sourceUnit": 2295,
+        "scope": 1052,
+        "sourceUnit": 2297,
         "src": "57:30:2",
         "symbolAliases": [],
         "unitAlias": ""
@@ -277,10 +277,10 @@
       {
         "absolutePath": "/home/hanzo/Desktop/DecentralizedCasino/dapp/contracts/Utility.sol",
         "file": "./../Utility.sol",
-        "id": 841,
+        "id": 843,
         "nodeType": "ImportDirective",
-        "scope": 1050,
-        "sourceUnit": 837,
+        "scope": 1052,
+        "sourceUnit": 839,
         "src": "88:26:2",
         "symbolAliases": [],
         "unitAlias": ""
@@ -288,10 +288,10 @@
       {
         "absolutePath": "/home/hanzo/Desktop/DecentralizedCasino/dapp/contracts/games/Game.sol",
         "file": "./Game.sol",
-        "id": 842,
+        "id": 844,
         "nodeType": "ImportDirective",
-        "scope": 1050,
-        "sourceUnit": 1089,
+        "scope": 1052,
+        "sourceUnit": 1091,
         "src": "115:20:2",
         "symbolAliases": [],
         "unitAlias": ""
@@ -302,17 +302,17 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 843,
+              "id": 845,
               "name": "Game",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 1088,
+              "referencedDeclaration": 1090,
               "src": "154:4:2",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Game_$1088",
+                "typeIdentifier": "t_contract$_Game_$1090",
                 "typeString": "contract Game"
               }
             },
-            "id": 844,
+            "id": 846,
             "nodeType": "InheritanceSpecifier",
             "src": "154:4:2"
           },
@@ -320,17 +320,17 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 845,
+              "id": 847,
               "name": "Utility",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 836,
+              "referencedDeclaration": 838,
               "src": "160:7:2",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Utility_$836",
+                "typeIdentifier": "t_contract$_Utility_$838",
                 "typeString": "contract Utility"
               }
             },
-            "id": 846,
+            "id": 848,
             "nodeType": "InheritanceSpecifier",
             "src": "160:7:2"
           },
@@ -338,57 +338,57 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 847,
+              "id": 849,
               "name": "Ownable",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 2294,
+              "referencedDeclaration": 2296,
               "src": "169:7:2",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Ownable_$2294",
+                "typeIdentifier": "t_contract$_Ownable_$2296",
                 "typeString": "contract Ownable"
               }
             },
-            "id": 848,
+            "id": 850,
             "nodeType": "InheritanceSpecifier",
             "src": "169:7:2"
           }
         ],
         "contractDependencies": [
-          836,
-          1088,
-          2294
+          838,
+          1090,
+          2296
         ],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 1049,
+        "id": 1051,
         "linearizedBaseContracts": [
-          1049,
-          2294,
-          836,
-          1088
+          1051,
+          2296,
+          838,
+          1090
         ],
         "name": "Dice",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
-            "id": 851,
+            "id": 853,
             "libraryName": {
               "contractScope": null,
-              "id": 849,
+              "id": 851,
               "name": "SafeMath",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 2392,
+              "referencedDeclaration": 2394,
               "src": "257:8:2",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_SafeMath_$2392",
+                "typeIdentifier": "t_contract$_SafeMath_$2394",
                 "typeString": "library SafeMath"
               }
             },
             "nodeType": "UsingForDirective",
             "src": "251:27:2",
             "typeName": {
-              "id": 850,
+              "id": 852,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
               "src": "270:7:2",
@@ -399,23 +399,23 @@
             }
           },
           {
-            "id": 854,
+            "id": 856,
             "libraryName": {
               "contractScope": null,
-              "id": 852,
+              "id": 854,
               "name": "SafeMath",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 2392,
+              "referencedDeclaration": 2394,
               "src": "332:8:2",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_SafeMath_$2392",
+                "typeIdentifier": "t_contract$_SafeMath_$2394",
                 "typeString": "library SafeMath"
               }
             },
             "nodeType": "UsingForDirective",
             "src": "326:25:2",
             "typeName": {
-              "id": 853,
+              "id": 855,
               "name": "uint8",
               "nodeType": "ElementaryTypeName",
               "src": "345:5:2",
@@ -427,14 +427,14 @@
           },
           {
             "canonicalName": "Dice.Bet",
-            "id": 861,
+            "id": 863,
             "members": [
               {
                 "constant": false,
-                "id": 856,
+                "id": 858,
                 "name": "isSet",
                 "nodeType": "VariableDeclaration",
-                "scope": 861,
+                "scope": 863,
                 "src": "381:10:2",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -443,7 +443,7 @@
                   "typeString": "bool"
                 },
                 "typeName": {
-                  "id": 855,
+                  "id": 857,
                   "name": "bool",
                   "nodeType": "ElementaryTypeName",
                   "src": "381:4:2",
@@ -457,10 +457,10 @@
               },
               {
                 "constant": false,
-                "id": 858,
+                "id": 860,
                 "name": "tokenAmount",
                 "nodeType": "VariableDeclaration",
-                "scope": 861,
+                "scope": 863,
                 "src": "396:19:2",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -469,7 +469,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 857,
+                  "id": 859,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
                   "src": "396:7:2",
@@ -483,10 +483,10 @@
               },
               {
                 "constant": false,
-                "id": 860,
+                "id": 862,
                 "name": "diceBet",
                 "nodeType": "VariableDeclaration",
-                "scope": 861,
+                "scope": 863,
                 "src": "419:13:2",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -495,7 +495,7 @@
                   "typeString": "uint8"
                 },
                 "typeName": {
-                  "id": 859,
+                  "id": 861,
                   "name": "uint8",
                   "nodeType": "ElementaryTypeName",
                   "src": "419:5:2",
@@ -510,27 +510,27 @@
             ],
             "name": "Bet",
             "nodeType": "StructDefinition",
-            "scope": 1049,
+            "scope": 1051,
             "src": "367:69:2",
             "visibility": "public"
           },
           {
             "constant": false,
-            "id": 865,
+            "id": 867,
             "name": "betsMap",
             "nodeType": "VariableDeclaration",
-            "scope": 1049,
+            "scope": 1051,
             "src": "438:39:2",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Bet_$861_storage_$",
+              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Bet_$863_storage_$",
               "typeString": "mapping(address => struct Dice.Bet)"
             },
             "typeName": {
-              "id": 864,
+              "id": 866,
               "keyType": {
-                "id": 862,
+                "id": 864,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
                 "src": "446:7:2",
@@ -542,18 +542,18 @@
               "nodeType": "Mapping",
               "src": "438:23:2",
               "typeDescriptions": {
-                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Bet_$861_storage_$",
+                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Bet_$863_storage_$",
                 "typeString": "mapping(address => struct Dice.Bet)"
               },
               "valueType": {
                 "contractScope": null,
-                "id": 863,
+                "id": 865,
                 "name": "Bet",
                 "nodeType": "UserDefinedTypeName",
-                "referencedDeclaration": 861,
+                "referencedDeclaration": 863,
                 "src": "457:3:2",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_struct$_Bet_$861_storage_ptr",
+                  "typeIdentifier": "t_struct$_Bet_$863_storage_ptr",
                   "typeString": "struct Dice.Bet"
                 }
               }
@@ -563,10 +563,10 @@
           },
           {
             "constant": false,
-            "id": 868,
+            "id": 870,
             "name": "diceBetMultiplier",
             "nodeType": "VariableDeclaration",
-            "scope": 1049,
+            "scope": 1051,
             "src": "480:29:2",
             "stateVariable": true,
             "storageLocation": "default",
@@ -575,7 +575,7 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 866,
+              "id": 868,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
               "src": "480:7:2",
@@ -587,7 +587,7 @@
             "value": {
               "argumentTypes": null,
               "hexValue": "36",
-              "id": 867,
+              "id": 869,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
@@ -606,7 +606,7 @@
           },
           {
             "body": {
-              "id": 882,
+              "id": 884,
               "nodeType": "Block",
               "src": "607:36:2",
               "statements": [
@@ -617,25 +617,25 @@
                       "argumentTypes": null,
                       "baseExpression": {
                         "argumentTypes": null,
-                        "id": 877,
+                        "id": 879,
                         "name": "betsMap",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 865,
+                        "referencedDeclaration": 867,
                         "src": "618:7:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Bet_$861_storage_$",
+                          "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Bet_$863_storage_$",
                           "typeString": "mapping(address => struct Dice.Bet storage ref)"
                         }
                       },
-                      "id": 879,
+                      "id": 881,
                       "indexExpression": {
                         "argumentTypes": null,
-                        "id": 878,
+                        "id": 880,
                         "name": "player",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 870,
+                        "referencedDeclaration": 872,
                         "src": "626:6:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -649,46 +649,46 @@
                       "nodeType": "IndexAccess",
                       "src": "618:15:2",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_Bet_$861_storage",
+                        "typeIdentifier": "t_struct$_Bet_$863_storage",
                         "typeString": "struct Dice.Bet storage ref"
                       }
                     },
-                    "id": 880,
+                    "id": 882,
                     "isConstant": false,
                     "isLValue": true,
                     "isPure": false,
                     "lValueRequested": false,
                     "memberName": "isSet",
                     "nodeType": "MemberAccess",
-                    "referencedDeclaration": 856,
+                    "referencedDeclaration": 858,
                     "src": "618:21:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
-                  "functionReturnParameters": 876,
-                  "id": 881,
+                  "functionReturnParameters": 878,
+                  "id": 883,
                   "nodeType": "Return",
                   "src": "611:28:2"
                 }
               ]
             },
             "documentation": null,
-            "id": 883,
+            "id": 885,
             "implemented": true,
             "kind": "function",
             "modifiers": [
               {
                 "arguments": null,
-                "id": 873,
+                "id": 875,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 872,
+                  "id": 874,
                   "name": "onlyOwner",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 2239,
+                  "referencedDeclaration": 2241,
                   "src": "584:9:2",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -702,15 +702,15 @@
             "name": "isBetSet",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 871,
+              "id": 873,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 870,
+                  "id": 872,
                   "name": "player",
                   "nodeType": "VariableDeclaration",
-                  "scope": 883,
+                  "scope": 885,
                   "src": "554:14:2",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -719,7 +719,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 869,
+                    "id": 871,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "554:7:2",
@@ -736,15 +736,15 @@
               "src": "553:16:2"
             },
             "returnParameters": {
-              "id": 876,
+              "id": 878,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 875,
+                  "id": 877,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 883,
+                  "scope": 885,
                   "src": "602:4:2",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -753,7 +753,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 874,
+                    "id": 876,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "602:4:2",
@@ -768,15 +768,15 @@
               ],
               "src": "601:6:2"
             },
-            "scope": 1049,
+            "scope": 1051,
             "src": "536:107:2",
             "stateMutability": "view",
-            "superFunction": 1058,
+            "superFunction": 1060,
             "visibility": "external"
           },
           {
             "body": {
-              "id": 944,
+              "id": 946,
               "nodeType": "Block",
               "src": "864:265:2",
               "statements": [
@@ -790,18 +790,18 @@
                           "typeIdentifier": "t_uint8",
                           "typeString": "uint8"
                         },
-                        "id": 907,
+                        "id": 909,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftExpression": {
                           "argumentTypes": null,
-                          "id": 905,
+                          "id": 907,
                           "name": "betData",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 889,
+                          "referencedDeclaration": 891,
                           "src": "876:7:2",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint8",
@@ -813,7 +813,7 @@
                         "rightExpression": {
                           "argumentTypes": null,
                           "hexValue": "32",
-                          "id": 906,
+                          "id": 908,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
@@ -837,7 +837,7 @@
                       {
                         "argumentTypes": null,
                         "hexValue": "426574206d757374206265206265747765656e203220616e64203132",
-                        "id": 908,
+                        "id": 910,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -864,21 +864,21 @@
                           "typeString": "literal_string \"Bet must be between 2 and 12\""
                         }
                       ],
-                      "id": 904,
+                      "id": 906,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        2834,
-                        2835
+                        2651,
+                        2652
                       ],
-                      "referencedDeclaration": 2835,
+                      "referencedDeclaration": 2652,
                       "src": "868:7:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (bool,string memory) pure"
                       }
                     },
-                    "id": 909,
+                    "id": 911,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -892,7 +892,7 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 910,
+                  "id": 912,
                   "nodeType": "ExpressionStatement",
                   "src": "868:53:2"
                 },
@@ -906,18 +906,18 @@
                           "typeIdentifier": "t_uint8",
                           "typeString": "uint8"
                         },
-                        "id": 914,
+                        "id": 916,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftExpression": {
                           "argumentTypes": null,
-                          "id": 912,
+                          "id": 914,
                           "name": "betData",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 889,
+                          "referencedDeclaration": 891,
                           "src": "933:7:2",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint8",
@@ -929,7 +929,7 @@
                         "rightExpression": {
                           "argumentTypes": null,
                           "hexValue": "3132",
-                          "id": 913,
+                          "id": 915,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
@@ -953,7 +953,7 @@
                       {
                         "argumentTypes": null,
                         "hexValue": "426574206d757374206265206265747765656e203220616e64203132",
-                        "id": 915,
+                        "id": 917,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -980,21 +980,21 @@
                           "typeString": "literal_string \"Bet must be between 2 and 12\""
                         }
                       ],
-                      "id": 911,
+                      "id": 913,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        2834,
-                        2835
+                        2651,
+                        2652
                       ],
-                      "referencedDeclaration": 2835,
+                      "referencedDeclaration": 2652,
                       "src": "925:7:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (bool,string memory) pure"
                       }
                     },
-                    "id": 916,
+                    "id": 918,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1008,14 +1008,14 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 917,
+                  "id": 919,
                   "nodeType": "ExpressionStatement",
                   "src": "925:54:2"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 923,
+                    "id": 925,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1026,25 +1026,25 @@
                         "argumentTypes": null,
                         "baseExpression": {
                           "argumentTypes": null,
-                          "id": 918,
+                          "id": 920,
                           "name": "betsMap",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 865,
+                          "referencedDeclaration": 867,
                           "src": "983:7:2",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Bet_$861_storage_$",
+                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Bet_$863_storage_$",
                             "typeString": "mapping(address => struct Dice.Bet storage ref)"
                           }
                         },
-                        "id": 920,
+                        "id": 922,
                         "indexExpression": {
                           "argumentTypes": null,
-                          "id": 919,
+                          "id": 921,
                           "name": "player",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 885,
+                          "referencedDeclaration": 887,
                           "src": "991:6:2",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -1058,18 +1058,18 @@
                         "nodeType": "IndexAccess",
                         "src": "983:15:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Bet_$861_storage",
+                          "typeIdentifier": "t_struct$_Bet_$863_storage",
                           "typeString": "struct Dice.Bet storage ref"
                         }
                       },
-                      "id": 921,
+                      "id": 923,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": true,
                       "memberName": "diceBet",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 860,
+                      "referencedDeclaration": 862,
                       "src": "983:23:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint8",
@@ -1080,11 +1080,11 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 922,
+                      "id": 924,
                       "name": "betData",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 889,
+                      "referencedDeclaration": 891,
                       "src": "1009:7:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint8",
@@ -1097,14 +1097,14 @@
                       "typeString": "uint8"
                     }
                   },
-                  "id": 924,
+                  "id": 926,
                   "nodeType": "ExpressionStatement",
                   "src": "983:33:2"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 930,
+                    "id": 932,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1115,25 +1115,25 @@
                         "argumentTypes": null,
                         "baseExpression": {
                           "argumentTypes": null,
-                          "id": 925,
+                          "id": 927,
                           "name": "betsMap",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 865,
+                          "referencedDeclaration": 867,
                           "src": "1020:7:2",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Bet_$861_storage_$",
+                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Bet_$863_storage_$",
                             "typeString": "mapping(address => struct Dice.Bet storage ref)"
                           }
                         },
-                        "id": 927,
+                        "id": 929,
                         "indexExpression": {
                           "argumentTypes": null,
-                          "id": 926,
+                          "id": 928,
                           "name": "player",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 885,
+                          "referencedDeclaration": 887,
                           "src": "1028:6:2",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -1147,18 +1147,18 @@
                         "nodeType": "IndexAccess",
                         "src": "1020:15:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Bet_$861_storage",
+                          "typeIdentifier": "t_struct$_Bet_$863_storage",
                           "typeString": "struct Dice.Bet storage ref"
                         }
                       },
-                      "id": 928,
+                      "id": 930,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": true,
                       "memberName": "isSet",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 856,
+                      "referencedDeclaration": 858,
                       "src": "1020:21:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
@@ -1170,7 +1170,7 @@
                     "rightHandSide": {
                       "argumentTypes": null,
                       "hexValue": "74727565",
-                      "id": 929,
+                      "id": 931,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -1191,14 +1191,14 @@
                       "typeString": "bool"
                     }
                   },
-                  "id": 931,
+                  "id": 933,
                   "nodeType": "ExpressionStatement",
                   "src": "1020:28:2"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 937,
+                    "id": 939,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1209,25 +1209,25 @@
                         "argumentTypes": null,
                         "baseExpression": {
                           "argumentTypes": null,
-                          "id": 932,
+                          "id": 934,
                           "name": "betsMap",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 865,
+                          "referencedDeclaration": 867,
                           "src": "1052:7:2",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Bet_$861_storage_$",
+                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Bet_$863_storage_$",
                             "typeString": "mapping(address => struct Dice.Bet storage ref)"
                           }
                         },
-                        "id": 934,
+                        "id": 936,
                         "indexExpression": {
                           "argumentTypes": null,
-                          "id": 933,
+                          "id": 935,
                           "name": "player",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 885,
+                          "referencedDeclaration": 887,
                           "src": "1060:6:2",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -1241,18 +1241,18 @@
                         "nodeType": "IndexAccess",
                         "src": "1052:15:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Bet_$861_storage",
+                          "typeIdentifier": "t_struct$_Bet_$863_storage",
                           "typeString": "struct Dice.Bet storage ref"
                         }
                       },
-                      "id": 935,
+                      "id": 937,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": true,
                       "memberName": "tokenAmount",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 858,
+                      "referencedDeclaration": 860,
                       "src": "1052:27:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -1263,11 +1263,11 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 936,
+                      "id": 938,
                       "name": "tokenAmount",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 891,
+                      "referencedDeclaration": 893,
                       "src": "1082:11:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -1280,7 +1280,7 @@
                       "typeString": "uint256"
                     }
                   },
-                  "id": 938,
+                  "id": 940,
                   "nodeType": "ExpressionStatement",
                   "src": "1052:41:2"
                 },
@@ -1291,25 +1291,25 @@
                       "argumentTypes": null,
                       "baseExpression": {
                         "argumentTypes": null,
-                        "id": 939,
+                        "id": 941,
                         "name": "betsMap",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 865,
+                        "referencedDeclaration": 867,
                         "src": "1104:7:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Bet_$861_storage_$",
+                          "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Bet_$863_storage_$",
                           "typeString": "mapping(address => struct Dice.Bet storage ref)"
                         }
                       },
-                      "id": 941,
+                      "id": 943,
                       "indexExpression": {
                         "argumentTypes": null,
-                        "id": 940,
+                        "id": 942,
                         "name": "player",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 885,
+                        "referencedDeclaration": 887,
                         "src": "1112:6:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -1323,46 +1323,46 @@
                       "nodeType": "IndexAccess",
                       "src": "1104:15:2",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_Bet_$861_storage",
+                        "typeIdentifier": "t_struct$_Bet_$863_storage",
                         "typeString": "struct Dice.Bet storage ref"
                       }
                     },
-                    "id": 942,
+                    "id": 944,
                     "isConstant": false,
                     "isLValue": true,
                     "isPure": false,
                     "lValueRequested": false,
                     "memberName": "isSet",
                     "nodeType": "MemberAccess",
-                    "referencedDeclaration": 856,
+                    "referencedDeclaration": 858,
                     "src": "1104:21:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
-                  "functionReturnParameters": 903,
-                  "id": 943,
+                  "functionReturnParameters": 905,
+                  "id": 945,
                   "nodeType": "Return",
                   "src": "1097:28:2"
                 }
               ]
             },
             "documentation": null,
-            "id": 945,
+            "id": 947,
             "implemented": true,
             "kind": "function",
             "modifiers": [
               {
                 "arguments": null,
-                "id": 894,
+                "id": 896,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 893,
+                  "id": 895,
                   "name": "onlyOwner",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 2239,
+                  "referencedDeclaration": 2241,
                   "src": "764:9:2",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -1380,25 +1380,25 @@
                       "argumentTypes": null,
                       "baseExpression": {
                         "argumentTypes": null,
-                        "id": 896,
+                        "id": 898,
                         "name": "betsMap",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 865,
+                        "referencedDeclaration": 867,
                         "src": "810:7:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Bet_$861_storage_$",
+                          "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Bet_$863_storage_$",
                           "typeString": "mapping(address => struct Dice.Bet storage ref)"
                         }
                       },
-                      "id": 898,
+                      "id": 900,
                       "indexExpression": {
                         "argumentTypes": null,
-                        "id": 897,
+                        "id": 899,
                         "name": "player",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 885,
+                        "referencedDeclaration": 887,
                         "src": "818:6:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -1412,18 +1412,18 @@
                       "nodeType": "IndexAccess",
                       "src": "810:15:2",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_Bet_$861_storage",
+                        "typeIdentifier": "t_struct$_Bet_$863_storage",
                         "typeString": "struct Dice.Bet storage ref"
                       }
                     },
-                    "id": 899,
+                    "id": 901,
                     "isConstant": false,
                     "isLValue": true,
                     "isPure": false,
                     "lValueRequested": false,
                     "memberName": "isSet",
                     "nodeType": "MemberAccess",
-                    "referencedDeclaration": 856,
+                    "referencedDeclaration": 858,
                     "src": "810:21:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
@@ -1431,14 +1431,14 @@
                     }
                   }
                 ],
-                "id": 900,
+                "id": 902,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 895,
+                  "id": 897,
                   "name": "currentBetIsNotSet",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 604,
+                  "referencedDeclaration": 606,
                   "src": "791:18:2",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$_t_bool_$",
@@ -1452,15 +1452,15 @@
             "name": "bet",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 892,
+              "id": 894,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 885,
+                  "id": 887,
                   "name": "player",
                   "nodeType": "VariableDeclaration",
-                  "scope": 945,
+                  "scope": 947,
                   "src": "659:14:2",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1469,7 +1469,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 884,
+                    "id": 886,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "659:7:2",
@@ -1484,10 +1484,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 887,
+                  "id": 889,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 945,
+                  "scope": 947,
                   "src": "681:15:2",
                   "stateVariable": false,
                   "storageLocation": "calldata",
@@ -1496,7 +1496,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 886,
+                    "id": 888,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "681:6:2",
@@ -1510,10 +1510,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 889,
+                  "id": 891,
                   "name": "betData",
                   "nodeType": "VariableDeclaration",
-                  "scope": 945,
+                  "scope": 947,
                   "src": "716:13:2",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1522,7 +1522,7 @@
                     "typeString": "uint8"
                   },
                   "typeName": {
-                    "id": 888,
+                    "id": 890,
                     "name": "uint8",
                     "nodeType": "ElementaryTypeName",
                     "src": "716:5:2",
@@ -1536,10 +1536,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 891,
+                  "id": 893,
                   "name": "tokenAmount",
                   "nodeType": "VariableDeclaration",
-                  "scope": 945,
+                  "scope": 947,
                   "src": "737:16:2",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1548,7 +1548,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 890,
+                    "id": 892,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "737:4:2",
@@ -1564,15 +1564,15 @@
               "src": "658:96:2"
             },
             "returnParameters": {
-              "id": 903,
+              "id": 905,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 902,
+                  "id": 904,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 945,
+                  "scope": 947,
                   "src": "859:4:2",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1581,7 +1581,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 901,
+                    "id": 903,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "859:4:2",
@@ -1596,22 +1596,22 @@
               ],
               "src": "858:6:2"
             },
-            "scope": 1049,
+            "scope": 1051,
             "src": "646:483:2",
             "stateMutability": "nonpayable",
-            "superFunction": 1071,
+            "superFunction": 1073,
             "visibility": "external"
           },
           {
             "body": {
-              "id": 972,
+              "id": 974,
               "nodeType": "Block",
               "src": "1241:75:2",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 965,
+                    "id": 967,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1622,25 +1622,25 @@
                         "argumentTypes": null,
                         "baseExpression": {
                           "argumentTypes": null,
-                          "id": 960,
+                          "id": 962,
                           "name": "betsMap",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 865,
+                          "referencedDeclaration": 867,
                           "src": "1245:7:2",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Bet_$861_storage_$",
+                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Bet_$863_storage_$",
                             "typeString": "mapping(address => struct Dice.Bet storage ref)"
                           }
                         },
-                        "id": 962,
+                        "id": 964,
                         "indexExpression": {
                           "argumentTypes": null,
-                          "id": 961,
+                          "id": 963,
                           "name": "player",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 947,
+                          "referencedDeclaration": 949,
                           "src": "1253:6:2",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -1654,18 +1654,18 @@
                         "nodeType": "IndexAccess",
                         "src": "1245:15:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Bet_$861_storage",
+                          "typeIdentifier": "t_struct$_Bet_$863_storage",
                           "typeString": "struct Dice.Bet storage ref"
                         }
                       },
-                      "id": 963,
+                      "id": 965,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": true,
                       "memberName": "isSet",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 856,
+                      "referencedDeclaration": 858,
                       "src": "1245:21:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
@@ -1677,7 +1677,7 @@
                     "rightHandSide": {
                       "argumentTypes": null,
                       "hexValue": "66616c7365",
-                      "id": 964,
+                      "id": 966,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -1698,7 +1698,7 @@
                       "typeString": "bool"
                     }
                   },
-                  "id": 966,
+                  "id": 968,
                   "nodeType": "ExpressionStatement",
                   "src": "1245:29:2"
                 },
@@ -1709,25 +1709,25 @@
                       "argumentTypes": null,
                       "baseExpression": {
                         "argumentTypes": null,
-                        "id": 967,
+                        "id": 969,
                         "name": "betsMap",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 865,
+                        "referencedDeclaration": 867,
                         "src": "1285:7:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Bet_$861_storage_$",
+                          "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Bet_$863_storage_$",
                           "typeString": "mapping(address => struct Dice.Bet storage ref)"
                         }
                       },
-                      "id": 969,
+                      "id": 971,
                       "indexExpression": {
                         "argumentTypes": null,
-                        "id": 968,
+                        "id": 970,
                         "name": "player",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 947,
+                        "referencedDeclaration": 949,
                         "src": "1293:6:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -1741,46 +1741,46 @@
                       "nodeType": "IndexAccess",
                       "src": "1285:15:2",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_Bet_$861_storage",
+                        "typeIdentifier": "t_struct$_Bet_$863_storage",
                         "typeString": "struct Dice.Bet storage ref"
                       }
                     },
-                    "id": 970,
+                    "id": 972,
                     "isConstant": false,
                     "isLValue": true,
                     "isPure": false,
                     "lValueRequested": false,
                     "memberName": "tokenAmount",
                     "nodeType": "MemberAccess",
-                    "referencedDeclaration": 858,
+                    "referencedDeclaration": 860,
                     "src": "1285:27:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "functionReturnParameters": 959,
-                  "id": 971,
+                  "functionReturnParameters": 961,
+                  "id": 973,
                   "nodeType": "Return",
                   "src": "1278:34:2"
                 }
               ]
             },
             "documentation": null,
-            "id": 973,
+            "id": 975,
             "implemented": true,
             "kind": "function",
             "modifiers": [
               {
                 "arguments": null,
-                "id": 950,
+                "id": 952,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 949,
+                  "id": 951,
                   "name": "onlyOwner",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 2239,
+                  "referencedDeclaration": 2241,
                   "src": "1176:9:2",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -1798,25 +1798,25 @@
                       "argumentTypes": null,
                       "baseExpression": {
                         "argumentTypes": null,
-                        "id": 952,
+                        "id": 954,
                         "name": "betsMap",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 865,
+                        "referencedDeclaration": 867,
                         "src": "1202:7:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Bet_$861_storage_$",
+                          "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Bet_$863_storage_$",
                           "typeString": "mapping(address => struct Dice.Bet storage ref)"
                         }
                       },
-                      "id": 954,
+                      "id": 956,
                       "indexExpression": {
                         "argumentTypes": null,
-                        "id": 953,
+                        "id": 955,
                         "name": "player",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 947,
+                        "referencedDeclaration": 949,
                         "src": "1210:6:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -1830,18 +1830,18 @@
                       "nodeType": "IndexAccess",
                       "src": "1202:15:2",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_Bet_$861_storage",
+                        "typeIdentifier": "t_struct$_Bet_$863_storage",
                         "typeString": "struct Dice.Bet storage ref"
                       }
                     },
-                    "id": 955,
+                    "id": 957,
                     "isConstant": false,
                     "isLValue": true,
                     "isPure": false,
                     "lValueRequested": false,
                     "memberName": "isSet",
                     "nodeType": "MemberAccess",
-                    "referencedDeclaration": 856,
+                    "referencedDeclaration": 858,
                     "src": "1202:21:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
@@ -1849,14 +1849,14 @@
                     }
                   }
                 ],
-                "id": 956,
+                "id": 958,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 951,
+                  "id": 953,
                   "name": "currentBetIsSet",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 617,
+                  "referencedDeclaration": 619,
                   "src": "1186:15:2",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$_t_bool_$",
@@ -1870,15 +1870,15 @@
             "name": "cancelBet",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 948,
+              "id": 950,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 947,
+                  "id": 949,
                   "name": "player",
                   "nodeType": "VariableDeclaration",
-                  "scope": 973,
+                  "scope": 975,
                   "src": "1151:14:2",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1887,7 +1887,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 946,
+                    "id": 948,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1151:7:2",
@@ -1904,15 +1904,15 @@
               "src": "1150:16:2"
             },
             "returnParameters": {
-              "id": 959,
+              "id": 961,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 958,
+                  "id": 960,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 973,
+                  "scope": 975,
                   "src": "1233:7:2",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1921,7 +1921,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 957,
+                    "id": 959,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "1233:7:2",
@@ -1936,29 +1936,29 @@
               ],
               "src": "1232:9:2"
             },
-            "scope": 1049,
+            "scope": 1051,
             "src": "1132:184:2",
             "stateMutability": "nonpayable",
-            "superFunction": 1078,
+            "superFunction": 1080,
             "visibility": "external"
           },
           {
             "body": {
-              "id": 1028,
+              "id": 1030,
               "nodeType": "Block",
               "src": "1431:279:2",
               "statements": [
                 {
                   "assignments": [
-                    991
+                    993
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 991,
+                      "id": 993,
                       "name": "diceResult",
                       "nodeType": "VariableDeclaration",
-                      "scope": 1028,
+                      "scope": 1030,
                       "src": "1451:16:2",
                       "stateVariable": false,
                       "storageLocation": "default",
@@ -1967,7 +1967,7 @@
                         "typeString": "uint8"
                       },
                       "typeName": {
-                        "id": 990,
+                        "id": 992,
                         "name": "uint8",
                         "nodeType": "ElementaryTypeName",
                         "src": "1451:5:2",
@@ -1980,24 +1980,24 @@
                       "visibility": "internal"
                     }
                   ],
-                  "id": 994,
+                  "id": 996,
                   "initialValue": {
                     "argumentTypes": null,
                     "arguments": [],
                     "expression": {
                       "argumentTypes": [],
-                      "id": 992,
+                      "id": 994,
                       "name": "randomDoubleDice",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1048,
+                      "referencedDeclaration": 1050,
                       "src": "1470:16:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$__$returns$_t_uint8_$",
                         "typeString": "function () returns (uint8)"
                       }
                     },
-                    "id": 993,
+                    "id": 995,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2016,15 +2016,15 @@
                 },
                 {
                   "assignments": [
-                    996
+                    998
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 996,
+                      "id": 998,
                       "name": "amount",
                       "nodeType": "VariableDeclaration",
-                      "scope": 1028,
+                      "scope": 1030,
                       "src": "1510:14:2",
                       "stateVariable": false,
                       "storageLocation": "default",
@@ -2033,7 +2033,7 @@
                         "typeString": "uint256"
                       },
                       "typeName": {
-                        "id": 995,
+                        "id": 997,
                         "name": "uint256",
                         "nodeType": "ElementaryTypeName",
                         "src": "1510:7:2",
@@ -2046,11 +2046,11 @@
                       "visibility": "internal"
                     }
                   ],
-                  "id": 998,
+                  "id": 1000,
                   "initialValue": {
                     "argumentTypes": null,
                     "hexValue": "30",
-                    "id": 997,
+                    "id": 999,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": true,
@@ -2075,18 +2075,18 @@
                       "typeIdentifier": "t_uint8",
                       "typeString": "uint8"
                     },
-                    "id": 1004,
+                    "id": 1006,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
                       "argumentTypes": null,
-                      "id": 999,
+                      "id": 1001,
                       "name": "diceResult",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 991,
+                      "referencedDeclaration": 993,
                       "src": "1535:10:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint8",
@@ -2101,25 +2101,25 @@
                         "argumentTypes": null,
                         "baseExpression": {
                           "argumentTypes": null,
-                          "id": 1000,
+                          "id": 1002,
                           "name": "betsMap",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 865,
+                          "referencedDeclaration": 867,
                           "src": "1549:7:2",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Bet_$861_storage_$",
+                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Bet_$863_storage_$",
                             "typeString": "mapping(address => struct Dice.Bet storage ref)"
                           }
                         },
-                        "id": 1002,
+                        "id": 1004,
                         "indexExpression": {
                           "argumentTypes": null,
-                          "id": 1001,
+                          "id": 1003,
                           "name": "player",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 975,
+                          "referencedDeclaration": 977,
                           "src": "1557:6:2",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -2133,18 +2133,18 @@
                         "nodeType": "IndexAccess",
                         "src": "1549:15:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Bet_$861_storage",
+                          "typeIdentifier": "t_struct$_Bet_$863_storage",
                           "typeString": "struct Dice.Bet storage ref"
                         }
                       },
-                      "id": 1003,
+                      "id": 1005,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "diceBet",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 860,
+                      "referencedDeclaration": 862,
                       "src": "1549:23:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint8",
@@ -2158,29 +2158,29 @@
                     }
                   },
                   "falseBody": null,
-                  "id": 1016,
+                  "id": 1018,
                   "nodeType": "IfStatement",
                   "src": "1532:111:2",
                   "trueBody": {
-                    "id": 1015,
+                    "id": 1017,
                     "nodeType": "Block",
                     "src": "1573:70:2",
                     "statements": [
                       {
                         "expression": {
                           "argumentTypes": null,
-                          "id": 1013,
+                          "id": 1015,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftHandSide": {
                             "argumentTypes": null,
-                            "id": 1005,
+                            "id": 1007,
                             "name": "amount",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 996,
+                            "referencedDeclaration": 998,
                             "src": "1579:6:2",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
@@ -2194,11 +2194,11 @@
                             "arguments": [
                               {
                                 "argumentTypes": null,
-                                "id": 1011,
+                                "id": 1013,
                                 "name": "diceBetMultiplier",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 868,
+                                "referencedDeclaration": 870,
                                 "src": "1620:17:2",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_uint256",
@@ -2219,25 +2219,25 @@
                                   "argumentTypes": null,
                                   "baseExpression": {
                                     "argumentTypes": null,
-                                    "id": 1006,
+                                    "id": 1008,
                                     "name": "betsMap",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 865,
+                                    "referencedDeclaration": 867,
                                     "src": "1588:7:2",
                                     "typeDescriptions": {
-                                      "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Bet_$861_storage_$",
+                                      "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Bet_$863_storage_$",
                                       "typeString": "mapping(address => struct Dice.Bet storage ref)"
                                     }
                                   },
-                                  "id": 1008,
+                                  "id": 1010,
                                   "indexExpression": {
                                     "argumentTypes": null,
-                                    "id": 1007,
+                                    "id": 1009,
                                     "name": "player",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 975,
+                                    "referencedDeclaration": 977,
                                     "src": "1596:6:2",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_address",
@@ -2251,39 +2251,39 @@
                                   "nodeType": "IndexAccess",
                                   "src": "1588:15:2",
                                   "typeDescriptions": {
-                                    "typeIdentifier": "t_struct$_Bet_$861_storage",
+                                    "typeIdentifier": "t_struct$_Bet_$863_storage",
                                     "typeString": "struct Dice.Bet storage ref"
                                   }
                                 },
-                                "id": 1009,
+                                "id": 1011,
                                 "isConstant": false,
                                 "isLValue": true,
                                 "isPure": false,
                                 "lValueRequested": false,
                                 "memberName": "tokenAmount",
                                 "nodeType": "MemberAccess",
-                                "referencedDeclaration": 858,
+                                "referencedDeclaration": 860,
                                 "src": "1588:27:2",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_uint256",
                                   "typeString": "uint256"
                                 }
                               },
-                              "id": 1010,
+                              "id": 1012,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": false,
                               "lValueRequested": false,
                               "memberName": "mul",
                               "nodeType": "MemberAccess",
-                              "referencedDeclaration": 2329,
+                              "referencedDeclaration": 2331,
                               "src": "1588:31:2",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$bound_to$_t_uint256_$",
                                 "typeString": "function (uint256,uint256) pure returns (uint256)"
                               }
                             },
-                            "id": 1012,
+                            "id": 1014,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -2303,7 +2303,7 @@
                             "typeString": "uint256"
                           }
                         },
-                        "id": 1014,
+                        "id": 1016,
                         "nodeType": "ExpressionStatement",
                         "src": "1579:59:2"
                       }
@@ -2313,7 +2313,7 @@
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 1022,
+                    "id": 1024,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2324,25 +2324,25 @@
                         "argumentTypes": null,
                         "baseExpression": {
                           "argumentTypes": null,
-                          "id": 1017,
+                          "id": 1019,
                           "name": "betsMap",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 865,
+                          "referencedDeclaration": 867,
                           "src": "1646:7:2",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Bet_$861_storage_$",
+                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Bet_$863_storage_$",
                             "typeString": "mapping(address => struct Dice.Bet storage ref)"
                           }
                         },
-                        "id": 1019,
+                        "id": 1021,
                         "indexExpression": {
                           "argumentTypes": null,
-                          "id": 1018,
+                          "id": 1020,
                           "name": "player",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 975,
+                          "referencedDeclaration": 977,
                           "src": "1654:6:2",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -2356,18 +2356,18 @@
                         "nodeType": "IndexAccess",
                         "src": "1646:15:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Bet_$861_storage",
+                          "typeIdentifier": "t_struct$_Bet_$863_storage",
                           "typeString": "struct Dice.Bet storage ref"
                         }
                       },
-                      "id": 1020,
+                      "id": 1022,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": true,
                       "memberName": "isSet",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 856,
+                      "referencedDeclaration": 858,
                       "src": "1646:21:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
@@ -2379,7 +2379,7 @@
                     "rightHandSide": {
                       "argumentTypes": null,
                       "hexValue": "66616c7365",
-                      "id": 1021,
+                      "id": 1023,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -2400,7 +2400,7 @@
                       "typeString": "bool"
                     }
                   },
-                  "id": 1023,
+                  "id": 1025,
                   "nodeType": "ExpressionStatement",
                   "src": "1646:29:2"
                 },
@@ -2410,11 +2410,11 @@
                     "components": [
                       {
                         "argumentTypes": null,
-                        "id": 1024,
+                        "id": 1026,
                         "name": "diceResult",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 991,
+                        "referencedDeclaration": 993,
                         "src": "1687:10:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint8",
@@ -2423,11 +2423,11 @@
                       },
                       {
                         "argumentTypes": null,
-                        "id": 1025,
+                        "id": 1027,
                         "name": "amount",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 996,
+                        "referencedDeclaration": 998,
                         "src": "1699:6:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -2435,7 +2435,7 @@
                         }
                       }
                     ],
-                    "id": 1026,
+                    "id": 1028,
                     "isConstant": false,
                     "isInlineArray": false,
                     "isLValue": false,
@@ -2448,28 +2448,28 @@
                       "typeString": "tuple(uint8,uint256)"
                     }
                   },
-                  "functionReturnParameters": 989,
-                  "id": 1027,
+                  "functionReturnParameters": 991,
+                  "id": 1029,
                   "nodeType": "Return",
                   "src": "1679:27:2"
                 }
               ]
             },
             "documentation": null,
-            "id": 1029,
+            "id": 1031,
             "implemented": true,
             "kind": "function",
             "modifiers": [
               {
                 "arguments": null,
-                "id": 978,
+                "id": 980,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 977,
+                  "id": 979,
                   "name": "onlyOwner",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 2239,
+                  "referencedDeclaration": 2241,
                   "src": "1358:9:2",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -2487,25 +2487,25 @@
                       "argumentTypes": null,
                       "baseExpression": {
                         "argumentTypes": null,
-                        "id": 980,
+                        "id": 982,
                         "name": "betsMap",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 865,
+                        "referencedDeclaration": 867,
                         "src": "1384:7:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Bet_$861_storage_$",
+                          "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Bet_$863_storage_$",
                           "typeString": "mapping(address => struct Dice.Bet storage ref)"
                         }
                       },
-                      "id": 982,
+                      "id": 984,
                       "indexExpression": {
                         "argumentTypes": null,
-                        "id": 981,
+                        "id": 983,
                         "name": "player",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 975,
+                        "referencedDeclaration": 977,
                         "src": "1392:6:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -2519,18 +2519,18 @@
                       "nodeType": "IndexAccess",
                       "src": "1384:15:2",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_Bet_$861_storage",
+                        "typeIdentifier": "t_struct$_Bet_$863_storage",
                         "typeString": "struct Dice.Bet storage ref"
                       }
                     },
-                    "id": 983,
+                    "id": 985,
                     "isConstant": false,
                     "isLValue": true,
                     "isPure": false,
                     "lValueRequested": false,
                     "memberName": "isSet",
                     "nodeType": "MemberAccess",
-                    "referencedDeclaration": 856,
+                    "referencedDeclaration": 858,
                     "src": "1384:21:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
@@ -2538,14 +2538,14 @@
                     }
                   }
                 ],
-                "id": 984,
+                "id": 986,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 979,
+                  "id": 981,
                   "name": "currentBetIsSet",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 617,
+                  "referencedDeclaration": 619,
                   "src": "1368:15:2",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$_t_bool_$",
@@ -2559,15 +2559,15 @@
             "name": "play",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 976,
+              "id": 978,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 975,
+                  "id": 977,
                   "name": "player",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1029,
+                  "scope": 1031,
                   "src": "1333:14:2",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2576,7 +2576,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 974,
+                    "id": 976,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1333:7:2",
@@ -2593,15 +2593,15 @@
               "src": "1332:16:2"
             },
             "returnParameters": {
-              "id": 989,
+              "id": 991,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 986,
+                  "id": 988,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1029,
+                  "scope": 1031,
                   "src": "1415:5:2",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2610,7 +2610,7 @@
                     "typeString": "uint8"
                   },
                   "typeName": {
-                    "id": 985,
+                    "id": 987,
                     "name": "uint8",
                     "nodeType": "ElementaryTypeName",
                     "src": "1415:5:2",
@@ -2624,10 +2624,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 988,
+                  "id": 990,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1029,
+                  "scope": 1031,
                   "src": "1423:7:2",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2636,7 +2636,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 987,
+                    "id": 989,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "1423:7:2",
@@ -2651,15 +2651,15 @@
               ],
               "src": "1414:17:2"
             },
-            "scope": 1049,
+            "scope": 1051,
             "src": "1319:391:2",
             "stateMutability": "nonpayable",
-            "superFunction": 1087,
+            "superFunction": 1089,
             "visibility": "external"
           },
           {
             "body": {
-              "id": 1047,
+              "id": 1049,
               "nodeType": "Block",
               "src": "1765:77:2",
               "statements": [
@@ -2676,7 +2676,7 @@
                               {
                                 "argumentTypes": null,
                                 "hexValue": "31",
-                                "id": 1041,
+                                "id": 1043,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": true,
@@ -2694,7 +2694,7 @@
                               {
                                 "argumentTypes": null,
                                 "hexValue": "36",
-                                "id": 1042,
+                                "id": 1044,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": true,
@@ -2721,18 +2721,18 @@
                                   "typeString": "int_const 6"
                                 }
                               ],
-                              "id": 1040,
+                              "id": 1042,
                               "name": "randomUintBetween",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 654,
+                              "referencedDeclaration": 656,
                               "src": "1810:17:2",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_function_internal_nonpayable$_t_uint8_$_t_uint8_$returns$_t_uint8_$",
                                 "typeString": "function (uint8,uint8) returns (uint8)"
                               }
                             },
-                            "id": 1043,
+                            "id": 1045,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -2760,7 +2760,7 @@
                               {
                                 "argumentTypes": null,
                                 "hexValue": "31",
-                                "id": 1036,
+                                "id": 1038,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": true,
@@ -2778,7 +2778,7 @@
                               {
                                 "argumentTypes": null,
                                 "hexValue": "36",
-                                "id": 1037,
+                                "id": 1039,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": true,
@@ -2805,18 +2805,18 @@
                                   "typeString": "int_const 6"
                                 }
                               ],
-                              "id": 1035,
+                              "id": 1037,
                               "name": "randomUintBetween",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 654,
+                              "referencedDeclaration": 656,
                               "src": "1782:17:2",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_function_internal_nonpayable$_t_uint8_$_t_uint8_$returns$_t_uint8_$",
                                 "typeString": "function (uint8,uint8) returns (uint8)"
                               }
                             },
-                            "id": 1038,
+                            "id": 1040,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -2830,21 +2830,21 @@
                               "typeString": "uint8"
                             }
                           },
-                          "id": 1039,
+                          "id": 1041,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "memberName": "add",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 2391,
+                          "referencedDeclaration": 2393,
                           "src": "1782:27:2",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$bound_to$_t_uint256_$",
                             "typeString": "function (uint256,uint256) pure returns (uint256)"
                           }
                         },
-                        "id": 1044,
+                        "id": 1046,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -2866,7 +2866,7 @@
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 1034,
+                      "id": 1036,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -2879,7 +2879,7 @@
                       },
                       "typeName": "uint8"
                     },
-                    "id": 1045,
+                    "id": 1047,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2893,36 +2893,36 @@
                       "typeString": "uint8"
                     }
                   },
-                  "functionReturnParameters": 1033,
-                  "id": 1046,
+                  "functionReturnParameters": 1035,
+                  "id": 1048,
                   "nodeType": "Return",
                   "src": "1769:66:2"
                 }
               ]
             },
             "documentation": null,
-            "id": 1048,
+            "id": 1050,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "randomDoubleDice",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1030,
+              "id": 1032,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1738:2:2"
             },
             "returnParameters": {
-              "id": 1033,
+              "id": 1035,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1032,
+                  "id": 1034,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1048,
+                  "scope": 1050,
                   "src": "1759:5:2",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2931,7 +2931,7 @@
                     "typeString": "uint8"
                   },
                   "typeName": {
-                    "id": 1031,
+                    "id": 1033,
                     "name": "uint8",
                     "nodeType": "ElementaryTypeName",
                     "src": "1759:5:2",
@@ -2946,14 +2946,14 @@
               ],
               "src": "1758:7:2"
             },
-            "scope": 1049,
+            "scope": 1051,
             "src": "1713:129:2",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "internal"
           }
         ],
-        "scope": 1050,
+        "scope": 1052,
         "src": "137:1709:2"
       }
     ],
@@ -2964,7 +2964,7 @@
       "absolutePath": "/home/hanzo/Desktop/DecentralizedCasino/dapp/contracts/games/Dice.sol",
       "exportedSymbols": {
         "Dice": [
-          1049
+          1051
         ]
       }
     },
@@ -2978,46 +2978,16 @@
             ".0"
           ]
         },
-        "id": 838,
+        "id": 840,
         "name": "PragmaDirective",
         "src": "0:23:2"
       },
       {
         "attributes": {
-          "SourceUnit": 2393,
+          "SourceUnit": 2395,
           "absolutePath": "/home/hanzo/Desktop/DecentralizedCasino/dapp/contracts/lib/SafeMath.sol",
           "file": "./../lib/SafeMath.sol",
-          "scope": 1050,
-          "symbolAliases": [
-            null
-          ],
-          "unitAlias": ""
-        },
-        "id": 839,
-        "name": "ImportDirective",
-        "src": "25:31:2"
-      },
-      {
-        "attributes": {
-          "SourceUnit": 2295,
-          "absolutePath": "/home/hanzo/Desktop/DecentralizedCasino/dapp/contracts/lib/Ownable.sol",
-          "file": "./../lib/Ownable.sol",
-          "scope": 1050,
-          "symbolAliases": [
-            null
-          ],
-          "unitAlias": ""
-        },
-        "id": 840,
-        "name": "ImportDirective",
-        "src": "57:30:2"
-      },
-      {
-        "attributes": {
-          "SourceUnit": 837,
-          "absolutePath": "/home/hanzo/Desktop/DecentralizedCasino/dapp/contracts/Utility.sol",
-          "file": "./../Utility.sol",
-          "scope": 1050,
+          "scope": 1052,
           "symbolAliases": [
             null
           ],
@@ -3025,14 +2995,14 @@
         },
         "id": 841,
         "name": "ImportDirective",
-        "src": "88:26:2"
+        "src": "25:31:2"
       },
       {
         "attributes": {
-          "SourceUnit": 1089,
-          "absolutePath": "/home/hanzo/Desktop/DecentralizedCasino/dapp/contracts/games/Game.sol",
-          "file": "./Game.sol",
-          "scope": 1050,
+          "SourceUnit": 2297,
+          "absolutePath": "/home/hanzo/Desktop/DecentralizedCasino/dapp/contracts/lib/Ownable.sol",
+          "file": "./../lib/Ownable.sol",
+          "scope": 1052,
           "symbolAliases": [
             null
           ],
@@ -3040,26 +3010,56 @@
         },
         "id": 842,
         "name": "ImportDirective",
+        "src": "57:30:2"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 839,
+          "absolutePath": "/home/hanzo/Desktop/DecentralizedCasino/dapp/contracts/Utility.sol",
+          "file": "./../Utility.sol",
+          "scope": 1052,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 843,
+        "name": "ImportDirective",
+        "src": "88:26:2"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 1091,
+          "absolutePath": "/home/hanzo/Desktop/DecentralizedCasino/dapp/contracts/games/Game.sol",
+          "file": "./Game.sol",
+          "scope": 1052,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 844,
+        "name": "ImportDirective",
         "src": "115:20:2"
       },
       {
         "attributes": {
           "contractDependencies": [
-            836,
-            1088,
-            2294
+            838,
+            1090,
+            2296
           ],
           "contractKind": "contract",
           "documentation": null,
           "fullyImplemented": true,
           "linearizedBaseContracts": [
-            1049,
-            2294,
-            836,
-            1088
+            1051,
+            2296,
+            838,
+            1090
           ],
           "name": "Dice",
-          "scope": 1050
+          "scope": 1052
         },
         "children": [
           {
@@ -3071,15 +3071,15 @@
                 "attributes": {
                   "contractScope": null,
                   "name": "Game",
-                  "referencedDeclaration": 1088,
+                  "referencedDeclaration": 1090,
                   "type": "contract Game"
                 },
-                "id": 843,
+                "id": 845,
                 "name": "UserDefinedTypeName",
                 "src": "154:4:2"
               }
             ],
-            "id": 844,
+            "id": 846,
             "name": "InheritanceSpecifier",
             "src": "154:4:2"
           },
@@ -3092,15 +3092,15 @@
                 "attributes": {
                   "contractScope": null,
                   "name": "Utility",
-                  "referencedDeclaration": 836,
+                  "referencedDeclaration": 838,
                   "type": "contract Utility"
                 },
-                "id": 845,
+                "id": 847,
                 "name": "UserDefinedTypeName",
                 "src": "160:7:2"
               }
             ],
-            "id": 846,
+            "id": 848,
             "name": "InheritanceSpecifier",
             "src": "160:7:2"
           },
@@ -3113,15 +3113,15 @@
                 "attributes": {
                   "contractScope": null,
                   "name": "Ownable",
-                  "referencedDeclaration": 2294,
+                  "referencedDeclaration": 2296,
                   "type": "contract Ownable"
                 },
-                "id": 847,
+                "id": 849,
                 "name": "UserDefinedTypeName",
                 "src": "169:7:2"
               }
             ],
-            "id": 848,
+            "id": 850,
             "name": "InheritanceSpecifier",
             "src": "169:7:2"
           },
@@ -3131,10 +3131,10 @@
                 "attributes": {
                   "contractScope": null,
                   "name": "SafeMath",
-                  "referencedDeclaration": 2392,
+                  "referencedDeclaration": 2394,
                   "type": "library SafeMath"
                 },
-                "id": 849,
+                "id": 851,
                 "name": "UserDefinedTypeName",
                 "src": "257:8:2"
               },
@@ -3143,12 +3143,12 @@
                   "name": "uint256",
                   "type": "uint256"
                 },
-                "id": 850,
+                "id": 852,
                 "name": "ElementaryTypeName",
                 "src": "270:7:2"
               }
             ],
-            "id": 851,
+            "id": 853,
             "name": "UsingForDirective",
             "src": "251:27:2"
           },
@@ -3158,10 +3158,10 @@
                 "attributes": {
                   "contractScope": null,
                   "name": "SafeMath",
-                  "referencedDeclaration": 2392,
+                  "referencedDeclaration": 2394,
                   "type": "library SafeMath"
                 },
-                "id": 852,
+                "id": 854,
                 "name": "UserDefinedTypeName",
                 "src": "332:8:2"
               },
@@ -3170,12 +3170,12 @@
                   "name": "uint8",
                   "type": "uint8"
                 },
-                "id": 853,
+                "id": 855,
                 "name": "ElementaryTypeName",
                 "src": "345:5:2"
               }
             ],
-            "id": 854,
+            "id": 856,
             "name": "UsingForDirective",
             "src": "326:25:2"
           },
@@ -3183,7 +3183,7 @@
             "attributes": {
               "canonicalName": "Dice.Bet",
               "name": "Bet",
-              "scope": 1049,
+              "scope": 1051,
               "visibility": "public"
             },
             "children": [
@@ -3191,7 +3191,7 @@
                 "attributes": {
                   "constant": false,
                   "name": "isSet",
-                  "scope": 861,
+                  "scope": 863,
                   "stateVariable": false,
                   "storageLocation": "default",
                   "type": "bool",
@@ -3204,12 +3204,12 @@
                       "name": "bool",
                       "type": "bool"
                     },
-                    "id": 855,
+                    "id": 857,
                     "name": "ElementaryTypeName",
                     "src": "381:4:2"
                   }
                 ],
-                "id": 856,
+                "id": 858,
                 "name": "VariableDeclaration",
                 "src": "381:10:2"
               },
@@ -3217,7 +3217,7 @@
                 "attributes": {
                   "constant": false,
                   "name": "tokenAmount",
-                  "scope": 861,
+                  "scope": 863,
                   "stateVariable": false,
                   "storageLocation": "default",
                   "type": "uint256",
@@ -3230,12 +3230,12 @@
                       "name": "uint256",
                       "type": "uint256"
                     },
-                    "id": 857,
+                    "id": 859,
                     "name": "ElementaryTypeName",
                     "src": "396:7:2"
                   }
                 ],
-                "id": 858,
+                "id": 860,
                 "name": "VariableDeclaration",
                 "src": "396:19:2"
               },
@@ -3243,7 +3243,7 @@
                 "attributes": {
                   "constant": false,
                   "name": "diceBet",
-                  "scope": 861,
+                  "scope": 863,
                   "stateVariable": false,
                   "storageLocation": "default",
                   "type": "uint8",
@@ -3256,17 +3256,17 @@
                       "name": "uint8",
                       "type": "uint8"
                     },
-                    "id": 859,
+                    "id": 861,
                     "name": "ElementaryTypeName",
                     "src": "419:5:2"
                   }
                 ],
-                "id": 860,
+                "id": 862,
                 "name": "VariableDeclaration",
                 "src": "419:13:2"
               }
             ],
-            "id": 861,
+            "id": 863,
             "name": "StructDefinition",
             "src": "367:69:2"
           },
@@ -3274,7 +3274,7 @@
             "attributes": {
               "constant": false,
               "name": "betsMap",
-              "scope": 1049,
+              "scope": 1051,
               "stateVariable": true,
               "storageLocation": "default",
               "type": "mapping(address => struct Dice.Bet)",
@@ -3292,7 +3292,7 @@
                       "name": "address",
                       "type": "address"
                     },
-                    "id": 862,
+                    "id": 864,
                     "name": "ElementaryTypeName",
                     "src": "446:7:2"
                   },
@@ -3300,20 +3300,20 @@
                     "attributes": {
                       "contractScope": null,
                       "name": "Bet",
-                      "referencedDeclaration": 861,
+                      "referencedDeclaration": 863,
                       "type": "struct Dice.Bet"
                     },
-                    "id": 863,
+                    "id": 865,
                     "name": "UserDefinedTypeName",
                     "src": "457:3:2"
                   }
                 ],
-                "id": 864,
+                "id": 866,
                 "name": "Mapping",
                 "src": "438:23:2"
               }
             ],
-            "id": 865,
+            "id": 867,
             "name": "VariableDeclaration",
             "src": "438:39:2"
           },
@@ -3321,7 +3321,7 @@
             "attributes": {
               "constant": false,
               "name": "diceBetMultiplier",
-              "scope": 1049,
+              "scope": 1051,
               "stateVariable": true,
               "storageLocation": "default",
               "type": "uint256",
@@ -3333,7 +3333,7 @@
                   "name": "uint256",
                   "type": "uint256"
                 },
-                "id": 866,
+                "id": 868,
                 "name": "ElementaryTypeName",
                 "src": "480:7:2"
               },
@@ -3350,12 +3350,12 @@
                   "type": "int_const 6",
                   "value": "6"
                 },
-                "id": 867,
+                "id": 869,
                 "name": "Literal",
                 "src": "508:1:2"
               }
             ],
-            "id": 868,
+            "id": 870,
             "name": "VariableDeclaration",
             "src": "480:29:2"
           },
@@ -3366,9 +3366,9 @@
               "isConstructor": false,
               "kind": "function",
               "name": "isBetSet",
-              "scope": 1049,
+              "scope": 1051,
               "stateMutability": "view",
-              "superFunction": 1058,
+              "superFunction": 1060,
               "visibility": "external"
             },
             "children": [
@@ -3378,7 +3378,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "player",
-                      "scope": 883,
+                      "scope": 885,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -3392,17 +3392,17 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 869,
+                        "id": 871,
                         "name": "ElementaryTypeName",
                         "src": "554:7:2"
                       }
                     ],
-                    "id": 870,
+                    "id": 872,
                     "name": "VariableDeclaration",
                     "src": "554:14:2"
                   }
                 ],
-                "id": 871,
+                "id": 873,
                 "name": "ParameterList",
                 "src": "553:16:2"
               },
@@ -3412,7 +3412,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "",
-                      "scope": 883,
+                      "scope": 885,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "bool",
@@ -3425,17 +3425,17 @@
                           "name": "bool",
                           "type": "bool"
                         },
-                        "id": 874,
+                        "id": 876,
                         "name": "ElementaryTypeName",
                         "src": "602:4:2"
                       }
                     ],
-                    "id": 875,
+                    "id": 877,
                     "name": "VariableDeclaration",
                     "src": "602:4:2"
                   }
                 ],
-                "id": 876,
+                "id": 878,
                 "name": "ParameterList",
                 "src": "601:6:2"
               },
@@ -3450,16 +3450,16 @@
                       "overloadedDeclarations": [
                         null
                       ],
-                      "referencedDeclaration": 2239,
+                      "referencedDeclaration": 2241,
                       "type": "modifier ()",
                       "value": "onlyOwner"
                     },
-                    "id": 872,
+                    "id": 874,
                     "name": "Identifier",
                     "src": "584:9:2"
                   }
                 ],
-                "id": 873,
+                "id": 875,
                 "name": "ModifierInvocation",
                 "src": "584:9:2"
               },
@@ -3467,7 +3467,7 @@
                 "children": [
                   {
                     "attributes": {
-                      "functionReturnParameters": 876
+                      "functionReturnParameters": 878
                     },
                     "children": [
                       {
@@ -3478,7 +3478,7 @@
                           "isPure": false,
                           "lValueRequested": false,
                           "member_name": "isSet",
-                          "referencedDeclaration": 856,
+                          "referencedDeclaration": 858,
                           "type": "bool"
                         },
                         "children": [
@@ -3498,11 +3498,11 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 865,
+                                  "referencedDeclaration": 867,
                                   "type": "mapping(address => struct Dice.Bet storage ref)",
                                   "value": "betsMap"
                                 },
-                                "id": 877,
+                                "id": 879,
                                 "name": "Identifier",
                                 "src": "618:7:2"
                               },
@@ -3512,36 +3512,36 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 870,
+                                  "referencedDeclaration": 872,
                                   "type": "address",
                                   "value": "player"
                                 },
-                                "id": 878,
+                                "id": 880,
                                 "name": "Identifier",
                                 "src": "626:6:2"
                               }
                             ],
-                            "id": 879,
+                            "id": 881,
                             "name": "IndexAccess",
                             "src": "618:15:2"
                           }
                         ],
-                        "id": 880,
+                        "id": 882,
                         "name": "MemberAccess",
                         "src": "618:21:2"
                       }
                     ],
-                    "id": 881,
+                    "id": 883,
                     "name": "Return",
                     "src": "611:28:2"
                   }
                 ],
-                "id": 882,
+                "id": 884,
                 "name": "Block",
                 "src": "607:36:2"
               }
             ],
-            "id": 883,
+            "id": 885,
             "name": "FunctionDefinition",
             "src": "536:107:2"
           },
@@ -3552,9 +3552,9 @@
               "isConstructor": false,
               "kind": "function",
               "name": "bet",
-              "scope": 1049,
+              "scope": 1051,
               "stateMutability": "nonpayable",
-              "superFunction": 1071,
+              "superFunction": 1073,
               "visibility": "external"
             },
             "children": [
@@ -3564,7 +3564,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "player",
-                      "scope": 945,
+                      "scope": 947,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -3578,12 +3578,12 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 884,
+                        "id": 886,
                         "name": "ElementaryTypeName",
                         "src": "659:7:2"
                       }
                     ],
-                    "id": 885,
+                    "id": 887,
                     "name": "VariableDeclaration",
                     "src": "659:14:2"
                   },
@@ -3591,7 +3591,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "",
-                      "scope": 945,
+                      "scope": 947,
                       "stateVariable": false,
                       "storageLocation": "calldata",
                       "type": "string",
@@ -3604,12 +3604,12 @@
                           "name": "string",
                           "type": "string"
                         },
-                        "id": 886,
+                        "id": 888,
                         "name": "ElementaryTypeName",
                         "src": "681:6:2"
                       }
                     ],
-                    "id": 887,
+                    "id": 889,
                     "name": "VariableDeclaration",
                     "src": "681:15:2"
                   },
@@ -3617,7 +3617,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "betData",
-                      "scope": 945,
+                      "scope": 947,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint8",
@@ -3630,12 +3630,12 @@
                           "name": "uint8",
                           "type": "uint8"
                         },
-                        "id": 888,
+                        "id": 890,
                         "name": "ElementaryTypeName",
                         "src": "716:5:2"
                       }
                     ],
-                    "id": 889,
+                    "id": 891,
                     "name": "VariableDeclaration",
                     "src": "716:13:2"
                   },
@@ -3643,7 +3643,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "tokenAmount",
-                      "scope": 945,
+                      "scope": 947,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -3656,17 +3656,17 @@
                           "name": "uint",
                           "type": "uint256"
                         },
-                        "id": 890,
+                        "id": 892,
                         "name": "ElementaryTypeName",
                         "src": "737:4:2"
                       }
                     ],
-                    "id": 891,
+                    "id": 893,
                     "name": "VariableDeclaration",
                     "src": "737:16:2"
                   }
                 ],
-                "id": 892,
+                "id": 894,
                 "name": "ParameterList",
                 "src": "658:96:2"
               },
@@ -3676,7 +3676,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "",
-                      "scope": 945,
+                      "scope": 947,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "bool",
@@ -3689,17 +3689,17 @@
                           "name": "bool",
                           "type": "bool"
                         },
-                        "id": 901,
+                        "id": 903,
                         "name": "ElementaryTypeName",
                         "src": "859:4:2"
                       }
                     ],
-                    "id": 902,
+                    "id": 904,
                     "name": "VariableDeclaration",
                     "src": "859:4:2"
                   }
                 ],
-                "id": 903,
+                "id": 905,
                 "name": "ParameterList",
                 "src": "858:6:2"
               },
@@ -3714,16 +3714,16 @@
                       "overloadedDeclarations": [
                         null
                       ],
-                      "referencedDeclaration": 2239,
+                      "referencedDeclaration": 2241,
                       "type": "modifier ()",
                       "value": "onlyOwner"
                     },
-                    "id": 893,
+                    "id": 895,
                     "name": "Identifier",
                     "src": "764:9:2"
                   }
                 ],
-                "id": 894,
+                "id": 896,
                 "name": "ModifierInvocation",
                 "src": "764:9:2"
               },
@@ -3735,11 +3735,11 @@
                       "overloadedDeclarations": [
                         null
                       ],
-                      "referencedDeclaration": 604,
+                      "referencedDeclaration": 606,
                       "type": "modifier (bool)",
                       "value": "currentBetIsNotSet"
                     },
-                    "id": 895,
+                    "id": 897,
                     "name": "Identifier",
                     "src": "791:18:2"
                   },
@@ -3751,7 +3751,7 @@
                       "isPure": false,
                       "lValueRequested": false,
                       "member_name": "isSet",
-                      "referencedDeclaration": 856,
+                      "referencedDeclaration": 858,
                       "type": "bool"
                     },
                     "children": [
@@ -3771,11 +3771,11 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 865,
+                              "referencedDeclaration": 867,
                               "type": "mapping(address => struct Dice.Bet storage ref)",
                               "value": "betsMap"
                             },
-                            "id": 896,
+                            "id": 898,
                             "name": "Identifier",
                             "src": "810:7:2"
                           },
@@ -3785,26 +3785,26 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 885,
+                              "referencedDeclaration": 887,
                               "type": "address",
                               "value": "player"
                             },
-                            "id": 897,
+                            "id": 899,
                             "name": "Identifier",
                             "src": "818:6:2"
                           }
                         ],
-                        "id": 898,
+                        "id": 900,
                         "name": "IndexAccess",
                         "src": "810:15:2"
                       }
                     ],
-                    "id": 899,
+                    "id": 901,
                     "name": "MemberAccess",
                     "src": "810:21:2"
                   }
                 ],
-                "id": 900,
+                "id": 902,
                 "name": "ModifierInvocation",
                 "src": "791:41:2"
               },
@@ -3840,14 +3840,14 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                2834,
-                                2835
+                                2651,
+                                2652
                               ],
-                              "referencedDeclaration": 2835,
+                              "referencedDeclaration": 2652,
                               "type": "function (bool,string memory) pure",
                               "value": "require"
                             },
-                            "id": 904,
+                            "id": 906,
                             "name": "Identifier",
                             "src": "868:7:2"
                           },
@@ -3872,11 +3872,11 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 889,
+                                  "referencedDeclaration": 891,
                                   "type": "uint8",
                                   "value": "betData"
                                 },
-                                "id": 905,
+                                "id": 907,
                                 "name": "Identifier",
                                 "src": "876:7:2"
                               },
@@ -3893,12 +3893,12 @@
                                   "type": "int_const 2",
                                   "value": "2"
                                 },
-                                "id": 906,
+                                "id": 908,
                                 "name": "Literal",
                                 "src": "887:1:2"
                               }
                             ],
-                            "id": 907,
+                            "id": 909,
                             "name": "BinaryOperation",
                             "src": "876:12:2"
                           },
@@ -3915,17 +3915,17 @@
                               "type": "literal_string \"Bet must be between 2 and 12\"",
                               "value": "Bet must be between 2 and 12"
                             },
-                            "id": 908,
+                            "id": 910,
                             "name": "Literal",
                             "src": "890:30:2"
                           }
                         ],
-                        "id": 909,
+                        "id": 911,
                         "name": "FunctionCall",
                         "src": "868:53:2"
                       }
                     ],
-                    "id": 910,
+                    "id": 912,
                     "name": "ExpressionStatement",
                     "src": "868:53:2"
                   },
@@ -3959,14 +3959,14 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                2834,
-                                2835
+                                2651,
+                                2652
                               ],
-                              "referencedDeclaration": 2835,
+                              "referencedDeclaration": 2652,
                               "type": "function (bool,string memory) pure",
                               "value": "require"
                             },
-                            "id": 911,
+                            "id": 913,
                             "name": "Identifier",
                             "src": "925:7:2"
                           },
@@ -3991,11 +3991,11 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 889,
+                                  "referencedDeclaration": 891,
                                   "type": "uint8",
                                   "value": "betData"
                                 },
-                                "id": 912,
+                                "id": 914,
                                 "name": "Identifier",
                                 "src": "933:7:2"
                               },
@@ -4012,12 +4012,12 @@
                                   "type": "int_const 12",
                                   "value": "12"
                                 },
-                                "id": 913,
+                                "id": 915,
                                 "name": "Literal",
                                 "src": "944:2:2"
                               }
                             ],
-                            "id": 914,
+                            "id": 916,
                             "name": "BinaryOperation",
                             "src": "933:13:2"
                           },
@@ -4034,17 +4034,17 @@
                               "type": "literal_string \"Bet must be between 2 and 12\"",
                               "value": "Bet must be between 2 and 12"
                             },
-                            "id": 915,
+                            "id": 917,
                             "name": "Literal",
                             "src": "948:30:2"
                           }
                         ],
-                        "id": 916,
+                        "id": 918,
                         "name": "FunctionCall",
                         "src": "925:54:2"
                       }
                     ],
-                    "id": 917,
+                    "id": 919,
                     "name": "ExpressionStatement",
                     "src": "925:54:2"
                   },
@@ -4069,7 +4069,7 @@
                               "isPure": false,
                               "lValueRequested": true,
                               "member_name": "diceBet",
-                              "referencedDeclaration": 860,
+                              "referencedDeclaration": 862,
                               "type": "uint8"
                             },
                             "children": [
@@ -4089,11 +4089,11 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 865,
+                                      "referencedDeclaration": 867,
                                       "type": "mapping(address => struct Dice.Bet storage ref)",
                                       "value": "betsMap"
                                     },
-                                    "id": 918,
+                                    "id": 920,
                                     "name": "Identifier",
                                     "src": "983:7:2"
                                   },
@@ -4103,21 +4103,21 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 885,
+                                      "referencedDeclaration": 887,
                                       "type": "address",
                                       "value": "player"
                                     },
-                                    "id": 919,
+                                    "id": 921,
                                     "name": "Identifier",
                                     "src": "991:6:2"
                                   }
                                 ],
-                                "id": 920,
+                                "id": 922,
                                 "name": "IndexAccess",
                                 "src": "983:15:2"
                               }
                             ],
-                            "id": 921,
+                            "id": 923,
                             "name": "MemberAccess",
                             "src": "983:23:2"
                           },
@@ -4127,21 +4127,21 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 889,
+                              "referencedDeclaration": 891,
                               "type": "uint8",
                               "value": "betData"
                             },
-                            "id": 922,
+                            "id": 924,
                             "name": "Identifier",
                             "src": "1009:7:2"
                           }
                         ],
-                        "id": 923,
+                        "id": 925,
                         "name": "Assignment",
                         "src": "983:33:2"
                       }
                     ],
-                    "id": 924,
+                    "id": 926,
                     "name": "ExpressionStatement",
                     "src": "983:33:2"
                   },
@@ -4166,7 +4166,7 @@
                               "isPure": false,
                               "lValueRequested": true,
                               "member_name": "isSet",
-                              "referencedDeclaration": 856,
+                              "referencedDeclaration": 858,
                               "type": "bool"
                             },
                             "children": [
@@ -4186,11 +4186,11 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 865,
+                                      "referencedDeclaration": 867,
                                       "type": "mapping(address => struct Dice.Bet storage ref)",
                                       "value": "betsMap"
                                     },
-                                    "id": 925,
+                                    "id": 927,
                                     "name": "Identifier",
                                     "src": "1020:7:2"
                                   },
@@ -4200,21 +4200,21 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 885,
+                                      "referencedDeclaration": 887,
                                       "type": "address",
                                       "value": "player"
                                     },
-                                    "id": 926,
+                                    "id": 928,
                                     "name": "Identifier",
                                     "src": "1028:6:2"
                                   }
                                 ],
-                                "id": 927,
+                                "id": 929,
                                 "name": "IndexAccess",
                                 "src": "1020:15:2"
                               }
                             ],
-                            "id": 928,
+                            "id": 930,
                             "name": "MemberAccess",
                             "src": "1020:21:2"
                           },
@@ -4231,17 +4231,17 @@
                               "type": "bool",
                               "value": "true"
                             },
-                            "id": 929,
+                            "id": 931,
                             "name": "Literal",
                             "src": "1044:4:2"
                           }
                         ],
-                        "id": 930,
+                        "id": 932,
                         "name": "Assignment",
                         "src": "1020:28:2"
                       }
                     ],
-                    "id": 931,
+                    "id": 933,
                     "name": "ExpressionStatement",
                     "src": "1020:28:2"
                   },
@@ -4266,7 +4266,7 @@
                               "isPure": false,
                               "lValueRequested": true,
                               "member_name": "tokenAmount",
-                              "referencedDeclaration": 858,
+                              "referencedDeclaration": 860,
                               "type": "uint256"
                             },
                             "children": [
@@ -4286,11 +4286,11 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 865,
+                                      "referencedDeclaration": 867,
                                       "type": "mapping(address => struct Dice.Bet storage ref)",
                                       "value": "betsMap"
                                     },
-                                    "id": 932,
+                                    "id": 934,
                                     "name": "Identifier",
                                     "src": "1052:7:2"
                                   },
@@ -4300,21 +4300,21 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 885,
+                                      "referencedDeclaration": 887,
                                       "type": "address",
                                       "value": "player"
                                     },
-                                    "id": 933,
+                                    "id": 935,
                                     "name": "Identifier",
                                     "src": "1060:6:2"
                                   }
                                 ],
-                                "id": 934,
+                                "id": 936,
                                 "name": "IndexAccess",
                                 "src": "1052:15:2"
                               }
                             ],
-                            "id": 935,
+                            "id": 937,
                             "name": "MemberAccess",
                             "src": "1052:27:2"
                           },
@@ -4324,27 +4324,27 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 891,
+                              "referencedDeclaration": 893,
                               "type": "uint256",
                               "value": "tokenAmount"
                             },
-                            "id": 936,
+                            "id": 938,
                             "name": "Identifier",
                             "src": "1082:11:2"
                           }
                         ],
-                        "id": 937,
+                        "id": 939,
                         "name": "Assignment",
                         "src": "1052:41:2"
                       }
                     ],
-                    "id": 938,
+                    "id": 940,
                     "name": "ExpressionStatement",
                     "src": "1052:41:2"
                   },
                   {
                     "attributes": {
-                      "functionReturnParameters": 903
+                      "functionReturnParameters": 905
                     },
                     "children": [
                       {
@@ -4355,7 +4355,7 @@
                           "isPure": false,
                           "lValueRequested": false,
                           "member_name": "isSet",
-                          "referencedDeclaration": 856,
+                          "referencedDeclaration": 858,
                           "type": "bool"
                         },
                         "children": [
@@ -4375,11 +4375,11 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 865,
+                                  "referencedDeclaration": 867,
                                   "type": "mapping(address => struct Dice.Bet storage ref)",
                                   "value": "betsMap"
                                 },
-                                "id": 939,
+                                "id": 941,
                                 "name": "Identifier",
                                 "src": "1104:7:2"
                               },
@@ -4389,36 +4389,36 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 885,
+                                  "referencedDeclaration": 887,
                                   "type": "address",
                                   "value": "player"
                                 },
-                                "id": 940,
+                                "id": 942,
                                 "name": "Identifier",
                                 "src": "1112:6:2"
                               }
                             ],
-                            "id": 941,
+                            "id": 943,
                             "name": "IndexAccess",
                             "src": "1104:15:2"
                           }
                         ],
-                        "id": 942,
+                        "id": 944,
                         "name": "MemberAccess",
                         "src": "1104:21:2"
                       }
                     ],
-                    "id": 943,
+                    "id": 945,
                     "name": "Return",
                     "src": "1097:28:2"
                   }
                 ],
-                "id": 944,
+                "id": 946,
                 "name": "Block",
                 "src": "864:265:2"
               }
             ],
-            "id": 945,
+            "id": 947,
             "name": "FunctionDefinition",
             "src": "646:483:2"
           },
@@ -4429,9 +4429,9 @@
               "isConstructor": false,
               "kind": "function",
               "name": "cancelBet",
-              "scope": 1049,
+              "scope": 1051,
               "stateMutability": "nonpayable",
-              "superFunction": 1078,
+              "superFunction": 1080,
               "visibility": "external"
             },
             "children": [
@@ -4441,7 +4441,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "player",
-                      "scope": 973,
+                      "scope": 975,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -4455,17 +4455,17 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 946,
+                        "id": 948,
                         "name": "ElementaryTypeName",
                         "src": "1151:7:2"
                       }
                     ],
-                    "id": 947,
+                    "id": 949,
                     "name": "VariableDeclaration",
                     "src": "1151:14:2"
                   }
                 ],
-                "id": 948,
+                "id": 950,
                 "name": "ParameterList",
                 "src": "1150:16:2"
               },
@@ -4475,7 +4475,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "",
-                      "scope": 973,
+                      "scope": 975,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -4488,17 +4488,17 @@
                           "name": "uint256",
                           "type": "uint256"
                         },
-                        "id": 957,
+                        "id": 959,
                         "name": "ElementaryTypeName",
                         "src": "1233:7:2"
                       }
                     ],
-                    "id": 958,
+                    "id": 960,
                     "name": "VariableDeclaration",
                     "src": "1233:7:2"
                   }
                 ],
-                "id": 959,
+                "id": 961,
                 "name": "ParameterList",
                 "src": "1232:9:2"
               },
@@ -4513,16 +4513,16 @@
                       "overloadedDeclarations": [
                         null
                       ],
-                      "referencedDeclaration": 2239,
+                      "referencedDeclaration": 2241,
                       "type": "modifier ()",
                       "value": "onlyOwner"
                     },
-                    "id": 949,
+                    "id": 951,
                     "name": "Identifier",
                     "src": "1176:9:2"
                   }
                 ],
-                "id": 950,
+                "id": 952,
                 "name": "ModifierInvocation",
                 "src": "1176:9:2"
               },
@@ -4534,11 +4534,11 @@
                       "overloadedDeclarations": [
                         null
                       ],
-                      "referencedDeclaration": 617,
+                      "referencedDeclaration": 619,
                       "type": "modifier (bool)",
                       "value": "currentBetIsSet"
                     },
-                    "id": 951,
+                    "id": 953,
                     "name": "Identifier",
                     "src": "1186:15:2"
                   },
@@ -4550,7 +4550,7 @@
                       "isPure": false,
                       "lValueRequested": false,
                       "member_name": "isSet",
-                      "referencedDeclaration": 856,
+                      "referencedDeclaration": 858,
                       "type": "bool"
                     },
                     "children": [
@@ -4570,11 +4570,11 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 865,
+                              "referencedDeclaration": 867,
                               "type": "mapping(address => struct Dice.Bet storage ref)",
                               "value": "betsMap"
                             },
-                            "id": 952,
+                            "id": 954,
                             "name": "Identifier",
                             "src": "1202:7:2"
                           },
@@ -4584,26 +4584,26 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 947,
+                              "referencedDeclaration": 949,
                               "type": "address",
                               "value": "player"
                             },
-                            "id": 953,
+                            "id": 955,
                             "name": "Identifier",
                             "src": "1210:6:2"
                           }
                         ],
-                        "id": 954,
+                        "id": 956,
                         "name": "IndexAccess",
                         "src": "1202:15:2"
                       }
                     ],
-                    "id": 955,
+                    "id": 957,
                     "name": "MemberAccess",
                     "src": "1202:21:2"
                   }
                 ],
-                "id": 956,
+                "id": 958,
                 "name": "ModifierInvocation",
                 "src": "1186:38:2"
               },
@@ -4630,7 +4630,7 @@
                               "isPure": false,
                               "lValueRequested": true,
                               "member_name": "isSet",
-                              "referencedDeclaration": 856,
+                              "referencedDeclaration": 858,
                               "type": "bool"
                             },
                             "children": [
@@ -4650,11 +4650,11 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 865,
+                                      "referencedDeclaration": 867,
                                       "type": "mapping(address => struct Dice.Bet storage ref)",
                                       "value": "betsMap"
                                     },
-                                    "id": 960,
+                                    "id": 962,
                                     "name": "Identifier",
                                     "src": "1245:7:2"
                                   },
@@ -4664,21 +4664,21 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 947,
+                                      "referencedDeclaration": 949,
                                       "type": "address",
                                       "value": "player"
                                     },
-                                    "id": 961,
+                                    "id": 963,
                                     "name": "Identifier",
                                     "src": "1253:6:2"
                                   }
                                 ],
-                                "id": 962,
+                                "id": 964,
                                 "name": "IndexAccess",
                                 "src": "1245:15:2"
                               }
                             ],
-                            "id": 963,
+                            "id": 965,
                             "name": "MemberAccess",
                             "src": "1245:21:2"
                           },
@@ -4695,23 +4695,23 @@
                               "type": "bool",
                               "value": "false"
                             },
-                            "id": 964,
+                            "id": 966,
                             "name": "Literal",
                             "src": "1269:5:2"
                           }
                         ],
-                        "id": 965,
+                        "id": 967,
                         "name": "Assignment",
                         "src": "1245:29:2"
                       }
                     ],
-                    "id": 966,
+                    "id": 968,
                     "name": "ExpressionStatement",
                     "src": "1245:29:2"
                   },
                   {
                     "attributes": {
-                      "functionReturnParameters": 959
+                      "functionReturnParameters": 961
                     },
                     "children": [
                       {
@@ -4722,7 +4722,7 @@
                           "isPure": false,
                           "lValueRequested": false,
                           "member_name": "tokenAmount",
-                          "referencedDeclaration": 858,
+                          "referencedDeclaration": 860,
                           "type": "uint256"
                         },
                         "children": [
@@ -4742,11 +4742,11 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 865,
+                                  "referencedDeclaration": 867,
                                   "type": "mapping(address => struct Dice.Bet storage ref)",
                                   "value": "betsMap"
                                 },
-                                "id": 967,
+                                "id": 969,
                                 "name": "Identifier",
                                 "src": "1285:7:2"
                               },
@@ -4756,36 +4756,36 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 947,
+                                  "referencedDeclaration": 949,
                                   "type": "address",
                                   "value": "player"
                                 },
-                                "id": 968,
+                                "id": 970,
                                 "name": "Identifier",
                                 "src": "1293:6:2"
                               }
                             ],
-                            "id": 969,
+                            "id": 971,
                             "name": "IndexAccess",
                             "src": "1285:15:2"
                           }
                         ],
-                        "id": 970,
+                        "id": 972,
                         "name": "MemberAccess",
                         "src": "1285:27:2"
                       }
                     ],
-                    "id": 971,
+                    "id": 973,
                     "name": "Return",
                     "src": "1278:34:2"
                   }
                 ],
-                "id": 972,
+                "id": 974,
                 "name": "Block",
                 "src": "1241:75:2"
               }
             ],
-            "id": 973,
+            "id": 975,
             "name": "FunctionDefinition",
             "src": "1132:184:2"
           },
@@ -4796,9 +4796,9 @@
               "isConstructor": false,
               "kind": "function",
               "name": "play",
-              "scope": 1049,
+              "scope": 1051,
               "stateMutability": "nonpayable",
-              "superFunction": 1087,
+              "superFunction": 1089,
               "visibility": "external"
             },
             "children": [
@@ -4808,7 +4808,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "player",
-                      "scope": 1029,
+                      "scope": 1031,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -4822,17 +4822,17 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 974,
+                        "id": 976,
                         "name": "ElementaryTypeName",
                         "src": "1333:7:2"
                       }
                     ],
-                    "id": 975,
+                    "id": 977,
                     "name": "VariableDeclaration",
                     "src": "1333:14:2"
                   }
                 ],
-                "id": 976,
+                "id": 978,
                 "name": "ParameterList",
                 "src": "1332:16:2"
               },
@@ -4842,7 +4842,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "",
-                      "scope": 1029,
+                      "scope": 1031,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint8",
@@ -4855,12 +4855,12 @@
                           "name": "uint8",
                           "type": "uint8"
                         },
-                        "id": 985,
+                        "id": 987,
                         "name": "ElementaryTypeName",
                         "src": "1415:5:2"
                       }
                     ],
-                    "id": 986,
+                    "id": 988,
                     "name": "VariableDeclaration",
                     "src": "1415:5:2"
                   },
@@ -4868,7 +4868,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "",
-                      "scope": 1029,
+                      "scope": 1031,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -4881,17 +4881,17 @@
                           "name": "uint256",
                           "type": "uint256"
                         },
-                        "id": 987,
+                        "id": 989,
                         "name": "ElementaryTypeName",
                         "src": "1423:7:2"
                       }
                     ],
-                    "id": 988,
+                    "id": 990,
                     "name": "VariableDeclaration",
                     "src": "1423:7:2"
                   }
                 ],
-                "id": 989,
+                "id": 991,
                 "name": "ParameterList",
                 "src": "1414:17:2"
               },
@@ -4906,16 +4906,16 @@
                       "overloadedDeclarations": [
                         null
                       ],
-                      "referencedDeclaration": 2239,
+                      "referencedDeclaration": 2241,
                       "type": "modifier ()",
                       "value": "onlyOwner"
                     },
-                    "id": 977,
+                    "id": 979,
                     "name": "Identifier",
                     "src": "1358:9:2"
                   }
                 ],
-                "id": 978,
+                "id": 980,
                 "name": "ModifierInvocation",
                 "src": "1358:9:2"
               },
@@ -4927,11 +4927,11 @@
                       "overloadedDeclarations": [
                         null
                       ],
-                      "referencedDeclaration": 617,
+                      "referencedDeclaration": 619,
                       "type": "modifier (bool)",
                       "value": "currentBetIsSet"
                     },
-                    "id": 979,
+                    "id": 981,
                     "name": "Identifier",
                     "src": "1368:15:2"
                   },
@@ -4943,7 +4943,7 @@
                       "isPure": false,
                       "lValueRequested": false,
                       "member_name": "isSet",
-                      "referencedDeclaration": 856,
+                      "referencedDeclaration": 858,
                       "type": "bool"
                     },
                     "children": [
@@ -4963,11 +4963,11 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 865,
+                              "referencedDeclaration": 867,
                               "type": "mapping(address => struct Dice.Bet storage ref)",
                               "value": "betsMap"
                             },
-                            "id": 980,
+                            "id": 982,
                             "name": "Identifier",
                             "src": "1384:7:2"
                           },
@@ -4977,26 +4977,26 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 975,
+                              "referencedDeclaration": 977,
                               "type": "address",
                               "value": "player"
                             },
-                            "id": 981,
+                            "id": 983,
                             "name": "Identifier",
                             "src": "1392:6:2"
                           }
                         ],
-                        "id": 982,
+                        "id": 984,
                         "name": "IndexAccess",
                         "src": "1384:15:2"
                       }
                     ],
-                    "id": 983,
+                    "id": 985,
                     "name": "MemberAccess",
                     "src": "1384:21:2"
                   }
                 ],
-                "id": 984,
+                "id": 986,
                 "name": "ModifierInvocation",
                 "src": "1368:38:2"
               },
@@ -5005,7 +5005,7 @@
                   {
                     "attributes": {
                       "assignments": [
-                        991
+                        993
                       ]
                     },
                     "children": [
@@ -5013,7 +5013,7 @@
                         "attributes": {
                           "constant": false,
                           "name": "diceResult",
-                          "scope": 1028,
+                          "scope": 1030,
                           "stateVariable": false,
                           "storageLocation": "default",
                           "type": "uint8",
@@ -5026,12 +5026,12 @@
                               "name": "uint8",
                               "type": "uint8"
                             },
-                            "id": 990,
+                            "id": 992,
                             "name": "ElementaryTypeName",
                             "src": "1451:5:2"
                           }
                         ],
-                        "id": 991,
+                        "id": 993,
                         "name": "VariableDeclaration",
                         "src": "1451:16:2"
                       },
@@ -5061,28 +5061,28 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 1048,
+                              "referencedDeclaration": 1050,
                               "type": "function () returns (uint8)",
                               "value": "randomDoubleDice"
                             },
-                            "id": 992,
+                            "id": 994,
                             "name": "Identifier",
                             "src": "1470:16:2"
                           }
                         ],
-                        "id": 993,
+                        "id": 995,
                         "name": "FunctionCall",
                         "src": "1470:18:2"
                       }
                     ],
-                    "id": 994,
+                    "id": 996,
                     "name": "VariableDeclarationStatement",
                     "src": "1451:37:2"
                   },
                   {
                     "attributes": {
                       "assignments": [
-                        996
+                        998
                       ]
                     },
                     "children": [
@@ -5090,7 +5090,7 @@
                         "attributes": {
                           "constant": false,
                           "name": "amount",
-                          "scope": 1028,
+                          "scope": 1030,
                           "stateVariable": false,
                           "storageLocation": "default",
                           "type": "uint256",
@@ -5103,12 +5103,12 @@
                               "name": "uint256",
                               "type": "uint256"
                             },
-                            "id": 995,
+                            "id": 997,
                             "name": "ElementaryTypeName",
                             "src": "1510:7:2"
                           }
                         ],
-                        "id": 996,
+                        "id": 998,
                         "name": "VariableDeclaration",
                         "src": "1510:14:2"
                       },
@@ -5125,12 +5125,12 @@
                           "type": "int_const 0",
                           "value": "0"
                         },
-                        "id": 997,
+                        "id": 999,
                         "name": "Literal",
                         "src": "1527:1:2"
                       }
                     ],
-                    "id": 998,
+                    "id": 1000,
                     "name": "VariableDeclarationStatement",
                     "src": "1510:18:2"
                   },
@@ -5160,11 +5160,11 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 991,
+                              "referencedDeclaration": 993,
                               "type": "uint8",
                               "value": "diceResult"
                             },
-                            "id": 999,
+                            "id": 1001,
                             "name": "Identifier",
                             "src": "1535:10:2"
                           },
@@ -5176,7 +5176,7 @@
                               "isPure": false,
                               "lValueRequested": false,
                               "member_name": "diceBet",
-                              "referencedDeclaration": 860,
+                              "referencedDeclaration": 862,
                               "type": "uint8"
                             },
                             "children": [
@@ -5196,11 +5196,11 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 865,
+                                      "referencedDeclaration": 867,
                                       "type": "mapping(address => struct Dice.Bet storage ref)",
                                       "value": "betsMap"
                                     },
-                                    "id": 1000,
+                                    "id": 1002,
                                     "name": "Identifier",
                                     "src": "1549:7:2"
                                   },
@@ -5210,26 +5210,26 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 975,
+                                      "referencedDeclaration": 977,
                                       "type": "address",
                                       "value": "player"
                                     },
-                                    "id": 1001,
+                                    "id": 1003,
                                     "name": "Identifier",
                                     "src": "1557:6:2"
                                   }
                                 ],
-                                "id": 1002,
+                                "id": 1004,
                                 "name": "IndexAccess",
                                 "src": "1549:15:2"
                               }
                             ],
-                            "id": 1003,
+                            "id": 1005,
                             "name": "MemberAccess",
                             "src": "1549:23:2"
                           }
                         ],
-                        "id": 1004,
+                        "id": 1006,
                         "name": "BinaryOperation",
                         "src": "1535:37:2"
                       },
@@ -5254,11 +5254,11 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 996,
+                                      "referencedDeclaration": 998,
                                       "type": "uint256",
                                       "value": "amount"
                                     },
-                                    "id": 1005,
+                                    "id": 1007,
                                     "name": "Identifier",
                                     "src": "1579:6:2"
                                   },
@@ -5290,7 +5290,7 @@
                                           "isPure": false,
                                           "lValueRequested": false,
                                           "member_name": "mul",
-                                          "referencedDeclaration": 2329,
+                                          "referencedDeclaration": 2331,
                                           "type": "function (uint256,uint256) pure returns (uint256)"
                                         },
                                         "children": [
@@ -5302,7 +5302,7 @@
                                               "isPure": false,
                                               "lValueRequested": false,
                                               "member_name": "tokenAmount",
-                                              "referencedDeclaration": 858,
+                                              "referencedDeclaration": 860,
                                               "type": "uint256"
                                             },
                                             "children": [
@@ -5322,11 +5322,11 @@
                                                       "overloadedDeclarations": [
                                                         null
                                                       ],
-                                                      "referencedDeclaration": 865,
+                                                      "referencedDeclaration": 867,
                                                       "type": "mapping(address => struct Dice.Bet storage ref)",
                                                       "value": "betsMap"
                                                     },
-                                                    "id": 1006,
+                                                    "id": 1008,
                                                     "name": "Identifier",
                                                     "src": "1588:7:2"
                                                   },
@@ -5336,26 +5336,26 @@
                                                       "overloadedDeclarations": [
                                                         null
                                                       ],
-                                                      "referencedDeclaration": 975,
+                                                      "referencedDeclaration": 977,
                                                       "type": "address",
                                                       "value": "player"
                                                     },
-                                                    "id": 1007,
+                                                    "id": 1009,
                                                     "name": "Identifier",
                                                     "src": "1596:6:2"
                                                   }
                                                 ],
-                                                "id": 1008,
+                                                "id": 1010,
                                                 "name": "IndexAccess",
                                                 "src": "1588:15:2"
                                               }
                                             ],
-                                            "id": 1009,
+                                            "id": 1011,
                                             "name": "MemberAccess",
                                             "src": "1588:27:2"
                                           }
                                         ],
-                                        "id": 1010,
+                                        "id": 1012,
                                         "name": "MemberAccess",
                                         "src": "1588:31:2"
                                       },
@@ -5365,36 +5365,36 @@
                                           "overloadedDeclarations": [
                                             null
                                           ],
-                                          "referencedDeclaration": 868,
+                                          "referencedDeclaration": 870,
                                           "type": "uint256",
                                           "value": "diceBetMultiplier"
                                         },
-                                        "id": 1011,
+                                        "id": 1013,
                                         "name": "Identifier",
                                         "src": "1620:17:2"
                                       }
                                     ],
-                                    "id": 1012,
+                                    "id": 1014,
                                     "name": "FunctionCall",
                                     "src": "1588:50:2"
                                   }
                                 ],
-                                "id": 1013,
+                                "id": 1015,
                                 "name": "Assignment",
                                 "src": "1579:59:2"
                               }
                             ],
-                            "id": 1014,
+                            "id": 1016,
                             "name": "ExpressionStatement",
                             "src": "1579:59:2"
                           }
                         ],
-                        "id": 1015,
+                        "id": 1017,
                         "name": "Block",
                         "src": "1573:70:2"
                       }
                     ],
-                    "id": 1016,
+                    "id": 1018,
                     "name": "IfStatement",
                     "src": "1532:111:2"
                   },
@@ -5419,7 +5419,7 @@
                               "isPure": false,
                               "lValueRequested": true,
                               "member_name": "isSet",
-                              "referencedDeclaration": 856,
+                              "referencedDeclaration": 858,
                               "type": "bool"
                             },
                             "children": [
@@ -5439,11 +5439,11 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 865,
+                                      "referencedDeclaration": 867,
                                       "type": "mapping(address => struct Dice.Bet storage ref)",
                                       "value": "betsMap"
                                     },
-                                    "id": 1017,
+                                    "id": 1019,
                                     "name": "Identifier",
                                     "src": "1646:7:2"
                                   },
@@ -5453,21 +5453,21 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 975,
+                                      "referencedDeclaration": 977,
                                       "type": "address",
                                       "value": "player"
                                     },
-                                    "id": 1018,
+                                    "id": 1020,
                                     "name": "Identifier",
                                     "src": "1654:6:2"
                                   }
                                 ],
-                                "id": 1019,
+                                "id": 1021,
                                 "name": "IndexAccess",
                                 "src": "1646:15:2"
                               }
                             ],
-                            "id": 1020,
+                            "id": 1022,
                             "name": "MemberAccess",
                             "src": "1646:21:2"
                           },
@@ -5484,23 +5484,23 @@
                               "type": "bool",
                               "value": "false"
                             },
-                            "id": 1021,
+                            "id": 1023,
                             "name": "Literal",
                             "src": "1670:5:2"
                           }
                         ],
-                        "id": 1022,
+                        "id": 1024,
                         "name": "Assignment",
                         "src": "1646:29:2"
                       }
                     ],
-                    "id": 1023,
+                    "id": 1025,
                     "name": "ExpressionStatement",
                     "src": "1646:29:2"
                   },
                   {
                     "attributes": {
-                      "functionReturnParameters": 989
+                      "functionReturnParameters": 991
                     },
                     "children": [
                       {
@@ -5520,11 +5520,11 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 991,
+                              "referencedDeclaration": 993,
                               "type": "uint8",
                               "value": "diceResult"
                             },
-                            "id": 1024,
+                            "id": 1026,
                             "name": "Identifier",
                             "src": "1687:10:2"
                           },
@@ -5534,31 +5534,31 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 996,
+                              "referencedDeclaration": 998,
                               "type": "uint256",
                               "value": "amount"
                             },
-                            "id": 1025,
+                            "id": 1027,
                             "name": "Identifier",
                             "src": "1699:6:2"
                           }
                         ],
-                        "id": 1026,
+                        "id": 1028,
                         "name": "TupleExpression",
                         "src": "1686:20:2"
                       }
                     ],
-                    "id": 1027,
+                    "id": 1029,
                     "name": "Return",
                     "src": "1679:27:2"
                   }
                 ],
-                "id": 1028,
+                "id": 1030,
                 "name": "Block",
                 "src": "1431:279:2"
               }
             ],
-            "id": 1029,
+            "id": 1031,
             "name": "FunctionDefinition",
             "src": "1319:391:2"
           },
@@ -5572,7 +5572,7 @@
                 null
               ],
               "name": "randomDoubleDice",
-              "scope": 1049,
+              "scope": 1051,
               "stateMutability": "nonpayable",
               "superFunction": null,
               "visibility": "internal"
@@ -5585,7 +5585,7 @@
                   ]
                 },
                 "children": [],
-                "id": 1030,
+                "id": 1032,
                 "name": "ParameterList",
                 "src": "1738:2:2"
               },
@@ -5595,7 +5595,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "",
-                      "scope": 1048,
+                      "scope": 1050,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint8",
@@ -5608,17 +5608,17 @@
                           "name": "uint8",
                           "type": "uint8"
                         },
-                        "id": 1031,
+                        "id": 1033,
                         "name": "ElementaryTypeName",
                         "src": "1759:5:2"
                       }
                     ],
-                    "id": 1032,
+                    "id": 1034,
                     "name": "VariableDeclaration",
                     "src": "1759:5:2"
                   }
                 ],
-                "id": 1033,
+                "id": 1035,
                 "name": "ParameterList",
                 "src": "1758:7:2"
               },
@@ -5626,7 +5626,7 @@
                 "children": [
                   {
                     "attributes": {
-                      "functionReturnParameters": 1033
+                      "functionReturnParameters": 1035
                     },
                     "children": [
                       {
@@ -5659,7 +5659,7 @@
                               "type": "type(uint8)",
                               "value": "uint8"
                             },
-                            "id": 1034,
+                            "id": 1036,
                             "name": "ElementaryTypeNameExpression",
                             "src": "1776:5:2"
                           },
@@ -5691,7 +5691,7 @@
                                   "isPure": false,
                                   "lValueRequested": false,
                                   "member_name": "add",
-                                  "referencedDeclaration": 2391,
+                                  "referencedDeclaration": 2393,
                                   "type": "function (uint256,uint256) pure returns (uint256)"
                                 },
                                 "children": [
@@ -5725,11 +5725,11 @@
                                           "overloadedDeclarations": [
                                             null
                                           ],
-                                          "referencedDeclaration": 654,
+                                          "referencedDeclaration": 656,
                                           "type": "function (uint8,uint8) returns (uint8)",
                                           "value": "randomUintBetween"
                                         },
-                                        "id": 1035,
+                                        "id": 1037,
                                         "name": "Identifier",
                                         "src": "1782:17:2"
                                       },
@@ -5746,7 +5746,7 @@
                                           "type": "int_const 1",
                                           "value": "1"
                                         },
-                                        "id": 1036,
+                                        "id": 1038,
                                         "name": "Literal",
                                         "src": "1800:1:2"
                                       },
@@ -5763,17 +5763,17 @@
                                           "type": "int_const 6",
                                           "value": "6"
                                         },
-                                        "id": 1037,
+                                        "id": 1039,
                                         "name": "Literal",
                                         "src": "1803:1:2"
                                       }
                                     ],
-                                    "id": 1038,
+                                    "id": 1040,
                                     "name": "FunctionCall",
                                     "src": "1782:23:2"
                                   }
                                 ],
-                                "id": 1039,
+                                "id": 1041,
                                 "name": "MemberAccess",
                                 "src": "1782:27:2"
                               },
@@ -5807,11 +5807,11 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 654,
+                                      "referencedDeclaration": 656,
                                       "type": "function (uint8,uint8) returns (uint8)",
                                       "value": "randomUintBetween"
                                     },
-                                    "id": 1040,
+                                    "id": 1042,
                                     "name": "Identifier",
                                     "src": "1810:17:2"
                                   },
@@ -5828,7 +5828,7 @@
                                       "type": "int_const 1",
                                       "value": "1"
                                     },
-                                    "id": 1041,
+                                    "id": 1043,
                                     "name": "Literal",
                                     "src": "1828:1:2"
                                   },
@@ -5845,47 +5845,47 @@
                                       "type": "int_const 6",
                                       "value": "6"
                                     },
-                                    "id": 1042,
+                                    "id": 1044,
                                     "name": "Literal",
                                     "src": "1831:1:2"
                                   }
                                 ],
-                                "id": 1043,
+                                "id": 1045,
                                 "name": "FunctionCall",
                                 "src": "1810:23:2"
                               }
                             ],
-                            "id": 1044,
+                            "id": 1046,
                             "name": "FunctionCall",
                             "src": "1782:52:2"
                           }
                         ],
-                        "id": 1045,
+                        "id": 1047,
                         "name": "FunctionCall",
                         "src": "1776:59:2"
                       }
                     ],
-                    "id": 1046,
+                    "id": 1048,
                     "name": "Return",
                     "src": "1769:66:2"
                   }
                 ],
-                "id": 1047,
+                "id": 1049,
                 "name": "Block",
                 "src": "1765:77:2"
               }
             ],
-            "id": 1048,
+            "id": 1050,
             "name": "FunctionDefinition",
             "src": "1713:129:2"
           }
         ],
-        "id": 1049,
+        "id": 1051,
         "name": "ContractDefinition",
         "src": "137:1709:2"
       }
     ],
-    "id": 1050,
+    "id": 1052,
     "name": "SourceUnit",
     "src": "0:1847:2"
   },
@@ -5895,7 +5895,7 @@
   },
   "networks": {},
   "schemaVersion": "3.3.4",
-  "updatedAt": "2021-03-24T02:12:03.044Z",
+  "updatedAt": "2021-03-24T17:26:30.315Z",
   "devdoc": {
     "methods": {
       "isOwner()": {
