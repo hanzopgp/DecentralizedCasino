@@ -71,11 +71,10 @@ function App() {
         const networkId = await web3.eth.net.getId();
         const deployedNetwork = Casino.networks[networkId];
        
-       setInstance(new web3.eth.Contract(
+        setInstance(new web3.eth.Contract(
           Casino.abi,
           deployedNetwork && deployedNetwork.address,
         ));
-
 
         let accountsInfo = await Promise.all(accounts.map(async (account) => {
           return {
