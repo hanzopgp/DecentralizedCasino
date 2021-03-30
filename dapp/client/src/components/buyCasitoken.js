@@ -12,7 +12,6 @@ function BuyCasitoken({web3, instance, nextStep}) {
   		const initialTokenBalance = instance.methods.getNbTokensOf().call({
   				from: address.current.value 
   			});
-      console.log(initialTokenBalance);
   		const res = await instance.methods.buyCasitokens(parseInt(tokenAmount.current.value)).send({
   			from: address.current.value, 
   			value: web3.utils.toWei(money.current.value, 'ether')

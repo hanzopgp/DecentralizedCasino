@@ -26,7 +26,7 @@ contract("Casino", (accounts) => {
     })
     it("should buy tokens", async () => {
         const result = await casino.buyCasitokens(maxTokenAmount, {from: a, value: moneyForMaxTokenAmount});
-        //assert.equal(result, maxTokenAmount);
+        assert.equal(result.logs[0].args.tokenBought.toNumber(), maxTokenAmount);
         assert.equal(result.logs[0].event, "EventTokenBought");
     })
     //Admin function test
