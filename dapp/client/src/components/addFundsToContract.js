@@ -31,8 +31,8 @@ function AddFundsToContract({web3, instance, nextStep}) {
   return (
       <form>
 
-        <h1> Add Funds to contract </h1>
-        <p>Account address</p>
+        <h1 className="font-bold"> Add Funds to contract </h1>
+        <p >Account address</p>
         <div>
           <TextField inputRef={address}/>
         </div>

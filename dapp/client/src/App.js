@@ -95,19 +95,33 @@ function App() {
         return <div className="text-5xl h-screen flex justify-center align-center m-auto items-center bg-red-400">Loading Web3, accounts, and contract...</div>;
   }
   return (
-    <div className="App h-full w-full flex justify-center align-center bg-green-200">
+    <div className="App h-full w-full flex justify-center align-center bg-gray-100">
 
       <div className="w-2/3 h-full">
-        {stepComponents[stepNames[actualStepIndex]]()}
-        <Button onClick={stepBack}>Back</Button>
+        <div className="font-bold p-4 text-3xl">
+          CASINO
+          <svg height="210" width="100" id="ethereum_logo">    
+            <polygon points="50,10 0,110 50,130 100,110" id="base_left"/>
+            <polygon points="50,10 50,130 50,130 100,110" id="base_right"/>
+            <polygon points="50,130 0,110 50,70 100,110" id="base_bottom_left"/>
+            <polygon points="50,130 50,110 50,70 100,110" id="base_bottom_right"/>
+            
+            <polygon points="50,170 0,120 50,140 100,120" id="bottom_left"/>
+            <polygon points="50,170 50,120 50,140 100,120" id="bottom_right"/>
+          </svg>
+        </div>
+        <div className="bg-white w-2/4 p-3 rounded-lg form">
+          {stepComponents[stepNames[actualStepIndex]]()}
+          <Button onClick={stepBack}>Back</Button>
+        </div>
       </div>
 
-      <div className="bg-yellow-200 w-1/3 max-h-full overflow-y-auto"> 
+      <div className="bg-black text-white w-1/3 h-full overflow-y-auto"> 
         {/* {navigateToAllSteps} */}
         {
         stepNames.map((name, index) => {
           return (
-            <div className="bg-blue-300 w-full" key={index}>
+            <div className="bg-white w-full" key={index}>
               {index !== 0 && <Divider/>}
               <Button onClick={() => goToStep(index)}>{name}</Button>
             </div>
