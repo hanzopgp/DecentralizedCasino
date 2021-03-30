@@ -32,7 +32,7 @@ function BuyCasitoken({web3, instance, nextStep}) {
   return (
       <form>
 
-        <h1>Buy Casitokens</h1>
+        <h1 className="font-bold">Buy Casitokens</h1>
         <p>Account address</p>
         <div>
           <TextField inputRef={address}/>

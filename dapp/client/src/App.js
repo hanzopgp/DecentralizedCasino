@@ -13,7 +13,7 @@ import WithdrawFundsOfContract from './components/withdrawFundsOfContract';
 import "./App.css";
 import "./tailwind.output.css";
 
-import { Button, Divider } from '@material-ui/core';
+import { Button } from '@material-ui/core';
 
 function App() {
   const stepNames = [
@@ -95,7 +95,7 @@ function App() {
         return <div className="text-5xl h-screen flex justify-center align-center m-auto items-center bg-red-400">Loading Web3, accounts, and contract...</div>;
   }
   return (
-    <div className="App h-full w-full flex justify-center align-center bg-gray-100">
+    <div className="App h-full w-full flex justify-center align-center bg-gray-400">
 
       <div className="w-2/3 h-full">
         <div className="font-bold p-4 text-3xl">
@@ -116,30 +116,43 @@ function App() {
         </div>
       </div>
 
-      <div className="bg-black text-white w-1/3 h-full overflow-y-auto"> 
+      <div className="divide-y flex flex-col divide-gray-200 bg-black text-white w-1/3 h-full overflow-y-auto"> 
         {/* {navigateToAllSteps} */}
-        {
-        stepNames.map((name, index) => {
-          return (
-            <div className="bg-white w-full" key={index}>
-              {index !== 0 && <Divider/>}
-              <Button onClick={() => goToStep(index)}>{name}</Button>
-            </div>
-          )})
-        }
+
+        <div className="flex">
+          <div className="flex flex-col">
+            {
+            stepNames.map((name, index) => {
+              return (
+                <div className="divide-y divide-gray-200 bg-white w-full" key={index}>
+                  <Button onClick={() => goToStep(index)}>{name}</Button>
+                </div>
+              )})
+            } 
+          </div>
+          <div className="min-h-full w-full w-2/3 text-white m-auto">
+            <h3 className="text-3xl">Made by :</h3>
+            <ul className="text-xl">
+              <li>--> Durand Enzo</li>
+              <li>--> Saury Tom</li>
+              <li>--> Gignoux Thomas</li>
+              <li>--> Tiem Hugo</li>
+            </ul>
+          </div>
+        </div>
+
         {accountsInfo &&
         accountsInfo.map(({account, balance}, index) => {
           return (
             <div key={index}>
-              {index !== 0 && <Divider/>}
               <p>{index === 0 ? "Owner address" : "Account " + index}</p>
               <p>{account}</p>
               <p>Wallet balance: {Number.parseFloat(balance).toFixed(4)} ether</p>
             </div>
           )})
         }
-      </div>
 
+      </div>
     </div>
   );
 }

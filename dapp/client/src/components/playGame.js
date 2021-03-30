@@ -23,7 +23,7 @@ function PlayGame({instance, nextStep}) {
   return (
       <form>
 
-        <h1>Bet game</h1>
+        <h1 className="font-bold">Bet game</h1>
         <p>Account address</p>
         <div>
           <TextField inputRef={address}/>

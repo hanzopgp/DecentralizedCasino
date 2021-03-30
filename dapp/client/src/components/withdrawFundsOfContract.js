@@ -30,7 +30,7 @@ function WithdrawFundsOfContract({web3, instance, nextStep}) {
   return (
       <form>
 
-        <h1>Withdraw funds</h1>
+        <h1 className="font-bold">Withdraw funds</h1>
         <p>Account address</p>
         <div>
           <TextField inputRef={address}/>

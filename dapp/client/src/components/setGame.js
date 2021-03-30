@@ -28,7 +28,7 @@ function setGame({nextStep, instance}) {
 
   return (
   <form>
-    <h1>Set game</h1>
+    <h1 className="font-bold">Set game</h1>
     <p>Account address</p>
     <div>
       <TextField inputRef={address}/>
